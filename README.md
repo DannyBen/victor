@@ -120,9 +120,9 @@ svg.save 'filename'
 SVG Templates
 --------------------------------------------------
 
-The `:default` SVG template is designed to be a full XML document. If you 
-wish to use the output as an SVG element inside HTML, you can change the
-SVG template:
+The `:default` SVG template is designed to be a full XML document (i.e., 
+a standalone SVG image). If you wish to use the output as an SVG element 
+inside HTML, you can change the SVG template:
 
 ```ruby
 svg = SVG.new template: :html 
