@@ -27,7 +27,7 @@ svg.save '01_hello_world'
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 210, height: 400
+svg = SVG.new width: 202, height: 204
 
 style = {
   stroke: 'yellow',
@@ -35,10 +35,10 @@ style = {
 }
 
 svg.build do 
-  rect x: 2, y: 2, width: 200, height: 200, fill: '#f88', style: style
-  circle cx: 50, cy: 50, r: 40, style: style, fill: 'red'
-  ellipse cx: 100, cy: 140, rx: 80, ry: 30, style: style, fill: 'green'
-  line x1: 100, y1: 200, x2: 100, y2: 300, style: style
+  rect x: 2, y: 2, width: 200, height: 200, fill: '#fcc', style: style
+  circle cx: 60, cy: 50, r: 30, style: style, fill: 'red'
+  ellipse cx: 100, cy: 140, rx: 80, ry: 20, style: style, fill: 'green'
+  line x1: 100, y1: 60, x2: 110, y2: 100, style: style
   polygon points: "150,20 180,80 120,80", fill: 'blue', style: style
 end
 
@@ -56,10 +56,10 @@ svg.save '02_shapes'
 ```ruby
 require 'victor'
 
-svg = SVG.new
+svg = SVG.new width: 200, height: 200 
 
 svg.build do 
-  rect x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
+  rect x: 0, y: 0, width: 200, height: 200, fill: '#ddd'
 
   path d: "M100,90 q  180 -140 0 70", fill: 'red'
   path d: "M100,90 q -180 -140 0 70", fill: 'red'
@@ -81,13 +81,12 @@ require 'victor'
 
 svg = SVG.new
 
-# These two are the same, and both return the XML code
-a = svg.element :rect, x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
-b = svg.rect x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
+# These two are the same
+svg.element :rect, x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
+svg.rect x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
 
 puts "Result:\n\n"
-puts "a: #{a}"
-puts "b: #{b}"
+p svg.content
 ```
 
 No output
@@ -98,9 +97,10 @@ No output
 ```ruby
 require 'victor'
 
-svg = SVG.new
+svg = SVG.new viewBox: "0 0 700 70"
 
-svg.text "Victor", x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font_size: 40, fill: 'blue'
+svg.rect x: 0, y: 0, width: 700, height: 70, fill: '#ddd'
+svg.text "Victor", x: 100, y: 50, font_family: 'arial', font_weight: 'bold', font_size: 40, fill: 'blue'
 
 puts "Result:\n\n"
 puts svg.render
@@ -116,10 +116,10 @@ svg.save '05_text'
 ```ruby
 require 'victor'
 
-svg = SVG.new
+svg = SVG.new width: 420, height: 80
 
 svg.build do
-  rect x: 0, y: 0, width: 420, height: 80, style: { fill: '#666' }
+  rect x: 0, y: 0, width: 420, height: 80, fill: '#666'
 
   g font_size: 30, font_family: 'arial', fill: 'white' do
     text "Scalable Victor Graphics", x: 40, y: 50
@@ -134,3 +134,10 @@ svg.save '06_nested'
 
 [![06_nested](https://cdn.rawgit.com/DannyBen/victor/master/examples/06_nested.svg)](https://github.com/DannyBen/victor/blob/master/examples/06_nested.rb)
 
+
+
+---
+
+This file was generated automatically with `run examples`.
+
+---

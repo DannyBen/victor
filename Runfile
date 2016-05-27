@@ -50,6 +50,10 @@ action :examples do
     result.push "\n"
   end
 
+  result.push "\n---\n"
+  result.push "This file was generated automatically with `run examples`."
+  result.push "\n---\n"
+
   result = result.join "\n"
   File.write 'examples/README.md', result
   say_status :write, 'examples/README.md'

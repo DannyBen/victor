@@ -1,23 +1,19 @@
 require 'spec_helper'
-# require 'fileutils'
 
 describe SVG do
   let(:svg) { SVG.new }
 
-  # before do 
-  #   FileUtils.rm_rf 'cache'
-  # end
-
   describe '#new' do
-    it "sets default properties" do
-      expect(svg.height).to eq "100%"
-      expect(svg.width).to eq "100%"
+    it "sets default attributes" do
+      expect(svg.attributes[:height]).to eq "100%"
+      expect(svg.attributes[:width]).to eq "100%"
     end
 
-    it "accepts initialization properties" do
-      svg = SVG.new height: '90%', width: '80%'
-      expect(svg.height).to eq "90%"
-      expect(svg.width).to eq "80%"
+    it "accepts initialization attributes" do
+      svg = SVG.new height: '90%', width: '80%', viewBox: "0 0 100 200"
+      expect(svg.attributes[:height]).to eq "90%"
+      expect(svg.attributes[:width]).to eq "80%"
+      expect(svg.attributes[:viewBox]).to eq "0 0 100 200"
     end
   end
 

@@ -1,6 +1,6 @@
 require 'victor'
 
-svg = SVG.new width: 210, height: 400
+svg = SVG.new width: 202, height: 204
 
 style = {
   stroke: 'yellow',
@@ -8,10 +8,10 @@ style = {
 }
 
 svg.build do 
-  rect x: 2, y: 2, width: 200, height: 200, fill: '#f88', style: style
-  circle cx: 50, cy: 50, r: 40, style: style, fill: 'red'
-  ellipse cx: 100, cy: 140, rx: 80, ry: 30, style: style, fill: 'green'
-  line x1: 100, y1: 200, x2: 100, y2: 300, style: style
+  rect x: 2, y: 2, width: 200, height: 200, fill: '#fcc', style: style
+  circle cx: 60, cy: 50, r: 30, style: style, fill: 'red'
+  ellipse cx: 100, cy: 140, rx: 80, ry: 20, style: style, fill: 'green'
+  line x1: 100, y1: 60, x2: 110, y2: 100, style: style
   polygon points: "150,20 180,80 120,80", fill: 'blue', style: style
 end
 

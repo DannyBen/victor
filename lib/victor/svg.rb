@@ -3,12 +3,13 @@
 module Victor
 
   class SVG
-    attr_accessor :height, :width
+    attr_accessor :attributes
     attr_reader :content
 
-    def initialize(opts={})
-      @height = opts[:height] || "100%"
-      @width  = opts[:width] || "100%"
+    def initialize(attributes={})
+      @attributes = attributes
+      attributes[:width] ||= "100%"
+      attributes[:height] ||= "100%"
       @content = []
     end
 
@@ -38,7 +39,7 @@ module Victor
     end
 
     def render
-      template % { height: height, width: width, content: content.join("\n") }
+      template % { attributes: expand(attributes), content: content.join("\n") }
     end
 
     def save(filename)
@@ -70,11 +71,11 @@ module Victor
     end
 
     def template_path
-      File.join File.dirname(__FILE__), template_file
+      File.join File.dirname(__FILE__), 'templates', template_file
     end
 
     def template_file
-      'template.svg'
+      'default.svg'
     end
   end
 
