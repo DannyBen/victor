@@ -35,12 +35,26 @@ See the [examples] folder for several ruby scripts and their SVG output.
 Usage
 --------------------------------------------------
 
-Victor uses a single method (`element`) to generate all SVG elements:
+Initialize your SVG image:
 
 ```ruby
 require 'victor'
 svg = SVG.new
+```
 
+Any option you provide to `SVG.new` will be added as an attribute to the
+main `<svg>` element. By default, `height` and `width` are set to 100%.
+
+```ruby
+svg = SVG.new width: '100%', height: '100%'
+# same as just SVG.new
+
+svg = SVG.new width: '100%', height: '100%', viewBox: "0 0 200 100"
+```
+
+Victor uses a single method (`element`) to generate all SVG elements:
+
+```ruby
 svg.element :rect, x: 2, y: 2, width: 200, height: 200
 # => <rect x="2" y="2" width="200" height="200"/>
 ```
