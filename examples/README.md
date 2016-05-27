@@ -27,7 +27,7 @@ svg.save '01_hello_world'
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 400, height: 600
+svg = SVG.new width: 210, height: 400
 
 style = {
   stroke: 'yellow',
