@@ -75,7 +75,7 @@ describe SVG do
   end
 
   describe '#save' do
-    let(:filename) { 'dev/test.svg' }
+    let(:filename) { 'test.svg' }
 
     before do 
       File.unlink filename if File.exist? filename
