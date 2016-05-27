@@ -12,17 +12,19 @@ module Victor
       @content = []
     end
 
-    def build(&block)
-      self.instance_eval &block
-    end
-
     def method_missing(method_sym, *arguments, &block)
       element method_sym, *arguments
     end
 
+    def build(&block)
+      self.instance_eval &block
+    end
+
     def element(name, attributes={}, &block)
       xml_attributes = expand attributes
-      content.push "<#{name} #{xml_attributes}/>"
+      elem = "<#{name} #{xml_attributes}/>"
+      content.push elem
+      elem
     end
 
     def render
