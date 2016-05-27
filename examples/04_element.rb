@@ -9,3 +9,5 @@ svg.rect x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
 puts "Result:\n\n"
 p svg.content
 
+# => ["<rect x=\"2\" y=\"2\" width=\"200\" height=\"200\" fill=\"#ddd\"/>", 
+#     "<rect x=\"2\" y=\"2\" width=\"200\" height=\"200\" fill=\"#ddd\"/>"]

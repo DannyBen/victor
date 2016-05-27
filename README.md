@@ -106,4 +106,4 @@ svg.save 'filename'
 
 ---
 
-[examples]: https://github.com/DannyBen/victor/tree/master/examples
+[examples]: https://github.com/DannyBen/victor/tree/master/examples#examples

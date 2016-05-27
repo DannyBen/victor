@@ -39,20 +39,19 @@ action :examples do
     if File.exist? "examples/#{title}.svg"
       image = "[![#{title}](https://cdn.rawgit.com/DannyBen/victor/master/examples/#{title}.svg)](https://github.com/DannyBen/victor/blob/master/#{file})"
     else
-      image = 'No output'
+      image = false
     end
 
     result.push "## #{title}\n"
     result.push "```ruby"
     result.push code
     result.push "```\n"
-    result.push image
+    result.push image if image
     result.push "\n"
   end
 
   result.push "\n---\n"
   result.push "This file was generated automatically with `run examples`."
-  result.push "\n---\n"
 
   result = result.join "\n"
   File.write 'examples/README.md', result
