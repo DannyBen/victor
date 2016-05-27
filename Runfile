@@ -25,3 +25,32 @@ action :watch do
     end
   end
 end
+
+help "Generate readme for examples folder"
+action :examples do
+  say_status :invoke, 'examples'
+
+  result = ["# Examples\n"]
+  Dir['examples/*.rb'].each do |file|
+    say_status :process, file
+
+    title = File.basename file, '.rb'
+    code  = File.read(file).strip
+    if File.exist? "examples/#{title}.svg"
+      image = "[![#{title}](https://cdn.rawgit.com/DannyBen/victor/master/examples/#{title}.svg)](https://github.com/DannyBen/victor/blob/master/#{file})"
+    else
+      image = 'No output'
+    end
+
+    result.push "## #{title}\n"
+    result.push "```ruby"
+    result.push code
+    result.push "```\n"
+    result.push image
+    result.push "\n"
+  end
+
+  result = result.join "\n"
+  File.write 'examples/README.md', result
+  say_status :write, 'examples/README.md'
+end
