@@ -1,0 +1,7 @@
+/coverage
+/dev
+/doc
+/gems
+/Gemfile.lock
+/.yardoc
+*.gem

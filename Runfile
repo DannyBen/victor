@@ -1,0 +1,25 @@
+require "runfile-tasks"
+require 'filewatcher'
+
+require_relative 'lib/victor'
+
+name    "Victor Developer Toolbelt"
+summary "Runfile tasks for building the Victor gem"
+version Victor::VERSION
+
+RunfileTasks::RubyGems.all 'victor'
+RunfileTasks::Testing.rspec
+
+
+help 'Watch example files and rerun them on change'
+action :watch do
+  say_status :watch, 'examples/*.rb'
+
+  FileWatcher.new("examples/*.rb").watch do |filename, event|
+    say_status event, filename
+    Dir.chdir 'examples' do
+      filename = File.basename filename
+      run "ruby #{filename}"
+    end
+  end
+end
