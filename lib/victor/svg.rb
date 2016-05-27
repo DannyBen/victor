@@ -17,10 +17,10 @@ module Victor
     end
 
     def build(&block)
-      self.instance_eval &block
+      self.instance_eval(&block)
     end
 
-    def element(name, value=nil, attributes={}, &block)
+    def element(name, value=nil, attributes={}, &_block)
       if value.is_a? Hash
         attributes = value
         value = nil
@@ -50,19 +50,19 @@ module Victor
 
     def expand(attributes={})
       mapped = attributes.map do |key, value|
-        key = key.to_s.gsub '_', '-'
+        key = key.to_s.tr '_', '-'
         value.is_a?(Hash) ? inner_expand(key, value) : "#{key}=\"#{value}\""
       end
 
       mapped.join ' '
     end
 
-    def inner_expand(key, attributes)
+    def inner_expand(name, attributes)
       mapped = attributes.map do |key, value|
         "#{key}:#{value}"
       end
 
-      "#{key}=\"#{mapped.join '; '}\""
+      "#{name}=\"#{mapped.join '; '}\""
     end
 
     def template
