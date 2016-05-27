@@ -2,7 +2,7 @@ require 'victor'
 
 svg = SVG.new
 
-svg.text "Victor", x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font_size: 40
+svg.text "Victor", x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font_size: 40, fill: 'blue'
 
 puts "Result:\n\n"
 puts svg.render
