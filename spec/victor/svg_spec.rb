@@ -58,6 +58,13 @@ describe SVG do
     end
   end
 
+  describe '#build' do
+    it "evaluates in context" do
+      svg.build { rect x: 10, y: 10 }
+      expect(svg.content).to eq ['<rect x="10" y="10"/>']
+    end
+  end
+
   describe '#render' do
     it "generates full xml" do
       svg.circle radius: 10
