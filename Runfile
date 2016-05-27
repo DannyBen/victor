@@ -17,6 +17,8 @@ action :watch do
 
   FileWatcher.new("examples/*.rb").watch do |filename, event|
     say_status event, filename
+    next if event == :delete
+
     Dir.chdir 'examples' do
       filename = File.basename filename
       run "ruby #{filename}"

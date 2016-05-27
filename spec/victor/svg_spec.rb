@@ -23,25 +23,44 @@ describe SVG do
 
   describe '#element' do
     it "generates xml without attributes" do
-      result = svg.element 'anything'
-      expect(result).to eq '<anything />'
+      svg.element 'anything'
+      expect(svg.content).to eq ['<anything />']
     end
 
     it "generates xml with attributes" do
-      result = svg.element 'anything', at: 'all'
-      expect(result).to eq '<anything at="all"/>'
+      svg.element 'anything', at: 'all'
+      expect(svg.content).to eq ['<anything at="all"/>']
+    end
+
+    it "converts snake attributes to kebabs" do
+      svg.element 'text', font_family: 'arial'
+      expect(svg.content).to eq ['<text font-family="arial"/>']
     end
 
     context 'with hashed attributes' do
       it "converts attributes to style syntax" do
-        result = svg.element 'cool', dudes: { vanilla: 'ice', duke: 'nukem' }
-        expect(result).to eq '<cool dudes="vanilla:ice; duke:nukem"/>'
+        svg.element 'cool', dudes: { vanilla: 'ice', duke: 'nukem' }
+        expect(svg.content).to eq ['<cool dudes="vanilla:ice; duke:nukem"/>']
       end
     end
 
-    context "with blodk" do
+    context "with a block" do
       it "generates nested elements" do
-        skip 'not implemented'
+        svg.build do
+          universe do
+            world do
+              me
+            end
+          end
+        end  
+        expect(svg.content).to eq ["<universe>", "<world>", "<me />", "</world>", "</universe>"]
+      end
+    end
+
+    context "with a content argument" do
+      it "generates a container element" do
+        svg.element 'prison', 'inmate', number: '6'
+        expect(svg.content).to eq ["<prison number=\"6\">", "inmate", "</prison>"]
       end
     end
   end

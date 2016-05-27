@@ -4,7 +4,7 @@ svg = SVG.new
 
 style = {
   stroke: 'yellow',
-  'stroke-width': 4
+  stroke_width: 4
 }
 
 svg.build do 

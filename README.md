@@ -57,12 +57,40 @@ You can use the `build` method, to generate the SVG with a block
 
 ```ruby
 svg.build do 
-  rect x: 0, y: 0, width: 100, height: 100, style: { fill: '#ccc' }
-  rect x: 20, y: 20, width: 60, height: 60, style: { fill: '#f99' }
+  rect x: 0, y: 0, width: 100, height: 100, fill: '#ccc'
+  rect x: 20, y: 20, width: 60, height: 60, fill: '#f99'
 end
 ```
 
-Generate the SVG to a string with `render`:
+If the value of an attribute is a hash, it will be converted to a 
+style-compatible string:
+
+```ruby
+svg.rect x: 0, y: 0, width: 100, height: 100, style: { stroke: '#ccc' }
+# => <rect x=0 y=0 width=100 height=100 style="stroke:#ccc"/>
+```
+
+For SVG elements that have an inner content - such as text, simply pass it as 
+the first argument:
+
+```ruby
+svg.text "Victor", x: 40, y: 50
+# => <text x="40" y="50">Victor</text>
+```
+
+Underscores in attribute names are converted to dashes:
+
+```ruby
+svg.text "Victor", x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font_size: 40
+# => <text x="40" y="50" font-family="arial" font-weight="bold" font-size="40">
+# =>   Victor
+# => </text>
+```
+
+Saving the Output
+--------------------------------------------------
+
+Generate the full SVG to a string with `render`:
 
 ```ruby
 result = svg.render

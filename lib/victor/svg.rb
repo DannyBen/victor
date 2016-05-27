@@ -13,18 +13,28 @@ module Victor
     end
 
     def method_missing(method_sym, *arguments, &block)
-      element method_sym, *arguments
+      element method_sym, *arguments, &block
     end
 
     def build(&block)
       self.instance_eval &block
     end
 
-    def element(name, attributes={}, &block)
+    def element(name, value=nil, attributes={}, &block)
+      if value.is_a? Hash
+        attributes = value
+        value = nil
+      end
+
       xml_attributes = expand attributes
-      elem = "<#{name} #{xml_attributes}/>"
-      content.push elem
-      elem
+
+      if block_given? || value
+        content.push "<#{name} #{xml_attributes}".strip + ">"
+        value ? content.push(value) : yield
+        content.push "</#{name}>"
+      else
+        content.push "<#{name} #{xml_attributes}/>"
+      end
     end
 
     def render
@@ -40,6 +50,7 @@ module Victor
 
     def expand(attributes={})
       mapped = attributes.map do |key, value|
+        key = key.to_s.gsub '_', '-'
         value.is_a?(Hash) ? inner_expand(key, value) : "#{key}=\"#{value}\""
       end
 
