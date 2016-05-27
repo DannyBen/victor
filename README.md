@@ -66,11 +66,11 @@ If the value of an attribute is a hash, it will be converted to a
 style-compatible string:
 
 ```ruby
-svg.rect x: 0, y: 0, width: 100, height: 100, style: { stroke: '#ccc' }
-# => <rect x=0 y=0 width=100 height=100 style="stroke:#ccc"/>
+svg.rect x: 0, y: 0, width: 100, height: 100, style: { stroke: '#ccc', fill: 'red' }
+# => <rect x=0 y=0 width=100 height=100 style="stroke:#ccc; fill:red"/>
 ```
 
-For SVG elements that have an inner content - such as text, simply pass it as 
+For SVG elements that have an inner content - such as text - simply pass it as 
 the first argument:
 
 ```ruby
@@ -83,8 +83,8 @@ Underscores in attribute names are converted to dashes:
 ```ruby
 svg.text "Victor", x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font_size: 40
 # => <text x="40" y="50" font-family="arial" font-weight="bold" font-size="40">
-# =>   Victor
-# => </text>
+#      Victor
+#    </text>
 ```
 
 Saving the Output
