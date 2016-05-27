@@ -8,7 +8,7 @@ Victor - Ruby SVG Image Builder
 
 ---
 
-Victor is a direct Ruby to SVG builder. All method calls are converted
+Victor is a direct Ruby-to-SVG builder. All method calls are converted
 directly to SVG elements.
 
 ---
@@ -29,7 +29,7 @@ gem 'victor'
 Examples
 --------------------------------------------------
 
-See the examples folder for several ruby scripts and their SVG output.
+See the [examples] folder for several ruby scripts and their SVG output.
 
 
 Usage
@@ -49,7 +49,6 @@ But you can omit it. Calls to any other method, will be delegated to the
 `element` method, so normal usage looks more like this:
 
 ```ruby
-# this will generate the exact same result
 svg.rect x: 2, y: 2, width: 200, height: 200
 # => <rect x="2" y="2" width="200" height="200"/>
 ```
@@ -72,5 +71,11 @@ result = svg.render
 Or, save it to a file with `save`:
 
 ```ruby
-svg.save 'filename' # the '.svg' extension is optional
+svg.save 'filename'
+# the '.svg' extension is optional
 ```
+
+
+---
+
+[examples]: https://github.com/DannyBen/victor/tree/master/examples
