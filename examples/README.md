@@ -162,4 +162,4 @@ svg.save '07_nested'
 
 ---
 
-This file was generated automatically with `run examples`.
+This file was generated automatically with `run examples readme`.
