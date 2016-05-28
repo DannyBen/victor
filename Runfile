@@ -70,7 +70,7 @@ action :readme do
   end
 
   result.push "\n---\n"
-  result.push "This file was generated automatically with `run examples`."
+  result.push "This file was generated automatically with `run examples readme`."
 
   result = result.join "\n"
   File.write 'examples/README.md', result
