@@ -11,15 +11,20 @@ RunfileTasks::RubyGems.all 'victor'
 RunfileTasks::Testing.rspec
 
 
+usage 'watch [--dev]'
 help 'Watch example files and rerun them on change'
-action :watch do
-  say_status :watch, 'examples/*.rb'
+option '--dev', 'Watch the dev folder instead of the examples folder'
+action :watch do |args|
+  folder = args['--dev'] ? 'dev' : 'examples'
+  glob = "#{folder}/*.rb"
+  
+  say_status :watch, glob
 
-  FileWatcher.new("examples/*.rb").watch do |filename, event|
+  FileWatcher.new(glob).watch do |filename, event|
     say_status event, filename
     next if event == :delete
 
-    Dir.chdir 'examples' do
+    Dir.chdir folder do
       filename = File.basename filename
       run "ruby #{filename}"
     end
