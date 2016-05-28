@@ -13,9 +13,11 @@ module Victor
       mapped = attributes.map do |key, value|
         key = key.to_s.tr '_', '-'
         
-        if value.is_a?(Hash) 
+        if value.is_a? Hash
           style = Attributes.new(value).to_style
           "#{key}=\"#{style}\"" 
+        elsif value.is_a? Array
+          "#{key}=\"#{value.join ' '}\"" 
         else
           "#{key}=\"#{value}\""
         end

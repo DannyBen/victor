@@ -15,6 +15,11 @@ describe SVG do
       expect(svg.svg_attributes[:width]).to eq "80%"
       expect(svg.svg_attributes[:viewBox]).to eq "0 0 100 200"
     end
+
+    it "converts nested attributes to style" do
+      svg = SVG.new dudes: { duke: :nukem, vanilla: :ice }
+      expect(svg.svg_attributes.to_s).to match /dudes="duke:nukem; vanilla:ice"/
+    end
   end
 
   describe '#element' do
