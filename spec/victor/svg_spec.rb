@@ -5,15 +5,15 @@ describe SVG do
 
   describe '#new' do
     it "sets default attributes" do
-      expect(svg.attributes[:height]).to eq "100%"
-      expect(svg.attributes[:width]).to eq "100%"
+      expect(svg.svg_attributes[:height]).to eq "100%"
+      expect(svg.svg_attributes[:width]).to eq "100%"
     end
 
     it "accepts initialization attributes" do
       svg = SVG.new height: '90%', width: '80%', viewBox: "0 0 100 200"
-      expect(svg.attributes[:height]).to eq "90%"
-      expect(svg.attributes[:width]).to eq "80%"
-      expect(svg.attributes[:viewBox]).to eq "0 0 100 200"
+      expect(svg.svg_attributes[:height]).to eq "90%"
+      expect(svg.svg_attributes[:width]).to eq "80%"
+      expect(svg.svg_attributes[:viewBox]).to eq "0 0 100 200"
     end
   end
 

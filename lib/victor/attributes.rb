@@ -1,0 +1,45 @@
+
+
+module Victor
+
+  class Attributes
+    attr_reader :attributes
+
+    def initialize(attributes={})
+      @attributes = attributes        
+    end
+
+    def to_s
+      mapped = attributes.map do |key, value|
+        key = key.to_s.tr '_', '-'
+        
+        if value.is_a?(Hash) 
+          style = Attributes.new(value).to_style
+          "#{key}=\"#{style}\"" 
+        else
+          "#{key}=\"#{value}\""
+        end
+      end
+
+      mapped.join ' '
+    end
+
+    def to_style
+      mapped = attributes.map do |key, value|
+        "#{key}:#{value}"
+      end
+
+      mapped.join '; '
+    end
+
+    def [](key)
+      attributes[key]
+    end
+
+    def []=(key, value)
+      attributes[key] = value
+    end
+
+  end
+
+end
