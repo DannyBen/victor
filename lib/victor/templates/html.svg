@@ -1,3 +1,10 @@
 <svg %{attributes}>
+
+<style type="text/css" scoped>
+<![CDATA[
+%{css}
+]]>
+</style>
+
 %{content}
 </svg>

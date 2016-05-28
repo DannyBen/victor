@@ -144,14 +144,34 @@ You can also point it to any other template file:
 svg = SVG.new template: 'path/to/template.svg'
 ```
 
-This is what a basic template looks like:
+See the [templates] folder for an understanding of how templates are 
+structured.
 
-```xml
-<svg %{attributes}>
-%{content}
-</svg>
+
+CSS
+--------------------------------------------------
+
+To add a CSS to your SVG, simply use the `css` command inside your `build` 
+block, like this:
+
+```ruby
+svg = SVG.new
+
+svg.build do 
+  css['.main'] = {
+    stroke: "green", 
+    stroke_width: 2,
+    fill: "yellow"
+  }
+
+  circle cx: 35, cy: 35, r: 20, class: 'main'
+end
 ```
+
+Underscore characters will be converted to dashes (`stroke_width` becomes 
+`stroke-width`).
 
 ---
 
 [examples]: https://github.com/DannyBen/victor/tree/master/examples#examples
+[templates]: https://github.com/DannyBen/victor/tree/master/lib/victor/templates
