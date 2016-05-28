@@ -90,7 +90,7 @@ describe SVG do
       it "loads a built in template" do
         svg.template = :html
         svg.circle of: 'trust'
-        expect(svg.render).to eq "<svg width=\"100%\" height=\"100%\">\n<circle of=\"trust\"/>\n</svg>"
+        expect(svg.render).to eq "<svg width=\"100%\" height=\"100%\">\n\n<style type=\"text/css\" scoped>\n<![CDATA[\n\n]]>\n</style>\n\n<circle of=\"trust\"/>\n</svg>"
       end
     end
 
@@ -111,6 +111,23 @@ describe SVG do
       expect(svg.render).to match /DOCTYPE svg PUBLIC/
       expect(svg.render).to match /svg width="100%" height="100%"/
       expect(svg.render).to match /<circle radius="10"\/>/
+    end
+
+    context "with css elements" do
+      before do
+        @css = {}
+        @css['.main'] = { 
+          stroke: "green", 
+          stroke_width: 2,
+        } 
+      end
+
+      it "includes a css block" do
+        svg.css = @css
+        expect(svg.render).to match /.main \{/
+        expect(svg.render).to match /stroke: green;/
+        expect(svg.render).to match /stroke-width: 2;/
+      end
     end
   end
 
