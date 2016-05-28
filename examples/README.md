@@ -1,6 +1,6 @@
 # Examples
 
-## 01_hello_world
+## 01 hello world
 
 ```ruby
 require 'victor'
@@ -22,7 +22,7 @@ svg.save '01_hello_world'
 [![01_hello_world](https://cdn.rawgit.com/DannyBen/victor/master/examples/01_hello_world.svg)](https://github.com/DannyBen/victor/blob/master/examples/01_hello_world.rb)
 
 
-## 02_element
+## 02 element
 
 ```ruby
 require 'victor'
@@ -41,7 +41,7 @@ p svg.content
 
 
 
-## 03_shapes
+## 03 shapes
 
 ```ruby
 require 'victor'
@@ -70,7 +70,7 @@ svg.save '03_shapes'
 [![03_shapes](https://cdn.rawgit.com/DannyBen/victor/master/examples/03_shapes.svg)](https://github.com/DannyBen/victor/blob/master/examples/03_shapes.rb)
 
 
-## 04_path
+## 04 path
 
 ```ruby
 require 'victor'
@@ -93,7 +93,7 @@ svg.save '04_path'
 [![04_path](https://cdn.rawgit.com/DannyBen/victor/master/examples/04_path.svg)](https://github.com/DannyBen/victor/blob/master/examples/04_path.rb)
 
 
-## 05_path_as_array
+## 05 path as array
 
 ```ruby
 require 'victor'
@@ -116,7 +116,7 @@ svg.save '05_path_as_array'
 [![05_path_as_array](https://cdn.rawgit.com/DannyBen/victor/master/examples/05_path_as_array.svg)](https://github.com/DannyBen/victor/blob/master/examples/05_path_as_array.rb)
 
 
-## 06_text
+## 06 text
 
 ```ruby
 require 'victor'
@@ -135,7 +135,7 @@ svg.save '06_text'
 [![06_text](https://cdn.rawgit.com/DannyBen/victor/master/examples/06_text.svg)](https://github.com/DannyBen/victor/blob/master/examples/06_text.rb)
 
 
-## 07_nested
+## 07 nested
 
 ```ruby
 require 'victor'
@@ -159,7 +159,7 @@ svg.save '07_nested'
 [![07_nested](https://cdn.rawgit.com/DannyBen/victor/master/examples/07_nested.svg)](https://github.com/DannyBen/victor/blob/master/examples/07_nested.rb)
 
 
-## 08_css
+## 08 css
 
 ```ruby
 require 'victor'

@@ -53,10 +53,11 @@ action :readme do
   Dir['examples/*.rb'].each do |file|
     say_status :process, file
 
-    title = File.basename file, '.rb'
+    basename = File.basename file, '.rb'
+    title = basename.tr '_', ' '
     code  = File.read(file).strip
-    if File.exist? "examples/#{title}.svg"
-      image = "[![#{title}](https://cdn.rawgit.com/DannyBen/victor/master/examples/#{title}.svg)](https://github.com/DannyBen/victor/blob/master/#{file})"
+    if File.exist? "examples/#{basename}.svg"
+      image = "[![#{basename}](https://cdn.rawgit.com/DannyBen/victor/master/examples/#{basename}.svg)](https://github.com/DannyBen/victor/blob/master/#{file})"
     else
       image = false
     end
