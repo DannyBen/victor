@@ -10,6 +10,7 @@ version Victor::VERSION
 RunfileTasks::RubyGems.all 'victor'
 RunfileTasks::Testing.rspec
 
+command "examples"
 
 usage 'watch [--dev]'
 help 'Watch example files and rerun them on change'
@@ -31,8 +32,21 @@ action :watch do |args|
   end
 end
 
+help 'Regenerate all SVG examples'
+action :build do
+  say_status :invoke, :build
+  File.delete *Dir['examples/*.svg']
+  Dir.chdir 'examples' do
+    Dir['*.rb'].each do |filename|
+      run "ruby #{filename}"
+    end
+  end
+  say_status :done, :build
+  
+end
+
 help "Generate readme for examples folder"
-action :examples do
+action :readme do
   say_status :invoke, 'examples'
 
   result = ["# Examples\n"]
@@ -62,3 +76,5 @@ action :examples do
   File.write 'examples/README.md', result
   say_status :write, 'examples/README.md'
 end
+
+endcommand

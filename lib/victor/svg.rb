@@ -3,14 +3,14 @@
 module Victor
 
   class SVG
-    attr_accessor :attributes, :template
-    attr_reader :content
+    attr_accessor :template
+    attr_reader :content, :svg_attributes
 
     def initialize(attributes={})
       @template = attributes.delete(:template) || :default
-      @attributes = attributes
-      attributes[:width] ||= "100%"
-      attributes[:height] ||= "100%"
+      @svg_attributes = Attributes.new attributes
+      svg_attributes[:width] ||= "100%"
+      svg_attributes[:height] ||= "100%"
       @content = []
     end
 
@@ -28,19 +28,19 @@ module Victor
         value = nil
       end
 
-      xml_attributes = expand attributes
+      attributes = Attributes.new attributes
 
       if block_given? || value
-        content.push "<#{name} #{xml_attributes}".strip + ">"
+        content.push "<#{name} #{attributes}".strip + ">"
         value ? content.push(value) : yield
         content.push "</#{name}>"
       else
-        content.push "<#{name} #{xml_attributes}/>"
+        content.push "<#{name} #{attributes}/>"
       end
     end
 
     def render
-      svg_template % { attributes: expand(attributes), content: content.join("\n") }
+      svg_template % { attributes: svg_attributes, content: content.join("\n") }
     end
 
     def save(filename)
@@ -49,23 +49,6 @@ module Victor
     end
 
     private
-
-    def expand(attributes={})
-      mapped = attributes.map do |key, value|
-        key = key.to_s.tr '_', '-'
-        value.is_a?(Hash) ? inner_expand(key, value) : "#{key}=\"#{value}\""
-      end
-
-      mapped.join ' '
-    end
-
-    def inner_expand(name, attributes)
-      mapped = attributes.map do |key, value|
-        "#{key}:#{value}"
-      end
-
-      "#{name}=\"#{mapped.join '; '}\""
-    end
 
     def svg_template
       File.read template_path

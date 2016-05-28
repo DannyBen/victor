@@ -84,6 +84,15 @@ svg.rect x: 0, y: 0, width: 100, height: 100, style: { stroke: '#ccc', fill: 're
 # => <rect x=0 y=0 width=100 height=100 style="stroke:#ccc; fill:red"/>
 ```
 
+If the value of an attribute is an array, it will be converted to a 
+space delimited string:
+
+```ruby
+svg.path ['M', 150, 0, 'L', 75, 200, 'L', 225, 200, 'Z']
+# => <rect x=0 y=0 width=100 height=100 style="stroke:#ccc; fill:red"/>
+```
+
+
 For SVG elements that have an inner content - such as text - simply pass it as 
 the first argument:
 

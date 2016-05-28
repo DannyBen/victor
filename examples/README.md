@@ -22,7 +22,26 @@ svg.save '01_hello_world'
 [![01_hello_world](https://cdn.rawgit.com/DannyBen/victor/master/examples/01_hello_world.svg)](https://github.com/DannyBen/victor/blob/master/examples/01_hello_world.rb)
 
 
-## 02_shapes
+## 02_element
+
+```ruby
+require 'victor'
+
+svg = SVG.new
+
+# These two are the same
+svg.element :rect, x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
+svg.rect x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
+
+p svg.content
+
+# => ["<rect x=\"2\" y=\"2\" width=\"200\" height=\"200\" fill=\"#ddd\"/>", 
+#     "<rect x=\"2\" y=\"2\" width=\"200\" height=\"200\" fill=\"#ddd\"/>"]
+```
+
+
+
+## 03_shapes
 
 ```ruby
 require 'victor'
@@ -45,13 +64,13 @@ end
 puts "Result:\n\n"
 puts svg.render
 
-svg.save '02_shapes'
+svg.save '03_shapes'
 ```
 
-[![02_shapes](https://cdn.rawgit.com/DannyBen/victor/master/examples/02_shapes.svg)](https://github.com/DannyBen/victor/blob/master/examples/02_shapes.rb)
+[![03_shapes](https://cdn.rawgit.com/DannyBen/victor/master/examples/03_shapes.svg)](https://github.com/DannyBen/victor/blob/master/examples/03_shapes.rb)
 
 
-## 03_path
+## 04_path
 
 ```ruby
 require 'victor'
@@ -68,32 +87,36 @@ end
 puts "Result:\n\n"
 puts svg.render
 
-svg.save '03_path'
+svg.save '04_path'
 ```
 
-[![03_path](https://cdn.rawgit.com/DannyBen/victor/master/examples/03_path.svg)](https://github.com/DannyBen/victor/blob/master/examples/03_path.rb)
+[![04_path](https://cdn.rawgit.com/DannyBen/victor/master/examples/04_path.svg)](https://github.com/DannyBen/victor/blob/master/examples/04_path.rb)
 
 
-## 04_element
+## 05_path_as_array
 
 ```ruby
 require 'victor'
 
-svg = SVG.new
+svg = SVG.new width: 200, height: 200 
 
-# These two are the same
-svg.element :rect, x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
-svg.rect x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
+svg.build do 
+  rect x: 0, y: 0, width: 200, height: 200, fill: '#ddd'
 
-p svg.content
+  path d: ['M', 100,90, 'q',  180, -140, 0, 70], fill: 'red'
+  path d: ['M', 100,90, 'q', -180, -140, 0, 70], fill: 'red'
+end
 
-# => ["<rect x=\"2\" y=\"2\" width=\"200\" height=\"200\" fill=\"#ddd\"/>", 
-#     "<rect x=\"2\" y=\"2\" width=\"200\" height=\"200\" fill=\"#ddd\"/>"]
+puts "Result:\n\n"
+puts svg.render
+
+svg.save '05_path_as_array'
 ```
 
+[![05_path_as_array](https://cdn.rawgit.com/DannyBen/victor/master/examples/05_path_as_array.svg)](https://github.com/DannyBen/victor/blob/master/examples/05_path_as_array.rb)
 
 
-## 05_text
+## 06_text
 
 ```ruby
 require 'victor'
@@ -106,13 +129,13 @@ svg.text "Victor", x: 100, y: 50, font_family: 'arial', font_weight: 'bold', fon
 puts "Result:\n\n"
 puts svg.render
 
-svg.save '05_text'
+svg.save '06_text'
 ```
 
-[![05_text](https://cdn.rawgit.com/DannyBen/victor/master/examples/05_text.svg)](https://github.com/DannyBen/victor/blob/master/examples/05_text.rb)
+[![06_text](https://cdn.rawgit.com/DannyBen/victor/master/examples/06_text.svg)](https://github.com/DannyBen/victor/blob/master/examples/06_text.rb)
 
 
-## 06_nested
+## 07_nested
 
 ```ruby
 require 'victor'
@@ -130,10 +153,10 @@ end
 puts "Result:\n\n"
 puts svg.render
 
-svg.save '06_nested'
+svg.save '07_nested'
 ```
 
-[![06_nested](https://cdn.rawgit.com/DannyBen/victor/master/examples/06_nested.svg)](https://github.com/DannyBen/victor/blob/master/examples/06_nested.rb)
+[![07_nested](https://cdn.rawgit.com/DannyBen/victor/master/examples/07_nested.svg)](https://github.com/DannyBen/victor/blob/master/examples/07_nested.rb)
 
 
 
