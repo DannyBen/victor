@@ -18,4 +18,4 @@ end
 puts "Result:\n\n"
 puts svg.render
 
-svg.save '02_shapes'
+svg.save '03_shapes'

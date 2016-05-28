@@ -13,6 +13,6 @@ end
 puts "Result:\n\n"
 puts svg.render
 
-svg.save '06_nested'
+svg.save '07_nested'
 
 

@@ -8,6 +8,6 @@ svg.text "Victor", x: 100, y: 50, font_family: 'arial', font_weight: 'bold', fon
 puts "Result:\n\n"
 puts svg.render
 
-svg.save '05_text'
+svg.save '06_text'
 
 
