@@ -80,6 +80,26 @@ describe SVG do
     end
   end
 
+  describe '#template' do
+    context 'with a symbol' do
+      it "loads a built in template" do
+        svg.template = :html
+        svg.circle of: 'trust'
+        expect(svg.render).to eq "<svg width=\"100%\" height=\"100%\">\n<circle of=\"trust\"/>\n</svg>"
+      end
+    end
+
+    context 'with a path' do
+      let(:path) { 'spec/fixtures/custom_template.svg' }
+
+      it "loads a custom template" do
+        svg.template = path
+        svg.circle of: 'trust'
+        expect(svg.render).to eq "<!-- Custom Template -->\n<svg width=\"100%\" height=\"100%\">\n<circle of=\"trust\"/>\n</svg>"
+      end
+    end
+  end
+
   describe '#render' do
     it "generates full xml" do
       svg.circle radius: 10

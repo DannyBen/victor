@@ -1,0 +1,4 @@
+<!-- Custom Template -->
+<svg %{attributes}>
+%{content}
+</svg>

@@ -3,10 +3,11 @@
 module Victor
 
   class SVG
-    attr_accessor :attributes
+    attr_accessor :attributes, :template
     attr_reader :content
 
     def initialize(attributes={})
+      @template = attributes.delete(:template) || :default
       @attributes = attributes
       attributes[:width] ||= "100%"
       attributes[:height] ||= "100%"
@@ -39,7 +40,7 @@ module Victor
     end
 
     def render
-      template % { attributes: expand(attributes), content: content.join("\n") }
+      svg_template % { attributes: expand(attributes), content: content.join("\n") }
     end
 
     def save(filename)
@@ -66,16 +67,16 @@ module Victor
       "#{name}=\"#{mapped.join '; '}\""
     end
 
-    def template
+    def svg_template
       File.read template_path
     end
 
     def template_path
-      File.join File.dirname(__FILE__), 'templates', template_file
-    end
-
-    def template_file
-      'default.svg'
+      if template.is_a? Symbol
+        File.join File.dirname(__FILE__), 'templates', "#{template}.svg"
+      else
+        template
+      end
     end
   end
 
