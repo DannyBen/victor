@@ -1,6 +1,6 @@
 require 'victor'
 
-svg = SVG.new width: 400, height: 400, viewBox: "0 0 100 100", 
+svg = SVG.new width: 200, height: 200, viewBox: "0 0 70 70", 
   style: { background: '#eee' }
 
 svg.build do 
