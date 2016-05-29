@@ -1,5 +1,3 @@
-
-
 module Victor
 
   class CSS
@@ -10,14 +8,24 @@ module Victor
     end
 
     def to_s
+      convert_hash attributes
+    end
+
+    private 
+
+    def convert_hash(hash, indent=2)
+      return hash unless hash.is_a? Hash
+
       result = []
-      attributes.each do |selector, styles|
-        result.push "  #{selector} {"
-        styles.each do |key, value|
-          key = key.to_s.tr '_', '-'
-          result.push "    #{key}: #{value};"
+      hash.each do |key, value|
+        key = key.to_s.tr '_', '-'
+        if value.is_a? Hash
+          result.push " " * indent + "#{key} {"
+          result.push convert_hash(value, indent+2)
+          result.push " " * indent + "}"
+        else
+          result.push " " * indent + "#{key}: #{value};"
         end
-        result.push "  }"
       end
 
       result.join "\n"
