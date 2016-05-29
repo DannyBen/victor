@@ -3,7 +3,7 @@ require 'spec_helper'
 describe CSS do
 
   describe '#to_s' do
-    it "converts to a valid css" do
+    it "converts css one level deep" do
       css = {}
       css['.main'] = { 
         color: 'black', 
@@ -11,7 +11,22 @@ describe CSS do
       } 
 
       subject = CSS.new css
-      expect(subject.to_s).to eq "  .main {\n    color: black;\n    background: white;\n  }"
+      expect(subject.to_s).to eq fixture('css1.css')
+    end
+
+    it "converts css several levels deep" do
+      css = {}
+      css["@keyframes animation"] = {
+        "0%" => {
+          font_size: "10px"
+        },
+        "30%" => {
+          font_size: "15px"
+        }
+      }
+
+      subject = CSS.new css
+      expect(subject.to_s).to eq fixture('css2.css')
     end
   end
 
