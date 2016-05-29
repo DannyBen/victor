@@ -53,6 +53,7 @@ action :readme do
   Dir['examples/*.rb'].each do |file|
     say_status :process, file
 
+
     basename = File.basename file, '.rb'
     title = basename.tr '_', ' '
     code  = File.read(file).strip

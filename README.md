@@ -29,6 +29,32 @@ gem 'victor'
 Examples
 --------------------------------------------------
 
+```ruby
+require 'victor'
+
+svg = SVG.new width: 140, height: 100, style: { background: '#ddd' }
+
+svg.build do 
+  rect x: 10, y: 10, width: 120, height: 80, rx: 10, fill: '#666'
+  
+  circle cx: 50, cy: 50, r: 30, fill: 'yellow'
+  circle cx: 58, cy: 32, r: 4, fill: 'black'
+  polygon points: %w[45,50 80,30 80,70], fill: '#666'
+
+  3.times do |i|
+    x = 80 + i*18
+    circle cx: x, cy: 50, r: 4, fill: 'yellow'
+  end
+end
+
+svg.save 'pacman'
+```
+
+Output:
+
+[![pacman](https://cdn.rawgit.com/DannyBen/victor/master/examples/09_pacman.svg)](https://github.com/DannyBen/victor/blob/master/examples/09_pacman.rb)
+
+
 See the [examples] folder for several ruby scripts and their SVG output.
 
 

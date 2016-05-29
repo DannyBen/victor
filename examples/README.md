@@ -13,9 +13,10 @@ svg.build do
     transform: "rotate(10 40 40)"
 end
 
-puts "Result:\n\n"
-puts svg.render
+# If you want the XML itself:
+result = svg.render
 
+# If you want to save:
 svg.save '01_hello_world'
 ```
 
@@ -61,9 +62,6 @@ svg.build do
   polygon points: "150,20 180,80 120,80", fill: 'blue', style: style
 end
 
-puts "Result:\n\n"
-puts svg.render
-
 svg.save '03_shapes'
 ```
 
@@ -83,9 +81,6 @@ svg.build do
   path d: "M100,90 q  180 -140 0 70", fill: 'red'
   path d: "M100,90 q -180 -140 0 70", fill: 'red'
 end
-
-puts "Result:\n\n"
-puts svg.render
 
 svg.save '04_path'
 ```
@@ -107,9 +102,6 @@ svg.build do
   path d: ['M', 100,90, 'q', -180, -140, 0, 70], fill: 'red'
 end
 
-puts "Result:\n\n"
-puts svg.render
-
 svg.save '05_path_as_array'
 ```
 
@@ -125,9 +117,6 @@ svg = SVG.new viewBox: "0 0 700 70"
 
 svg.rect x: 0, y: 0, width: 700, height: 70, fill: '#ddd'
 svg.text "Victor", x: 100, y: 50, font_family: 'arial', font_weight: 'bold', font_size: 40, fill: 'blue'
-
-puts "Result:\n\n"
-puts svg.render
 
 svg.save '06_text'
 ```
@@ -149,9 +138,6 @@ svg.build do
     text "Scalable Victor Graphics", x: 40, y: 50
   end
 end
-
-puts "Result:\n\n"
-puts svg.render
 
 svg.save '07_nested'
 ```
@@ -183,6 +169,32 @@ svg.save '08_css.svg'
 ```
 
 [![08_css](https://cdn.rawgit.com/DannyBen/victor/master/examples/08_css.svg)](https://github.com/DannyBen/victor/blob/master/examples/08_css.rb)
+
+
+## 09 pacman
+
+```ruby
+require 'victor'
+
+svg = SVG.new width: 140, height: 100, style: { background: '#ddd' }
+
+svg.build do 
+  rect x: 10, y: 10, width: 120, height: 80, rx: 10, fill: '#666'
+  
+  circle cx: 50, cy: 50, r: 30, fill: 'yellow'
+  circle cx: 58, cy: 32, r: 4, fill: 'black'
+  polygon points: %w[45,50 80,30 80,70], fill: '#666'
+
+  3.times do |i|
+    x = 80 + i*18
+    circle cx: x, cy: 50, r: 4, fill: 'yellow'
+  end
+end
+
+svg.save '09_pacman'
+```
+
+[![09_pacman](https://cdn.rawgit.com/DannyBen/victor/master/examples/09_pacman.svg)](https://github.com/DannyBen/victor/blob/master/examples/09_pacman.rb)
 
 
 

@@ -10,9 +10,6 @@ svg.build do
   end
 end
 
-puts "Result:\n\n"
-puts svg.render
-
 svg.save '07_nested'
 
 

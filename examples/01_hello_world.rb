@@ -8,7 +8,8 @@ svg.build do
     transform: "rotate(10 40 40)"
 end
 
-puts "Result:\n\n"
-puts svg.render
+# If you want the XML itself:
+result = svg.render
 
+# If you want to save:
 svg.save '01_hello_world'

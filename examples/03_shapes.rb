@@ -15,7 +15,4 @@ svg.build do
   polygon points: "150,20 180,80 120,80", fill: 'blue', style: style
 end
 
-puts "Result:\n\n"
-puts svg.render
-
 svg.save '03_shapes'
