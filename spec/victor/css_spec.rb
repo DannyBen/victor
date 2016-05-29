@@ -17,10 +17,10 @@ describe CSS do
     it "converts css several levels deep" do
       css = {}
       css["@keyframes animation"] = {
-        "0%": {
+        "0%" => {
           font_size: "10px"
         },
-        "30%": {
+        "30%" => {
           font_size: "15px"
         }
       }
