@@ -141,6 +141,9 @@ svg.build do
     text "Scalable Victor Graphics", x: 40, y: 50
   end
 end
+# => <g font-size="30" font-family="arial" fill="white">
+#      <text x="40" y="50">Scalable Victor Graphics</text>
+#    </g>
 ```
 
 Underscores in attribute names are converted to dashes:
