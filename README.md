@@ -93,6 +93,13 @@ svg.rect x: 2, y: 2, width: 200, height: 200
 # => <rect x="2" y="2" width="200" height="200"/>
 ```
 
+In other words, these are the same:
+
+```ruby
+svg.element :anything, option: 'value'
+svg.anything option: 'value'
+```
+
 You can use the `build` method, to generate the SVG with a block
 
 ```ruby
@@ -114,10 +121,9 @@ If the value of an attribute is an array, it will be converted to a
 space delimited string:
 
 ```ruby
-svg.path ['M', 150, 0, 'L', 75, 200, 'L', 225, 200, 'Z']
-# => <rect x=0 y=0 width=100 height=100 style="stroke:#ccc; fill:red"/>
+svg.path d: ['M', 150, 0, 'L', 75, 200, 'L', 225, 200, 'Z']
+# => <path d="M 159 9 L 75 200 L 225 200 Z"/>
 ```
-
 
 For SVG elements that have an inner content - such as text - simply pass it as 
 the first argument:
@@ -125,6 +131,16 @@ the first argument:
 ```ruby
 svg.text "Victor", x: 40, y: 50
 # => <text x="40" y="50">Victor</text>
+```
+
+You can also nest elements with blocks:
+
+```ruby
+svg.build do
+  g font_size: 30, font_family: 'arial', fill: 'white' do
+    text "Scalable Victor Graphics", x: 40, y: 50
+  end
+end
 ```
 
 Underscores in attribute names are converted to dashes:
