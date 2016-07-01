@@ -30,6 +30,11 @@ describe Attributes do
       subject = Attributes.new duke: :nukem, vanilla: :ice
       expect(subject.to_style).to eq 'duke:nukem; vanilla:ice'
     end
+
+    it "converts underscores to dashes" do
+      subject = Attributes.new heroes_of_the_storm: 10
+      expect(subject.to_style).to eq 'heroes-of-the-storm:10'
+    end
   end
 
 end

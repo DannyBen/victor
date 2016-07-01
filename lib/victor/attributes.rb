@@ -28,6 +28,7 @@ module Victor
 
     def to_style
       mapped = attributes.map do |key, value|
+        key = key.to_s.tr '_', '-'
         "#{key}:#{value}"
       end
 
