@@ -213,6 +213,24 @@ svg.build do
 end
 ```
 
+You can also set CSS by providing a hash:
+
+```ruby
+svg.css = {
+  '.bar': {
+    fill: '#666',
+    stroke: '#fff',
+    stroke_width: 1
+  },
+  '.negative': {
+    fill: '#f66'
+  },
+  '.positive': {
+    fill: '#6f6'
+  }
+}
+```
+
 Underscore characters will be converted to dashes (`stroke_width` becomes 
 `stroke-width`).
 
