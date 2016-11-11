@@ -254,7 +254,7 @@ svg = SVG.new width: 300, height: 300, viewBox:"0 0 400 300"
 
 svg.build do
   
-  # Define a reusable pattern using SVG defs>
+  # Define a reusable pattern using SVG <defs>
   defs do
     pattern id: "Pattern", x: "0", y: "0", width: "75", height: "50", patternUnits: "userSpaceOnUse" do
       rect x: "0" , y: "0", width: "25", height: "50", fill: "black"
