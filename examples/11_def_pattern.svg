@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
-<svg viewBox="0 0 400 400" width="100%" height="100%" 
+<svg width="300" height="300" viewBox="0 0 400 300" 
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -12,21 +12,13 @@
 </style>
 
 <defs>
-<linearGradient id="Gradient1">
-<stop offset="5%" stop-color="white"/>
-<stop offset="95%" stop-color="blue"/>
-</linearGradient>
-<linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
-<stop offset="5%" stop-color="red"/>
-<stop offset="95%" stop-color="orange"/>
-</linearGradient>
-<pattern id="Pattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
-<rect x="0" y="0" width="50" height="50" fill="skyblue"/>
-<rect x="0" y="0" width="25" height="25" fill="url(#Gradient2)"/>
-<circle cx="25" cy="25" r="20" fill="url(#Gradient1)" fill-opacity="0.5"/>
+<pattern id="Pattern" x="0" y="0" width="75" height="50" patternUnits="userSpaceOnUse">
+<rect x="0" y="0" width="25" height="50" fill="black"/>
+<rect x="25" y="0" width="25" height="50" fill="red"/>
+<rect x="50" y="0" width="25" height="50" fill="yellow"/>
 </pattern>
 </defs>
 <rect fill="url(#Pattern)" stroke="black" x="0" y="0" width="300" height="150"/>
-<circle fill="url(#Pattern)" stroke="black" cx="200" cy="200" r="100"/>
+<circle fill="url(#Pattern)" stroke="black" cx="150" cy="150" r="100" transform="rotate(90 150 150)"/>
 
 </svg>
