@@ -1,5 +1,3 @@
-
-
 module Victor
 
   class SVG
@@ -44,8 +42,12 @@ module Victor
       svg_template % { 
         css: CSS.new(css),
         attributes: svg_attributes, 
-        content: content.join("\n") 
+        content: content.join("\n")
       }
+    end
+
+    def to_s
+      content.join "\n"
     end
 
     def save(filename)

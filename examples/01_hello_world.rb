@@ -11,5 +11,8 @@ end
 # If you want the XML itself:
 result = svg.render
 
+# If you want the XML without the surrounding template:
+result = svg.to_s
+
 # If you want to save:
 svg.save '01_hello_world'
