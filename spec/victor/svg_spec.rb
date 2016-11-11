@@ -131,6 +131,13 @@ describe SVG do
     end
   end
 
+  describe '#to_s' do
+    it "returns svg xml as string" do
+      svg.circle radius: 10
+      expect(svg.to_s).to eq '<circle radius="10"/>'
+    end    
+  end
+
   describe '#save' do
     let(:filename) { 'test.svg' }
 
