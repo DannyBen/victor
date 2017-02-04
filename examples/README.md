@@ -23,7 +23,9 @@ result = svg.to_s
 svg.save '01_hello_world'
 ```
 
-[![01_hello_world](https://cdn.rawgit.com/DannyBen/victor/master/examples/01_hello_world.svg)](https://github.com/DannyBen/victor/blob/master/examples/01_hello_world.rb)
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/01_hello_world.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/01_hello_world.svg)
+
+[![01_hello_world](https://cdn.rawgit.com/DannyBen/victor/master/examples/01_hello_world.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/01_hello_world.svg)
 
 
 ## 02 element
@@ -42,6 +44,8 @@ p svg.content
 # => ["<rect x=\"2\" y=\"2\" width=\"200\" height=\"200\" fill=\"#ddd\"/>", 
 #     "<rect x=\"2\" y=\"2\" width=\"200\" height=\"200\" fill=\"#ddd\"/>"]
 ```
+
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/02_element.rb)
 
 
 
@@ -68,7 +72,9 @@ end
 svg.save '03_shapes'
 ```
 
-[![03_shapes](https://cdn.rawgit.com/DannyBen/victor/master/examples/03_shapes.svg)](https://github.com/DannyBen/victor/blob/master/examples/03_shapes.rb)
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/03_shapes.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/03_shapes.svg)
+
+[![03_shapes](https://cdn.rawgit.com/DannyBen/victor/master/examples/03_shapes.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/03_shapes.svg)
 
 
 ## 04 path
@@ -88,7 +94,9 @@ end
 svg.save '04_path'
 ```
 
-[![04_path](https://cdn.rawgit.com/DannyBen/victor/master/examples/04_path.svg)](https://github.com/DannyBen/victor/blob/master/examples/04_path.rb)
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/04_path.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/04_path.svg)
+
+[![04_path](https://cdn.rawgit.com/DannyBen/victor/master/examples/04_path.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/04_path.svg)
 
 
 ## 05 path as array
@@ -108,7 +116,9 @@ end
 svg.save '05_path_as_array'
 ```
 
-[![05_path_as_array](https://cdn.rawgit.com/DannyBen/victor/master/examples/05_path_as_array.svg)](https://github.com/DannyBen/victor/blob/master/examples/05_path_as_array.rb)
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/05_path_as_array.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/05_path_as_array.svg)
+
+[![05_path_as_array](https://cdn.rawgit.com/DannyBen/victor/master/examples/05_path_as_array.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/05_path_as_array.svg)
 
 
 ## 06 text
@@ -124,7 +134,9 @@ svg.text "Victor", x: 100, y: 50, font_family: 'arial', font_weight: 'bold', fon
 svg.save '06_text'
 ```
 
-[![06_text](https://cdn.rawgit.com/DannyBen/victor/master/examples/06_text.svg)](https://github.com/DannyBen/victor/blob/master/examples/06_text.rb)
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/06_text.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/06_text.svg)
+
+[![06_text](https://cdn.rawgit.com/DannyBen/victor/master/examples/06_text.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/06_text.svg)
 
 
 ## 07 nested
@@ -145,7 +157,9 @@ end
 svg.save '07_nested'
 ```
 
-[![07_nested](https://cdn.rawgit.com/DannyBen/victor/master/examples/07_nested.svg)](https://github.com/DannyBen/victor/blob/master/examples/07_nested.rb)
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/07_nested.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/07_nested.svg)
+
+[![07_nested](https://cdn.rawgit.com/DannyBen/victor/master/examples/07_nested.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/07_nested.svg)
 
 
 ## 08 css
@@ -171,7 +185,9 @@ end
 svg.save '08_css.svg'
 ```
 
-[![08_css](https://cdn.rawgit.com/DannyBen/victor/master/examples/08_css.svg)](https://github.com/DannyBen/victor/blob/master/examples/08_css.rb)
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/08_css.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/08_css.svg)
+
+[![08_css](https://cdn.rawgit.com/DannyBen/victor/master/examples/08_css.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/08_css.svg)
 
 
 ## 09 pacman
@@ -197,7 +213,9 @@ end
 svg.save '09_pacman'
 ```
 
-[![09_pacman](https://cdn.rawgit.com/DannyBen/victor/master/examples/09_pacman.svg)](https://github.com/DannyBen/victor/blob/master/examples/09_pacman.rb)
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/09_pacman.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/09_pacman.svg)
+
+[![09_pacman](https://cdn.rawgit.com/DannyBen/victor/master/examples/09_pacman.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/09_pacman.svg)
 
 
 ## 10 animation
@@ -242,7 +260,9 @@ end
 svg.save '10_animation'
 ```
 
-[![10_animation](https://cdn.rawgit.com/DannyBen/victor/master/examples/10_animation.svg)](https://github.com/DannyBen/victor/blob/master/examples/10_animation.rb)
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/10_animation.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/10_animation.svg)
+
+[![10_animation](https://cdn.rawgit.com/DannyBen/victor/master/examples/10_animation.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/10_animation.svg)
 
 
 ## 11 def pattern
@@ -273,7 +293,51 @@ end
 svg.save '11_def_pattern'
 ```
 
-[![11_def_pattern](https://cdn.rawgit.com/DannyBen/victor/master/examples/11_def_pattern.svg)](https://github.com/DannyBen/victor/blob/master/examples/11_def_pattern.rb)
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/11_def_pattern.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/11_def_pattern.svg)
+
+[![11_def_pattern](https://cdn.rawgit.com/DannyBen/victor/master/examples/11_def_pattern.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/11_def_pattern.svg)
+
+
+## 12 custom fonts
+
+```ruby
+require 'victor'
+
+svg = SVG.new width: 300, height: 180, viewBox:"0 0 300 180"
+
+svg.build do
+  
+  # Whenever the value of a CSS entry is an array, each item in the
+  # array will simply be placed after the key,separated by a space
+  # so this will create two '@import url(...)' statements.
+  css['@import'] = [
+    "url('https://fonts.googleapis.com/css?family=Audiowide')",
+    "url('https://fonts.googleapis.com/css?family=Pacifico')"
+  ]
+
+  rect x: 0, y: 0, width: '100%', height: '100%', fill: '#779'
+
+  svg.text "Custom Fonts?", text_anchor: :middle, x: '50%', y: 50, 
+    font_family: 'Audiowide', font_size: 30, fill: :white
+
+  svg.text "No problem!", text_anchor: :middle, x: '50%', y: 100, 
+    font_family: 'Pacifico', font_size: 30
+
+  svg.text "this example does not work", 
+    text_anchor: :middle, x: '50%', y: 140, 
+    font_family: 'arial', font_size: 16
+
+  svg.text "when embedded in HTML", 
+    text_anchor: :middle, x: '50%', y: 160, 
+    font_family: 'arial', font_size: 16
+end
+
+svg.save '12_custom_fonts'
+```
+
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/12_custom_fonts.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/12_custom_fonts.svg)
+
+[![12_custom_fonts](https://cdn.rawgit.com/DannyBen/victor/master/examples/12_custom_fonts.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/12_custom_fonts.svg)
 
 
 
