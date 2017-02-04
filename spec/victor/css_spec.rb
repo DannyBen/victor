@@ -28,6 +28,17 @@ describe CSS do
       subject = CSS.new css
       expect(subject.to_s).to eq fixture('css2.css')
     end
+
+    it "converts array values to single lines" do
+      css = {}
+      css['@import'] = [
+        "some url",
+        "another url"
+      ]
+
+      subject = CSS.new css
+      expect(subject.to_s).to eq fixture('css3.css')
+    end
   end
 
 end

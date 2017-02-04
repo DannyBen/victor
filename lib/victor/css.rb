@@ -23,6 +23,10 @@ module Victor
           result.push " " * indent + "#{key} {"
           result.push convert_hash(value, indent+2)
           result.push " " * indent + "}"
+        elsif value.is_a? Array
+          value.each do |row|
+            result.push " " * indent + "#{key} #{row};"
+          end
         else
           result.push " " * indent + "#{key}: #{value};"
         end
