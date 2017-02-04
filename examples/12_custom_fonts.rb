@@ -1,6 +1,6 @@
 require 'victor'
 
-svg = SVG.new width: 300, height: 130, viewBox:"0 0 300 130"
+svg = SVG.new width: 300, height: 180, viewBox:"0 0 300 180"
 
 svg.build do
   
@@ -19,7 +19,17 @@ svg.build do
 
   svg.text "No problem!", text_anchor: :middle, x: '50%', y: 100, 
     font_family: 'Pacifico', font_size: 30
+
+  svg.text "this example does not work", 
+    text_anchor: :middle, x: '50%', y: 140, 
+    font_family: 'arial', font_size: 16
+
+  svg.text "when embedded in HTML", 
+    text_anchor: :middle, x: '50%', y: 160, 
+    font_family: 'arial', font_size: 16
 end
 
 svg.save '12_custom_fonts'
+
+
 
