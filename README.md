@@ -234,6 +234,23 @@ svg.css = {
 Underscore characters will be converted to dashes (`stroke_width` becomes 
 `stroke-width`).
 
+
+If you need to add CSS statements , like `@import`, use the following syntax:
+
+```ruby
+css['@import'] = [
+  "url('https://fonts.googleapis.com/css?family=Audiowide')",
+  "url('https://fonts.googleapis.com/css?family=Pacifico')"
+]
+```
+
+When the value of the CSS attribute is an array, Victor will simply use
+the values of the array and prefix each of them with the key, so the above 
+will result in two `@import url(...)` rows.
+
+See the [custom fonts example](https://github.com/DannyBen/victor/tree/master/examples#12-custom-fonts)
+
+
 ---
 
 [examples]: https://github.com/DannyBen/victor/tree/master/examples#examples
