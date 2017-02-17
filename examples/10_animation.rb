@@ -1,6 +1,6 @@
 require 'victor'
 
-svg = SVG.new width: 140, height: 100, style: { background: '#ddd' }
+svg = Victor::SVG.new width: 140, height: 100, style: { background: '#ddd' }
 
 def animation
   css[".mouth"] = {

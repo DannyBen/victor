@@ -1,6 +1,6 @@
 require 'victor'
 
-svg = SVG.new width: 420, height: 80
+svg = Victor::SVG.new width: 420, height: 80
 
 svg.build do
   rect x: 0, y: 0, width: 420, height: 80, fill: '#666'
