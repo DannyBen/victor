@@ -5,7 +5,7 @@
 ```ruby
 require 'victor'
 
-svg = SVG.new
+svg = Victor::SVG.new
 
 svg.build do 
   rect x: 0, y: 0, width: 100, height: 100, style: { fill: '#ccc' }
@@ -33,7 +33,7 @@ svg.save '01_hello_world'
 ```ruby
 require 'victor'
 
-svg = SVG.new
+svg = Victor::SVG.new
 
 # These two are the same
 svg.element :rect, x: 2, y: 2, width: 200, height: 200, fill: '#ddd'
@@ -54,7 +54,7 @@ p svg.content
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 202, height: 204
+svg = Victor::SVG.new width: 202, height: 204
 
 style = {
   stroke: 'yellow',
@@ -82,7 +82,7 @@ svg.save '03_shapes'
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 200, height: 200 
+svg = Victor::SVG.new width: 200, height: 200 
 
 svg.build do 
   rect x: 0, y: 0, width: 200, height: 200, fill: '#ddd'
@@ -104,7 +104,7 @@ svg.save '04_path'
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 200, height: 200 
+svg = Victor::SVG.new width: 200, height: 200 
 
 svg.build do 
   rect x: 0, y: 0, width: 200, height: 200, fill: '#ddd'
@@ -126,7 +126,7 @@ svg.save '05_path_as_array'
 ```ruby
 require 'victor'
 
-svg = SVG.new viewBox: "0 0 700 70"
+svg = Victor::SVG.new viewBox: "0 0 700 70"
 
 svg.rect x: 0, y: 0, width: 700, height: 70, fill: '#ddd'
 svg.text "Victor", x: 100, y: 50, font_family: 'arial', font_weight: 'bold', font_size: 40, fill: 'blue'
@@ -144,7 +144,7 @@ svg.save '06_text'
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 420, height: 80
+svg = Victor::SVG.new width: 420, height: 80
 
 svg.build do
   rect x: 0, y: 0, width: 420, height: 80, fill: '#666'
@@ -167,7 +167,7 @@ svg.save '07_nested'
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 200, height: 200, viewBox: "0 0 70 70", 
+svg = Victor::SVG.new width: 200, height: 200, viewBox: "0 0 70 70", 
   style: { background: '#eee' }
 
 svg.build do 
@@ -195,7 +195,7 @@ svg.save '08_css.svg'
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 140, height: 100, style: { background: '#ddd' }
+svg = Victor::SVG.new width: 140, height: 100, style: { background: '#ddd' }
 
 svg.build do 
   rect x: 10, y: 10, width: 120, height: 80, rx: 10, fill: '#666'
@@ -223,7 +223,7 @@ svg.save '09_pacman'
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 140, height: 100, style: { background: '#ddd' }
+svg = Victor::SVG.new width: 140, height: 100, style: { background: '#ddd' }
 
 def animation
   css[".mouth"] = {
@@ -270,7 +270,7 @@ svg.save '10_animation'
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 300, height: 300, viewBox:"0 0 400 300"
+svg = Victor::SVG.new width: 300, height: 300, viewBox:"0 0 400 300"
 
 svg.build do
   
@@ -303,7 +303,7 @@ svg.save '11_def_pattern'
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 300, height: 180, viewBox:"0 0 300 180"
+svg = Victor::SVG.new width: 300, height: 180, viewBox:"0 0 300 180"
 
 svg.build do
   
