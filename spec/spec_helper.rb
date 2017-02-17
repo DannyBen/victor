@@ -5,6 +5,8 @@ require 'rubygems'
 require 'bundler'
 Bundler.require :default, :development
 
+include Victor
+
 def fixture(filename, data=nil)
   if data
     File.write "spec/fixtures/#{filename}", data

@@ -32,7 +32,7 @@ Examples
 ```ruby
 require 'victor'
 
-svg = SVG.new width: 140, height: 100, style: { background: '#ddd' }
+svg = Victor::SVG.new width: 140, height: 100, style: { background: '#ddd' }
 
 svg.build do 
   rect x: 10, y: 10, width: 120, height: 80, rx: 10, fill: '#666'
@@ -65,17 +65,17 @@ Initialize your SVG image:
 
 ```ruby
 require 'victor'
-svg = SVG.new
+svg = Victor::SVG.new
 ```
 
 Any option you provide to `SVG.new` will be added as an attribute to the
 main `<svg>` element. By default, `height` and `width` are set to 100%.
 
 ```ruby
-svg = SVG.new width: '100%', height: '100%'
-# same as just SVG.new
+svg = Victor::SVG.new width: '100%', height: '100%'
+# same as just Victor::SVG.new
 
-svg = SVG.new width: '100%', height: '100%', viewBox: "0 0 200 100"
+svg = Victor::SVG.new width: '100%', height: '100%', viewBox: "0 0 200 100"
 ```
 
 Victor uses a single method (`element`) to generate all SVG elements:
@@ -179,14 +179,14 @@ a standalone SVG image). If you wish to use the output as an SVG element
 inside HTML, you can change the SVG template:
 
 ```ruby
-svg = SVG.new template: :html 
+svg = Victor::SVG.new template: :html 
 # accepts :html, :default or a filename
 ```
 
 You can also point it to any other template file:
 
 ```ruby
-svg = SVG.new template: 'path/to/template.svg'
+svg = Victor::SVG.new template: 'path/to/template.svg'
 ```
 
 See the [templates] folder for an understanding of how templates are 
@@ -200,7 +200,7 @@ To add a CSS to your SVG, simply use the `css` command inside your `build`
 block, like this:
 
 ```ruby
-svg = SVG.new
+svg = Victor::SVG.new
 
 svg.build do 
   css['.main'] = {

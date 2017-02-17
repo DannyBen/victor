@@ -1,6 +1,6 @@
 require 'victor'
 
-svg = SVG.new width: 202, height: 204
+svg = Victor::SVG.new width: 202, height: 204
 
 style = {
   stroke: 'yellow',

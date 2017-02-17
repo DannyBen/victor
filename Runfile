@@ -39,6 +39,7 @@ action :build do
   Dir.chdir 'examples' do
     Dir['*.rb'].each do |filename|
       run "ruby #{filename}"
+      abort "Aborting" unless $?.success?
     end
   end
   say_status :done, :build
