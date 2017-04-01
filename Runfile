@@ -3,7 +3,7 @@ require 'filewatcher'
 
 require_relative 'lib/victor'
 
-name    "Victor Developer Toolbelt"
+title   "Victor Developer Toolbelt"
 summary "Runfile tasks for building the Victor gem"
 version Victor::VERSION
 
