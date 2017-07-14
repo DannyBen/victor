@@ -11,6 +11,8 @@ Victor - Ruby SVG Image Builder
 Victor is a direct Ruby-to-SVG builder. All method calls are converted
 directly to SVG elements.
 
+[![Demo](/animated.gif)]
+
 ---
 
 Install
