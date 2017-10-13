@@ -21,7 +21,7 @@ action :watch do |args|
   
   say_status :watch, glob
 
-  FileWatcher.new(glob).watch do |filename, event|
+  Filewatcher.new(glob).watch do |filename, event|
     say_status event, filename
     next if event == :delete
 
