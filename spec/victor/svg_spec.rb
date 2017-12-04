@@ -18,7 +18,7 @@ describe SVG do
 
     it "converts nested attributes to style" do
       svg = SVG.new dudes: { duke: :nukem, vanilla: :ice }
-      expect(svg.svg_attributes.to_s).to match /dudes="duke:nukem; vanilla:ice"/
+      expect(svg.svg_attributes.to_s).to match(/dudes="duke:nukem; vanilla:ice"/)
     end
   end
 
@@ -108,9 +108,9 @@ describe SVG do
   describe '#render' do
     it "generates full xml" do
       svg.circle radius: 10
-      expect(svg.render).to match /DOCTYPE svg PUBLIC/
-      expect(svg.render).to match /svg width="100%" height="100%"/
-      expect(svg.render).to match /<circle radius="10"\/>/
+      expect(svg.render).to match(/DOCTYPE svg PUBLIC/)
+      expect(svg.render).to match(/svg width="100%" height="100%"/)
+      expect(svg.render).to match(/<circle radius="10"\/>/)
     end
 
     context "with css elements" do
@@ -124,9 +124,9 @@ describe SVG do
 
       it "includes a css block" do
         svg.css = @css
-        expect(svg.render).to match /.main \{/
-        expect(svg.render).to match /stroke: green;/
-        expect(svg.render).to match /stroke-width: 2;/
+        expect(svg.render).to match(/.main \{/)
+        expect(svg.render).to match(/stroke: green;/)
+        expect(svg.render).to match(/stroke-width: 2;/)
       end
     end
   end
@@ -156,7 +156,7 @@ describe SVG do
       svg.circle radius: 10
       svg.save filename
       content = File.read filename
-      expect(content).to match /<circle radius="10"\/>/
+      expect(content).to match(/<circle radius="10"\/>/)
     end
   end
 
