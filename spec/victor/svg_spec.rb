@@ -53,7 +53,7 @@ describe SVG do
               me
             end
           end
-        end  
+        end
         expect(svg.content).to eq ["<universe>", "<world>", "<me />", "</world>", "</universe>"]
       end
     end
@@ -116,10 +116,10 @@ describe SVG do
     context "with css elements" do
       before do
         @css = {}
-        @css['.main'] = { 
-          stroke: "green", 
+        @css['.main'] = {
+          stroke: "green",
           stroke_width: 2,
-        } 
+        }
       end
 
       it "includes a css block" do
@@ -135,13 +135,13 @@ describe SVG do
     it "returns svg xml as string" do
       svg.circle radius: 10
       expect(svg.to_s).to eq '<circle radius="10"/>'
-    end    
+    end
   end
 
   describe '#save' do
     let(:filename) { 'test.svg' }
 
-    before do 
+    before do
       File.unlink filename if File.exist? filename
     end
 

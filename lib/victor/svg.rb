@@ -41,9 +41,9 @@ module Victor
     end
 
     def render
-      svg_template % { 
+      svg_template % {
         css: CSS.new(css),
-        attributes: svg_attributes, 
+        attributes: svg_attributes,
         content: content.join("\n")
       }
     end

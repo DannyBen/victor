@@ -12,7 +12,7 @@ module Victor
       convert_hash attributes
     end
 
-    private 
+    private
 
     def convert_hash(hash, indent=2)
       return hash unless hash.is_a? Hash
@@ -30,7 +30,7 @@ module Victor
       result = []
 
       my_indent = " " * indent
-      
+
       if value.is_a? Hash
         result.push "#{my_indent}#{key} {"
         result.push convert_hash(value, indent+2)

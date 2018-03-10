@@ -5,10 +5,10 @@ describe CSS do
   describe '#to_s' do
     it "converts css one level deep" do
       css = {}
-      css['.main'] = { 
-        color: 'black', 
-        background: 'white' 
-      } 
+      css['.main'] = {
+        color: 'black',
+        background: 'white'
+      }
 
       subject = CSS.new css
       expect(subject.to_s).to eq fixture('css1.css')

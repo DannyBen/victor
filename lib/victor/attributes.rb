@@ -6,18 +6,18 @@ module Victor
     attr_reader :attributes
 
     def initialize(attributes={})
-      @attributes = attributes        
+      @attributes = attributes
     end
 
     def to_s
       mapped = attributes.map do |key, value|
         key = key.to_s.tr '_', '-'
-        
+
         if value.is_a? Hash
           style = Attributes.new(value).to_style
-          "#{key}=\"#{style}\"" 
+          "#{key}=\"#{style}\""
         elsif value.is_a? Array
-          "#{key}=\"#{value.join ' '}\"" 
+          "#{key}=\"#{value.join ' '}\""
         else
           "#{key}=\"#{value}\""
         end
