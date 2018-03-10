@@ -1,0 +1,18 @@
+---
+exclude_paths:
+  - dev
+
+Attribute:
+  enabled: false
+
+FeatureEnvy:
+  exclude:
+  - Victor::Attributes#to_s
+  - Victor::CSS#convert_hash
+  - Victor::CSS#css_block
+
+TooManyStatements:
+  max_statements: 7
+  exclude:
+  - Victor::CSS#css_block
+  - Victor::SVG#element
