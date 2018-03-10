@@ -1,5 +1,7 @@
 module Victor
 
+  # This is the primary Victor class. It handles all the conversion from
+  # ruby to SVG using {#method_missing}
   class SVG
     attr_accessor :template, :css
     attr_reader :content, :svg_attributes

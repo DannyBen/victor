@@ -85,3 +85,8 @@ action :readme do
 end
 
 endcommand
+
+help   "Run YARD server"
+action :yard do
+  run "yard server -p3000 -B0.0.0.0 -r"
+end

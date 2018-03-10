@@ -1,7 +1,7 @@
-
-
 module Victor
 
+  # Handles conversion from a Hash of attributes, to an XML string or
+  # a CSS string.
   class Attributes
     attr_reader :attributes
 
