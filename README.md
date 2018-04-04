@@ -6,7 +6,6 @@ Victor - Ruby SVG Image Builder
 [![Build](https://img.shields.io/travis/DannyBen/victor.svg?style=flat-square)](https://travis-ci.org/DannyBen/victor)
 [![Code Quality](https://img.shields.io/codacy/grade/a502c262875643eabb01a43f7f5131ff.svg?style=flat-square)](https://www.codacy.com/app/db/victor)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/DannyBen/victor.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/victor)
-[![Issues](https://img.shields.io/codeclimate/issues/DannyBen/victor.svg?style=flat-square)](https://codeclimate.com/github/DannyBen/victor)
 [![Dependencies](https://img.shields.io/gemnasium/DannyBen/victor.svg?style=flat-square)](https://gemnasium.com/DannyBen/victor)
 
 ---
