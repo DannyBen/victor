@@ -16,6 +16,18 @@ directly to SVG elements.
 
 ---
 
+Table of Contents
+--------------------------------------------------
+
+* [Install](#install)
+* [Examples](#examples)
+* [Usage](#usage)
+* [Saving the Output](#saving-the-output)
+* [SVG Templates](#svg-templates)
+* [CSS](#css)
+
+---
+
 Install
 --------------------------------------------------
 

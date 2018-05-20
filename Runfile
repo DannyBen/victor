@@ -90,3 +90,8 @@ help   "Run YARD server"
 action :yard do
   run "yard server -p3000 -B0.0.0.0 -r"
 end
+
+help   "Generate TOC to toc.txt"
+action :toc do
+  run! 'gh-md-toc README.md > toc.txt'
+end

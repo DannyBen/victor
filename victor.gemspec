@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'runfile', '~> 0.10'
   s.add_development_dependency 'runfile-tasks', '~> 0.4'
   s.add_development_dependency 'rspec', '~> 3.6'
-  s.add_development_dependency 'simplecov', '~> 0.15'
+  s.add_development_dependency 'simplecov', '~> 0.16'
   s.add_development_dependency 'filewatcher', '~> 1.0'
 end
