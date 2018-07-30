@@ -19,6 +19,10 @@ module Victor
       element method_sym, *arguments, &block
     end
 
+    def <<(additional_content)
+      content.push additional_content.to_s
+    end
+
     def build(&block)
       self.instance_eval(&block)
     end
