@@ -4,13 +4,16 @@ class Troll < Victor::SVG
   attr_reader :color, :hat_color
 
   def initialize(color: 'yellow', hat_color: 'red')
+    # Accept parameters we care about, and call the super initializer
     @color, @hat_color = color, hat_color
     super width: 100, height: 100, viewBox: '0 0 100 100'
 
+    # Generate the base image with the frame and head elements
     frame
     head
   end
 
+  # Allow adding more elements after instantiation
   def add_nose
     circle cx: 50, cy: 65, r: 4, fill: 'black'
   end

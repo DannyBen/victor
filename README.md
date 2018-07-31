@@ -305,7 +305,7 @@ When the value of the CSS attribute is an array, Victor will simply use
 the values of the array and prefix each of them with the key, so the above 
 will result in two `@import url(...)` rows.
 
-See the [custom fonts example](https://github.com/DannyBen/victor/tree/master/examples#12-custom-fonts)
+See the [custom fonts example](https://github.com/DannyBen/victor/tree/master/examples#12-custom-fonts).
 
 
 ---

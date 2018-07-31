@@ -346,6 +346,7 @@ svg.save '12_custom_fonts'
 require 'victor'
 include Victor
 
+# Create two reusable objects: frame and troll
 frame = SVG.new
 frame.rect x: 0, y: 0, width: 100, height: 100, fill: '#336'
 frame.rect x: 10, y: 10, width: 80, height: 80, fill: '#fff'
@@ -354,6 +355,7 @@ troll = SVG.new
 troll.circle cx: 50, cy: 60, r: 24, fill: 'yellow'
 troll.polygon points: %w[24,50 50,14 76,54], fill: 'red'
 
+# Append the objects to a new SVG using the << operator
 svg = SVG.new viewBox: '0 0 100 100', width: 100, height: 100
 svg << frame
 svg << troll
@@ -375,13 +377,16 @@ class Troll < Victor::SVG
   attr_reader :color, :hat_color
 
   def initialize(color: 'yellow', hat_color: 'red')
+    # Accept parameters we care about, and call the super initializer
     @color, @hat_color = color, hat_color
     super width: 100, height: 100, viewBox: '0 0 100 100'
 
+    # Generate the base image with the frame and head elements
     frame
     head
   end
 
+  # Allow adding more elements after instantiation
   def add_nose
     circle cx: 50, cy: 65, r: 4, fill: 'black'
   end
