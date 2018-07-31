@@ -208,7 +208,7 @@ Another approach to a more modular SVG composition, would be to subclass
 `Victor::SVG`.
 
 See the [composite svg example](https://github.com/DannyBen/victor/tree/master/examples#13-composite-svg)
-or the [subclassing example](https://github.com/DannyBen/victor/tree/master/examples#14-subclassing-svg)
+or the [subclassing example](https://github.com/DannyBen/victor/tree/master/examples#14-subclassing)
 for more details.
 
 
