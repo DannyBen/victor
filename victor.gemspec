@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec', '~> 3.6'
   s.add_development_dependency 'simplecov', '~> 0.16'
   s.add_development_dependency 'filewatcher', '~> 1.0'
-  s.add_development_dependency 'byebug', '~> 10.0'
+  s.add_development_dependency 'byebug', '~> 9.1'
 end
