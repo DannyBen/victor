@@ -22,6 +22,7 @@ Table of Contents
 * [Install](#install)
 * [Examples](#examples)
 * [Usage](#usage)
+* [Composite SVG](#composite-svg)
 * [Saving the Output](#saving-the-output)
 * [SVG Templates](#svg-templates)
 * [CSS](#css)
@@ -169,6 +170,45 @@ svg.text "Victor", x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font
 #      Victor
 #    </text>
 ```
+
+Composite SVG
+--------------------------------------------------
+Victor also supports the abiliy to combine several smaller SVG objects into 
+one.
+
+```ruby
+require 'victor'
+include Victor
+
+# Create a reusable SVG object
+frame = SVG.new
+frame.rect x: 0, y: 0, width: 100, height: 100, fill: '#336'
+frame.rect x: 10, y: 10, width: 80, height: 80, fill: '#fff'
+
+# ... and another
+troll = SVG.new
+troll.circle cx: 50, cy: 60, r: 24, fill: 'yellow'
+troll.polygon points: %w[24,50 50,14 76,54], fill: 'red'
+
+# Combine objects into a single image
+svg = SVG.new viewBox: '0 0 100 100'
+svg << frame
+svg << troll
+
+# ... and save it
+svg.save 'framed-troll'
+```
+
+Output:
+
+[![troll](https://cdn.rawgit.com/DannyBen/victor/master/examples/13_composite_svg.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/13_composite_svg.svg)
+
+Another approach to a more modular SVG composition, would be to subclass 
+`Victor::SVG`.
+
+See the [composite svg example](https://github.com/DannyBen/victor/tree/master/examples#13-composite-svg)
+or the [subclassing example](https://github.com/DannyBen/victor/tree/master/examples#14-subclassing-svg)
+
 
 Saving the Output
 --------------------------------------------------

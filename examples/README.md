@@ -340,6 +340,73 @@ svg.save '12_custom_fonts'
 [![12_custom_fonts](https://cdn.rawgit.com/DannyBen/victor/master/examples/12_custom_fonts.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/12_custom_fonts.svg)
 
 
+## 13 composite svg
+
+```ruby
+require 'victor'
+include Victor
+
+frame = SVG.new
+frame.rect x: 0, y: 0, width: 100, height: 100, fill: '#336'
+frame.rect x: 10, y: 10, width: 80, height: 80, fill: '#fff'
+
+troll = SVG.new
+troll.circle cx: 50, cy: 60, r: 24, fill: 'yellow'
+troll.polygon points: %w[24,50 50,14 76,54], fill: 'red'
+
+svg = SVG.new viewBox: '0 0 100 100', width: 100, height: 100
+svg << frame
+svg << troll
+
+svg.save '13_composite_svg'
+```
+
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/13_composite_svg.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/13_composite_svg.svg)
+
+[![13_composite_svg](https://cdn.rawgit.com/DannyBen/victor/master/examples/13_composite_svg.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/13_composite_svg.svg)
+
+
+## 14 subclassing
+
+```ruby
+require 'victor'
+
+class Troll < Victor::SVG
+  attr_reader :color, :hat_color
+
+  def initialize(color: 'yellow', hat_color: 'red')
+    @color, @hat_color = color, hat_color
+    super width: 100, height: 100, viewBox: '0 0 100 100'
+
+    frame
+    head
+  end
+
+  def add_nose
+    circle cx: 50, cy: 65, r: 4, fill: 'black'
+  end
+
+  def frame
+    rect x: 0, y: 0, width: 100, height: 100, fill: '#336'
+    rect x: 10, y: 10, width: 80, height: 80, fill: '#fff'
+  end
+
+  def head
+    circle cx: 50, cy: 60, r: 24, fill: color
+    polygon points: %w[24,50 50,14 76,54], fill: hat_color
+  end
+end
+
+troll = Troll.new color: '#33f', hat_color: '#3f3';
+troll.add_nose
+troll.save '14_subclassing'
+```
+
+[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/14_subclassing.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/14_subclassing.svg)
+
+[![14_subclassing](https://cdn.rawgit.com/DannyBen/victor/master/examples/14_subclassing.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/14_subclassing.svg)
+
+
 
 ---
 
