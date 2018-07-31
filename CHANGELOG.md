@@ -1,8 +1,11 @@
 # Change Log
 
-## [Unreleased](https://github.com/DannyBen/victor/tree/HEAD)
+## [v0.2.2](https://github.com/DannyBen/victor/tree/v0.2.2) (2018-07-31)
+[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.1...v0.2.2)
 
-[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.1...HEAD)
+**Implemented enhancements:**
+
+- generate single elements to append on svg [\#26](https://github.com/DannyBen/victor/issues/26)
 
 **Closed issues:**
 
@@ -10,6 +13,11 @@
 
 **Merged pull requests:**
 
+- Add ability to compose SVG from smaller SVG blocks [\#27](https://github.com/DannyBen/victor/pull/27) ([DannyBen](https://github.com/DannyBen))
+- Integrate with CodeClimate Code Coverage [\#25](https://github.com/DannyBen/victor/pull/25) ([DannyBen](https://github.com/DannyBen))
+- Add reek config and clean some code smells [\#24](https://github.com/DannyBen/victor/pull/24) ([DannyBen](https://github.com/DannyBen))
+- Test against ruby 2.5 [\#23](https://github.com/DannyBen/victor/pull/23) ([DannyBen](https://github.com/DannyBen))
+- Upgrade filewatcher to version 1.0.0 [\#22](https://github.com/DannyBen/victor/pull/22) ([depfu[bot]](https://github.com/apps/depfu))
 - Bundle update and travis with ruby 2.4 [\#21](https://github.com/DannyBen/victor/pull/21) ([DannyBen](https://github.com/DannyBen))
 
 ## [v0.2.1](https://github.com/DannyBen/victor/tree/v0.2.1) (2017-02-17)
