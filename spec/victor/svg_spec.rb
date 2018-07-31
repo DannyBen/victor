@@ -22,6 +22,25 @@ describe SVG do
     end
   end
 
+  describe '#<<' do
+    it "pushes stringable objects as content" do
+      svg = SVG.new
+      fire = SVG.new
+      earth = SVG.new
+      water = SVG.new
+
+      fire.circle color: 'red'
+      earth.triangle color: 'green'
+      water.rect color: 'blue'
+
+      svg << fire
+      svg << earth
+      svg << water
+
+      expect(svg.to_s).to eq "<circle color=\"red\"/>\n<triangle color=\"green\"/>\n<rect color=\"blue\"/>"
+    end
+  end
+
   describe '#element' do
     it "generates xml without attributes" do
       svg.element 'anything'
