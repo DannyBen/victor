@@ -22,22 +22,36 @@ describe SVG do
     end
   end
 
-  describe '#<<' do
-    it "pushes stringable objects as content" do
-      svg = SVG.new
-      fire = SVG.new
-      earth = SVG.new
-      water = SVG.new
+  context 'append' do
+    let(:svg) { SVG.new }
+    let(:fire) { SVG.new }
+    let(:earth) { SVG.new }
+    let(:water) { SVG.new }
 
+    before do
       fire.circle color: 'red'
       earth.triangle color: 'green'
       water.rect color: 'blue'
+    end
 
-      svg << fire
-      svg << earth
-      svg << water
+    describe '#<<' do
+      it "pushes stringable objects as content" do
+        svg << fire
+        svg << earth
+        svg << water
 
-      expect(svg.to_s).to eq "<circle color=\"red\"/>\n<triangle color=\"green\"/>\n<rect color=\"blue\"/>"
+        expect(svg.to_s).to eq "<circle color=\"red\"/>\n<triangle color=\"green\"/>\n<rect color=\"blue\"/>"
+      end
+    end
+
+    describe '#append' do
+      it "pushes stringable objects as content" do
+        svg.append fire
+        svg.append earth
+        svg.append water
+
+        expect(svg.to_s).to eq "<circle color=\"red\"/>\n<triangle color=\"green\"/>\n<rect color=\"blue\"/>"
+      end
     end
   end
 
