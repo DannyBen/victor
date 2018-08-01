@@ -22,6 +22,7 @@ module Victor
     def <<(additional_content)
       content.push additional_content.to_s
     end
+    alias append <<
 
     def build(&block)
       self.instance_eval(&block)

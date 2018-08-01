@@ -174,8 +174,9 @@ svg.text "Victor", x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font
 Composite SVG
 --------------------------------------------------
 Victor also supports the abiliy to combine several smaller SVG objects into 
-one using the `<<` operator. This operator expects to receive any object
-that responds to `#to_s` (can be another `SVG` object).
+one using the `<<` operator or the `#append` method. 
+
+This operator expects to receive any object that responds to `#to_s` (can be another `SVG` object).
 
 ```ruby
 require 'victor'
@@ -203,6 +204,13 @@ svg.save 'framed-troll'
 Output:
 
 [![troll](https://cdn.rawgit.com/DannyBen/victor/master/examples/13_composite_svg.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/13_composite_svg.svg)
+
+These two calls are identical:
+
+```ruby
+svg << other
+svg.append other
+```
 
 Another approach to a more modular SVG composition, would be to subclass 
 `Victor::SVG`.
