@@ -1,3 +1,5 @@
+![Victor](/examples//15_victor_logo.svg)
+
 Victor - Ruby SVG Image Builder
 ==================================================
 
