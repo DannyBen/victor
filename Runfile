@@ -58,7 +58,7 @@ action :readme do
     title = basename.tr '_', ' '
     code  = File.read(file).strip
     if File.exist? "examples/#{basename}.svg"
-      image = "[![#{basename}](https://cdn.rawgit.com/DannyBen/victor/master/examples/#{basename}.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/#{basename}.svg)"
+      image = "[![#{basename}](/examples/#{basename}.svg)](/examples/#{basename}.svg)"
     else
       image = false
     end
@@ -68,9 +68,9 @@ action :readme do
     result.push code
     result.push "```\n"
     if image
-      result.push "[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/#{file}) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/#{basename}.svg)\n"
+      result.push "[View Source Ruby File](/#{file}) | [View Image](/examples/#{basename}.svg)\n"
     else
-      result.push "[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/#{file})\n"
+      result.push "[View Source Ruby File](/#{file})\n"
     end
     result.push image if image
     result.push "\n"
