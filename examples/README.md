@@ -481,9 +481,9 @@ end
 svg.save '15_victor_logo'
 ```
 
-[Open Source Ruby File](https://github.com/DannyBen/victor/blob/master/examples/15_victor_logo.rb) | [Open Image](https://cdn.rawgit.com/DannyBen/victor/master/examples/15_victor_logo.svg)
+[Open Source Ruby File](/examples/15_victor_logo.rb) | [Open Image](/examples/15_victor_logo.svg)
 
-[![15_victor_logo](https://cdn.rawgit.com/DannyBen/victor/master/examples/15_victor_logo.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/15_victor_logo.svg)
+[![15_victor_logo](/examples/15_victor_logo.svg)](/examples/15_victor_logo.svg)
 
 
 
