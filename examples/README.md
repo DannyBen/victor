@@ -428,10 +428,6 @@ color4 = "#ea7317"
 color5 = "#73bfb8"
 color6 = color1
 
-# Background
-bg = SVG.new 
-bg.rect x: 0, y: 0, width: 350, height: 120, fill: '#eee'
-
 # V
 v = SVG.new
 v.path d: "M0,0 h80 L40,100", fill: color1
@@ -469,7 +465,6 @@ end
 # All together now
 svg = SVG.new width: 350, height: 120
 svg.build do
-  append bg
   g(transform: "translate(70  20)") { append i }
   g(transform: "translate(0   20)") { append v }
   g(transform: "translate(150  0)") { append t }
