@@ -28,6 +28,7 @@ Table of Contents
 * [Saving the Output](#saving-the-output)
 * [SVG Templates](#svg-templates)
 * [CSS](#css)
+* [Using with Rails](#using-with-rails)
 
 ---
 
@@ -316,6 +317,13 @@ the values of the array and prefix each of them with the key, so the above
 will result in two `@import url(...)` rows.
 
 See the [custom fonts example](https://github.com/DannyBen/victor/tree/master/examples#12-custom-fonts).
+
+
+Using with Rails
+--------------------------------------------------
+
+See the [example_rails](example_rails) folder.
+
 
 
 ---
