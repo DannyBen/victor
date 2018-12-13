@@ -36,7 +36,7 @@ t.polygon points: "0,0 70,0 50,20 50,120 20,120 20,20", fill: color4, style: sty
 o = SVG.new
 o.circle cx: 50, cy: 50, r: 50, fill: color5, style: style
 
-# r
+# R
 r = SVG.new
 r.build do
   g transform: "skewX(20)" do
