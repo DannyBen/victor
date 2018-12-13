@@ -1,0 +1,8 @@
+<%# app/views/sample/demo.html.erb %>
+<h1>Victor Rails Demo</h1>
+
+<%# Render SVG inline %>
+<%== render 'circle.svg', color: 'yellow' %>
+
+<%# Render SVG using an image tag %>
+<img src='/sample/square.svg?color=blue'>
