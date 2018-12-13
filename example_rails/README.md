@@ -1,7 +1,7 @@
 Dynamic SVG Rendering in Rails
 ==================================================
 
-Using Victor to dynamically rendering SVG in rails is easy, and can be done
+Using Victor to dynamically render SVG in rails is easy, and can be done
 in several ways. This guide and associated files demonstrate how to render
 SVG images inline (as part of the HTML), or as separate SVG images.
 
