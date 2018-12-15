@@ -1,18 +1,22 @@
 module Victor
 
-  # Converts a Hash to a CSS string
   class CSS
     attr_reader :attributes
 
-    def initialize(attributes={})
-      @attributes = attributes
+    def initialize(attributes = nil)
+      @attributes = attributes || {}
     end
 
     def to_s
       convert_hash attributes
     end
 
-    private
+    def render
+      return '' if attributes.empty?
+      %Q{<style type="text/css" scoped>\n<![CDATA[\n#{to_s}\n]]>\n</style>\n}
+    end
+
+  protected
 
     def convert_hash(hash, indent=2)
       return hash unless hash.is_a? Hash
