@@ -40,8 +40,10 @@ module Victor
     end
 
     def render
+      css_string = CSS.new css
       svg_template % {
-        css: CSS.new(css),
+        css: css_string,
+        style: css_string.render,
         attributes: svg_attributes,
         content: content.join("\n")
       }
@@ -56,7 +58,7 @@ module Victor
       File.write filename, render
     end
 
-    private
+  protected
 
     def svg_template
       File.read template_path
