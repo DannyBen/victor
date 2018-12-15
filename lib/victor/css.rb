@@ -13,7 +13,7 @@ module Victor
 
     def render
       return '' if attributes.empty?
-      %Q{<style type="text/css" scoped>\n<![CDATA[\n#{to_s}\n]]>\n</style>\n}
+      %Q{<style type="text/css" scoped>\n<![CDATA[\n#{self}\n]]>\n</style>\n}
     end
 
   protected
