@@ -14,7 +14,7 @@ Victor - Ruby SVG Image Builder
 Victor is a direct Ruby-to-SVG builder. All method calls are converted
 directly to SVG elements.
 
-![Demo](/animated.gif)
+![Demo](assets/animated.gif)
 
 ---
 
@@ -29,6 +29,7 @@ Table of Contents
 * [SVG Templates](#svg-templates)
 * [CSS](#css)
 * [Using with Rails](#using-with-rails)
+* [Related Projects](#related-projects)
 
 ---
 
@@ -325,8 +326,16 @@ Using with Rails
 See the [example_rails](example_rails) folder.
 
 
+Related Projects
+--------------------------------------------------
+
+[Icodi] is a Ruby gem that uses Victor to generate consistent random icon 
+images, similar to GitHub's identicon.
+
+[![Icodi](assets/icodi.svg)][icodi]
 
 ---
 
 [examples]: https://github.com/DannyBen/victor/tree/master/examples#examples
 [templates]: https://github.com/DannyBen/victor/tree/master/lib/victor/templates
+[icodi]: https://github.com/DannyBen/icodi
