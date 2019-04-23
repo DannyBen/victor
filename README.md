@@ -7,7 +7,6 @@ Victor - Ruby SVG Image Builder
 [![Build Status](https://travis-ci.com/DannyBen/victor.svg?branch=master)](https://travis-ci.com/DannyBen/victor)
 [![Code Quality](https://api.codacy.com/project/badge/Grade/a502c262875643eabb01a43f7f5131ff)](https://www.codacy.com/app/db/victor?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DannyBen/victor&amp;utm_campaign=Badge_Grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/85cc05c219d6d233ab78/maintainability)](https://codeclimate.com/github/DannyBen/victor/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/85cc05c219d6d233ab78/test_coverage)](https://codeclimate.com/github/DannyBen/victor/test_coverage)
 
 ---
 
