@@ -123,7 +123,7 @@ describe SVG do
       it "loads a built in template" do
         svg.template = :html
         svg.circle of: 'trust'
-        expect(svg.render).to eq "<svg width=\"100%\" height=\"100%\">\n\n<circle of=\"trust\"/>\n</svg>"
+        expect(svg.render).to eq "<svg width=\"100%\" height=\"100%\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n\n\n<circle of=\"trust\"/>\n\n</svg>"
       end
     end
 

@@ -248,7 +248,7 @@ inside HTML, you can change the SVG template:
 
 ```ruby
 svg = Victor::SVG.new template: :html 
-# accepts :html, :default or a filename
+# accepts :html, :minimal, :default or a filename
 ```
 
 You can also point it to any other template file:
