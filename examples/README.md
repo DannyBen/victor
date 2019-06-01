@@ -482,7 +482,7 @@ svg.save '15_victor_logo'
 [![15_victor_logo](/examples/15_victor_logo.svg)](/examples/15_victor_logo.svg)
 
 
-## 16 multiple text elements
+## 16 tagless elements
 
 ```ruby
 #!/usr/bin/env ruby
@@ -501,12 +501,12 @@ svg.build do
   end
 end
 
-svg.save '16_multiple_text_elements'
+svg.save '16_tagless_elements'
 ```
 
-[View Source Ruby File](/examples/16_multiple_text_elements.rb) | [View Image](/examples/16_multiple_text_elements.svg)
+[View Source Ruby File](/examples/16_tagless_elements.rb) | [View Image](/examples/16_tagless_elements.svg)
 
-[![16_multiple_text_elements](/examples/16_multiple_text_elements.svg)](/examples/16_multiple_text_elements.svg)
+[![16_tagless_elements](/examples/16_tagless_elements.svg)](/examples/16_tagless_elements.svg)
 
 
 

@@ -347,7 +347,7 @@ svg.build do
 end
 ```
 
-See the [multiple text elements](https://github.com/DannyBen/victor/tree/master/examples#16-multiple-text-elements).
+See the [targless elements example](https://github.com/DannyBen/victor/tree/master/examples#16-tagless-elements).
 
 
 Using with Rails

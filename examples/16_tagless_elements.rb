@@ -14,5 +14,5 @@ svg.build do
   end
 end
 
-svg.save '16_multiple_text_elements'
+svg.save '16_tagless_elements'
 
