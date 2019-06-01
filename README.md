@@ -27,6 +27,7 @@ Table of Contents
 * [Saving the Output](#saving-the-output)
 * [SVG Templates](#svg-templates)
 * [CSS](#css)
+* [Tagless Elements](#tagless-elements)
 * [Using with Rails](#using-with-rails)
 * [Related Projects](#related-projects)
 
@@ -317,6 +318,36 @@ the values of the array and prefix each of them with the key, so the above
 will result in two `@import url(...)` rows.
 
 See the [custom fonts example](https://github.com/DannyBen/victor/tree/master/examples#12-custom-fonts).
+
+
+Tagless Elements
+--------------------------------------------------
+
+Using underscore (`_`) as the element name will simply add the value to the 
+generated SVG, without any surrounding element. This is designed to allow
+generating something like this:
+
+```xml
+<text>
+  You are
+  <tspan font-weight="bold">not</tspan>
+  a banana
+</text>
+```
+
+using this Ruby code:
+
+```ruby
+svg.build do 
+  text do
+    _ 'You are'
+    tspan 'not', font_weight: "bold"
+    _ 'a banana'
+  end
+end
+```
+
+See the [multiple text elements](https://github.com/DannyBen/victor/tree/master/examples#16-multiple-text-elements).
 
 
 Using with Rails

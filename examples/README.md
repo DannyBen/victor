@@ -482,6 +482,33 @@ svg.save '15_victor_logo'
 [![15_victor_logo](/examples/15_victor_logo.svg)](/examples/15_victor_logo.svg)
 
 
+## 16 multiple text elements
+
+```ruby
+#!/usr/bin/env ruby
+
+require 'victor'
+include Victor
+
+svg = SVG.new viewBox: "0 0 180 20"
+
+svg.build do 
+  rect x: 0, y:0, width: 180, height: 20, style: { fill: '#ddd' }
+  text x: 15, y: 15, font_size: 14, font_family: 'Verdana' do
+    _ 'You are'
+    tspan 'not', fill: "red", font_weight: "bold"
+    _ 'a banana'
+  end
+end
+
+svg.save '16_multiple_text_elements'
+```
+
+[View Source Ruby File](/examples/16_multiple_text_elements.rb) | [View Image](/examples/16_multiple_text_elements.svg)
+
+[![16_multiple_text_elements](/examples/16_multiple_text_elements.svg)](/examples/16_multiple_text_elements.svg)
+
+
 
 ---
 
