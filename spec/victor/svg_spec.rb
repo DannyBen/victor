@@ -98,7 +98,7 @@ describe SVG do
       end
 
       context "when the element is an underscore" do
-        it "generates plain text" do
+        it "generates a tagless element" do
           svg.element '_', 'You are (not) surrounded!'
           expect(svg.content).to eq ["You are (not) surrounded!"]
         end
