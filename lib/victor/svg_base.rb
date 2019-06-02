@@ -29,12 +29,13 @@ module Victor
       end
 
       attributes = Attributes.new attributes
+      empty_tag = name.to_s == '_'
 
       if block_given? || value
-        content.push "<#{name} #{attributes}".strip + ">"
+        content.push "<#{name} #{attributes}".strip + ">" unless empty_tag
         value ? content.push(value) : yield
-        content.push "</#{name}>"
-      else
+        content.push "</#{name}>" unless empty_tag
+      else      
         content.push "<#{name} #{attributes}/>"
       end
     end

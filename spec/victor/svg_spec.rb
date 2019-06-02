@@ -91,10 +91,17 @@ describe SVG do
       end
     end
 
-    context "with a content argument" do
+    context "with a plain text value" do
       it "generates a container element" do
         svg.element 'prison', 'inmate', number: '6'
         expect(svg.content).to eq ["<prison number=\"6\">", "inmate", "</prison>"]
+      end
+
+      context "when the element is an underscore" do
+        it "generates a tagless element" do
+          svg.element '_', 'You are (not) surrounded!'
+          expect(svg.content).to eq ["You are (not) surrounded!"]
+        end
       end
     end
   end
