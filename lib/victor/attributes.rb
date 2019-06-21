@@ -19,7 +19,7 @@ module Victor
         elsif value.is_a? Array
           "#{key}=\"#{value.join ' '}\""
         else
-          "#{key}=\"#{value}\""
+          "#{key}=#{value.encode(xml: :attr)}"
         end
       end
 
