@@ -14,6 +14,11 @@ describe Attributes do
       expect(subject.to_s).to eq 'duke="nukem" vanilla="ice"'
     end
 
+    it "escapes XML" do
+      @attrs = { href: "/speaker?needs=an&lifier", encode_me: '<>' }
+      expect(subject.to_s).to eq 'href="/speaker?needs=an&amp;lifier" encode-me="&lt;&gt;"'
+    end
+
     it "converts nested attributes to style" do
       @attrs = { dudes: { duke: :nukem, vanilla: :ice } }
       expect(subject.to_s).to eq 'dudes="duke:nukem; vanilla:ice"'
