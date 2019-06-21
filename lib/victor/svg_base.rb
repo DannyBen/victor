@@ -33,7 +33,7 @@ module Victor
 
       if block_given? || value
         content.push "<#{name} #{attributes}".strip + ">" unless empty_tag
-        value ? content.push(value) : yield
+        value ? content.push(value.encode(xml: :text)) : yield
         content.push "</#{name}>" unless empty_tag
       else      
         content.push "<#{name} #{attributes}/>"

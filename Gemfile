@@ -6,6 +6,7 @@ gem 'rspec_fixtures'
 gem 'runfile'
 gem 'runfile-tasks'
 gem 'simplecov'
+gem 'byebug'
 
 gemspec
 
