@@ -97,10 +97,20 @@ describe SVG do
         expect(svg.content).to eq ["<prison number=\"6\">", "inmate", "</prison>"]
       end
 
+      it "escapes XML" do
+        svg.element 'text', 'For Dumb & Dumber, 2 > 3'
+        expect(svg.content).to eq ["<text>", "For Dumb &amp; Dumber, 2 &gt; 3", "</text>"]
+      end
+
       context "when the element is an underscore" do
         it "generates a tagless element" do
           svg.element '_', 'You are (not) surrounded!'
           expect(svg.content).to eq ["You are (not) surrounded!"]
+        end
+
+        it "escapes XML" do
+          svg.element '_', 'For Dumb & Dumber, 2 > 3'
+          expect(svg.content).to eq ["For Dumb &amp; Dumber, 2 &gt; 3"]
         end
       end
     end
