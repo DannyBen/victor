@@ -28,6 +28,7 @@ Table of Contents
 * [SVG Templates](#svg-templates)
 * [CSS](#css)
 * [Tagless Elements](#tagless-elements)
+* [XML Encoding](#xml-encoding)
 * [Using with Rails](#using-with-rails)
 * [Related Projects](#related-projects)
 
@@ -348,6 +349,31 @@ end
 ```
 
 See the [targless elements example](https://github.com/DannyBen/victor/tree/master/examples#16-tagless-elements).
+
+
+XML Encoding
+--------------------------------------------------
+
+Plain text values are encoded automatically:
+
+```ruby
+svg.build do
+  text "Ben & Jerry's"
+end
+# <text>Ben &amp; Jerry's</text>
+```
+
+If you need to use the raw, unencoded string, add `!` to the element's name:
+
+```ruby
+svg.build do
+  text! "Ben & Jerry's"
+end
+# <text>Ben & Jerry's</text>
+```
+
+See the [xml encoding example](https://github.com/DannyBen/victor/tree/master/examples#17-xml-encoding).
+
 
 
 Using with Rails

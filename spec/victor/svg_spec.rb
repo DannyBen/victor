@@ -112,6 +112,20 @@ describe SVG do
           svg.element '_', 'For Dumb & Dumber, 2 > 3'
           expect(svg.content).to eq ["For Dumb &amp; Dumber, 2 &gt; 3"]
         end
+
+        context "when the element is _!" do
+          it "does not escape XML" do
+            svg.element '_!', 'For Dumb & Dumber, 2 > 3'
+            expect(svg.content).to eq ["For Dumb & Dumber, 2 > 3"]
+          end
+        end
+      end
+
+      context "when the element name ends with !" do
+        it "does not escape XML" do
+          svg.element 'text!', 'For Dumb & Dumber, 2 > 3'
+          expect(svg.content).to eq ["<text>", "For Dumb & Dumber, 2 > 3", "</text>"]
+        end
       end
     end
   end
