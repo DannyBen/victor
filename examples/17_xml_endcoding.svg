@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg viewBox="0 0 100 50" width="100%" height="100%" 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<rect x="0" y="0" width="100" height="50" style="fill:#ddd"/>
+<text x="10" y="10" font-size="12">
+Ben &amp; Jerry's
+</text>
+<text! x="10" y="25" font-size="12">
+&amp;#x2714; Works!
+</text!>
+
+</svg>
