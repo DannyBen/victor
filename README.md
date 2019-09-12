@@ -390,8 +390,11 @@ images, similar to GitHub's identicon.
 
 [![Icodi](assets/icodi.svg)][icodi]
 
+[victor-opal] is a playground of victor which works on browsers.
+
 ---
 
 [examples]: https://github.com/DannyBen/victor/tree/master/examples#examples
 [templates]: https://github.com/DannyBen/victor/tree/master/lib/victor/templates
 [icodi]: https://github.com/DannyBen/icodi
+[victor-opal]: https://kuboon.github.io/victor-opal/
