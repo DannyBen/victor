@@ -385,12 +385,14 @@ See the [example_rails](example_rails) folder.
 Related Projects
 --------------------------------------------------
 
+[victor-opal] is a Victor playground that works in the browser.
+
 [Icodi] is a Ruby gem that uses Victor to generate consistent random icon 
 images, similar to GitHub's identicon.
 
 [![Icodi](assets/icodi.svg)][icodi]
 
-[victor-opal] is a playground of victor which works on browsers.
+
 
 ---
 
