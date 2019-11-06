@@ -393,6 +393,11 @@ images, similar to GitHub's identicon.
 [![Icodi](assets/icodi.svg)][icodi]
 
 
+Contributing / Support
+--------------------------------------------------
+
+If you experience any issue, have a question or a suggestion, or if you wish
+to contribute, feel free to [open an issue](issues).
 
 ---
 
@@ -400,3 +405,4 @@ images, similar to GitHub's identicon.
 [templates]: https://github.com/DannyBen/victor/tree/master/lib/victor/templates
 [icodi]: https://github.com/DannyBen/icodi
 [victor-opal]: https://kuboon.github.io/victor-opal/
+
