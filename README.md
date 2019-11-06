@@ -31,6 +31,7 @@ Table of Contents
 * [XML Encoding](#xml-encoding)
 * [Using with Rails](#using-with-rails)
 * [Related Projects](#related-projects)
+* [Contributing / Support](#contributing--support)
 
 ---
 
@@ -397,7 +398,7 @@ Contributing / Support
 --------------------------------------------------
 
 If you experience any issue, have a question or a suggestion, or if you wish
-to contribute, feel free to [open an issue](issues).
+to contribute, feel free to [open an issue](https://github.com/DannyBen/victor/issues).
 
 ---
 
