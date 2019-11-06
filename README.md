@@ -398,7 +398,7 @@ Contributing / Support
 --------------------------------------------------
 
 If you experience any issue, have a question or a suggestion, or if you wish
-to contribute, feel free to [open an issue](https://github.com/DannyBen/victor/issues).
+to contribute, feel free to [open an issue](issues).
 
 ---
 
@@ -406,4 +406,4 @@ to contribute, feel free to [open an issue](https://github.com/DannyBen/victor/i
 [templates]: https://github.com/DannyBen/victor/tree/master/lib/victor/templates
 [icodi]: https://github.com/DannyBen/icodi
 [victor-opal]: https://kuboon.github.io/victor-opal/
-
+[issues]: https://github.com/DannyBen/victor/issues
