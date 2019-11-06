@@ -398,7 +398,7 @@ Contributing / Support
 --------------------------------------------------
 
 If you experience any issue, have a question or a suggestion, or if you wish
-to contribute, feel free to [open an issue](issues).
+to contribute, feel free to [open an issue][issues].
 
 ---
 
