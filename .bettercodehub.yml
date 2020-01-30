@@ -1,8 +1,0 @@
-component_depth: 1
-
-languages:
-- ruby
-
-exclude:
-- /example_rails/.*
-- /examples/.*

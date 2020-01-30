@@ -4,8 +4,7 @@ Victor - Ruby SVG Image Builder
 ==================================================
 
 [![Gem Version](https://badge.fury.io/rb/victor.svg)](https://badge.fury.io/rb/victor)
-[![Build Status](https://travis-ci.com/DannyBen/victor.svg?branch=master)](https://travis-ci.com/DannyBen/victor)
-[![BCH compliance](https://bettercodehub.com/edge/badge/DannyBen/victor?branch=master)](https://bettercodehub.com/results/DannyBen/victor)
+[![Build Status](https://github.com/DannyBen/rspec_fixtures/workflows/Test/badge.svg)](https://github.com/DannyBen/rspec_fixtures/actions?query=workflow%3ATest)
 [![Maintainability](https://api.codeclimate.com/v1/badges/85cc05c219d6d233ab78/maintainability)](https://codeclimate.com/github/DannyBen/victor/maintainability)
 
 ---
