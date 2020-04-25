@@ -15,4 +15,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/DannyBen/victor'
   s.license     = 'MIT'
   s.required_ruby_version = ">= 2.3.0"
+
+  s.add_runtime_dependency "nokogiri", ">=1.10.9"
 end
