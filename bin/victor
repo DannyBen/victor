@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require_relative "../lib/victor"
+require_relative "../lib/victor/convert_command"
+
+runner = MisterBin::Runner.new(
+  version: Victor::VERSION,
+)
+
+runner.route "convert", to: Victor::ConvertCommand
+
+exit runner.run ARGV

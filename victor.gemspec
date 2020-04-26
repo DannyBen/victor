@@ -14,7 +14,9 @@ Gem::Specification.new do |s|
   s.files       = Dir['README.md', 'lib/**/*.*']
   s.homepage    = 'https://github.com/DannyBen/victor'
   s.license     = 'MIT'
+  s.bindir = 'bin'
   s.required_ruby_version = ">= 2.3.0"
 
   s.add_runtime_dependency "nokogiri", ">=1.10.9"
+  s.add_runtime_dependency "mister_bin", ">=0.7.1"
 end
