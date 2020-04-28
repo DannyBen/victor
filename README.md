@@ -395,7 +395,6 @@ end
 
 puts render
 save 'output.svg'
-
 ```
 
 ## Using with Rails
