@@ -4,11 +4,8 @@ module Victor
     attr_accessor :template, :css
     attr_reader :content, :svg_attributes
 
-    def initialize(attributes={})
-      @template = attributes.delete(:template) || :default
-      @svg_attributes = Attributes.new attributes
-      svg_attributes[:width] ||= "100%"
-      svg_attributes[:height] ||= "100%"
+    def initialize(attributes = nil)
+      setup attributes
       @content = []
       @css = {}
     end
@@ -17,6 +14,20 @@ module Victor
       content.push additional_content.to_s
     end
     alias append <<
+
+    def setup(attributes = nil)
+      attributes ||= {}
+      attributes[:width] ||= "100%"
+      attributes[:height] ||= "100%"
+      
+      if attributes[:template]
+        @template = attributes.delete :template
+      elsif !@template
+        @template = :default
+      end
+
+      @svg_attributes = Attributes.new attributes
+    end
 
     def build(&block)
       self.instance_eval(&block)
