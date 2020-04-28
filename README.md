@@ -385,9 +385,17 @@ See the [example_rails](example_rails) folder.
 Related Projects
 --------------------------------------------------
 
-[victor-opal] is a Victor playground that works in the browser.
+### [victor-cli]
 
-[Icodi] is a Ruby gem that uses Victor to generate consistent random icon 
+A command line utility that generates Victor Ruby code from SVG code.
+
+### [victor-opal]
+
+A Victor playground that works in the browser.
+
+### [Icodi]
+
+A Ruby gem that uses Victor to generate consistent random icon 
 images, similar to GitHub's identicon.
 
 [![Icodi](assets/icodi.svg)][icodi]
@@ -405,4 +413,5 @@ to contribute, feel free to [open an issue][issues].
 [templates]: https://github.com/DannyBen/victor/tree/master/lib/victor/templates
 [icodi]: https://github.com/DannyBen/icodi
 [victor-opal]: https://kuboon.github.io/victor-opal/
+[victor-cli]:  https://github.com/DannyBen/victor-cli
 [issues]: https://github.com/DannyBen/victor/issues
