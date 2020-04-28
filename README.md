@@ -20,13 +20,14 @@ directly to SVG elements.
 * [Install](#install)
 * [Examples](#examples)
 * [Usage](#usage)
-* [Composite SVG](#composite-svg)
-* [Saving the Output](#saving-the-output)
-* [SVG Templates](#svg-templates)
-* [CSS](#css)
-* [Tagless Elements](#tagless-elements)
-* [XML Encoding](#xml-encoding)
-* [DSL Syntax](#dsl-syntax)
+* [Features](#features)
+  * [Composite SVG](#composite-svg)
+  * [Saving the Output](#saving-the-output)
+  * [SVG Templates](#svg-templates)
+  * [CSS](#css)
+  * [Tagless Elements](#tagless-elements)
+  * [XML Encoding](#xml-encoding)
+  * [DSL Syntax](#dsl-syntax)
 * [Using with Rails](#using-with-rails)
 * [Related Projects](#related-projects)
 * [Contributing / Support](#contributing--support)
@@ -180,7 +181,9 @@ svg.text "Victor", x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font
 #    </text>
 ```
 
-## Composite SVG
+## Features
+
+### Composite SVG
 
 Victor also supports the abiliy to combine several smaller SVG objects into 
 one using the `<<` operator or the `#append` method. 
@@ -229,7 +232,7 @@ or the [subclassing example](https://github.com/DannyBen/victor/tree/master/exam
 for more details.
 
 
-## Saving the Output
+### Saving the Output
 
 Generate the full SVG to a string with `render`:
 
@@ -244,7 +247,7 @@ svg.save 'filename'
 # the '.svg' extension is optional
 ```
 
-## SVG Templates
+### SVG Templates
 
 The `:default` SVG template is designed to be a full XML document (i.e., 
 a standalone SVG image). If you wish to use the output as an SVG element 
@@ -265,7 +268,7 @@ See the [templates] folder for an understanding of how templates are
 structured.
 
 
-## CSS
+### CSS
 
 To add a CSS to your SVG, simply use the `css` command inside your `build` 
 block, like this:
@@ -322,7 +325,7 @@ will result in two `@import url(...)` rows.
 See the [custom fonts example](https://github.com/DannyBen/victor/tree/master/examples#12-custom-fonts).
 
 
-## Tagless Elements
+### Tagless Elements
 
 Using underscore (`_`) as the element name will simply add the value to the 
 generated SVG, without any surrounding element. This is designed to allow
@@ -351,7 +354,7 @@ end
 See the [targless elements example](https://github.com/DannyBen/victor/tree/master/examples#16-tagless-elements).
 
 
-## XML Encoding
+### XML Encoding
 
 Plain text values are encoded automatically:
 
@@ -373,14 +376,14 @@ end
 
 See the [xml encoding example](https://github.com/DannyBen/victor/tree/master/examples#17-xml-encoding).
 
-## DSL Syntax
+### DSL Syntax
 
 Victor supports another a cleaner DSL-like syntax. To use it, simply `require 'victor/script'`.
 
-Once required, you have access to these methods:
+Once required, you have access to:
 
 - `svg` - returns an instance of `Victor::SVG`
-- `build`, `setup`, `save` and `render` - will be forwarded to the `svg` instance.
+- All the methods that are available on the `SVG` object, are included at the root level.
 
 For example:
 

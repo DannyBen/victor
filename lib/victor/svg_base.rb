@@ -19,7 +19,7 @@ module Victor
       attributes ||= {}
       attributes[:width] ||= "100%"
       attributes[:height] ||= "100%"
-      
+
       if attributes[:template]
         @template = attributes.delete :template
       elsif !@template
@@ -64,6 +64,7 @@ module Victor
 
     def render
       css_string = CSS.new css
+
       svg_template % {
         css: css_string,
         style: css_string.render,
