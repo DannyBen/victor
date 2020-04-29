@@ -378,7 +378,7 @@ See the [xml encoding example](https://github.com/DannyBen/victor/tree/master/ex
 
 ### DSL Syntax
 
-Victor supports another a cleaner DSL-like syntax. To use it, simply `require 'victor/script'`.
+Victor also supports a DSL-like syntax. To use it, simply `require 'victor/script'`.
 
 Once required, you have access to:
 
@@ -409,15 +409,15 @@ See the [example_rails](example_rails) folder.
 
 ## Related Projects
 
-### [victor-cli]
+### [Victor CLI][victor-cli]
 
 A command line utility that generates Victor Ruby code from SVG code.
 
-### [victor-opal]
+### [Victor Opal][victor-opal]
 
 A Victor playground that works in the browser.
 
-### [Icodi]
+### [Icodi][icodi]
 
 A Ruby gem that uses Victor to generate consistent random icon 
 images, similar to GitHub's identicon.
