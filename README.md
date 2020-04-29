@@ -400,6 +400,8 @@ puts render
 save 'output.svg'
 ```
 
+See the [dsl example](https://github.com/DannyBen/victor/tree/master/examples#18-dsl).
+
 ## Using with Rails
 
 See the [example_rails](example_rails) folder.
