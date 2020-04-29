@@ -411,7 +411,8 @@ See the [example_rails](example_rails) folder.
 
 ### [Victor CLI][victor-cli]
 
-A command line utility that generates Victor Ruby code from SVG code.
+A command line utility that allows converting Ruby to SVG as well as SVG to
+Victor Ruby scripts.
 
 ### [Victor Opal][victor-opal]
 
