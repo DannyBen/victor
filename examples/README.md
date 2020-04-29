@@ -23,9 +23,9 @@ result = svg.to_s
 svg.save '01_hello_world'
 ```
 
-[View Source Ruby File](/examples/01_hello_world.rb) | [View Image](/examples/01_hello_world.svg)
+[View Source Ruby File](01_hello_world.rb) | [View Image](01_hello_world.svg)
 
-[![01_hello_world](/examples/01_hello_world.svg)](/examples/01_hello_world.svg)
+[![01_hello_world](01_hello_world.svg)](01_hello_world.svg)
 
 
 ## 02 element
@@ -45,7 +45,7 @@ p svg.content
 #     "<rect x=\"2\" y=\"2\" width=\"200\" height=\"200\" fill=\"#ddd\"/>"]
 ```
 
-[View Source Ruby File](/examples/02_element.rb)
+[View Source Ruby File](02_element.rb)
 
 
 
@@ -72,9 +72,9 @@ end
 svg.save '03_shapes'
 ```
 
-[View Source Ruby File](/examples/03_shapes.rb) | [View Image](/examples/03_shapes.svg)
+[View Source Ruby File](03_shapes.rb) | [View Image](03_shapes.svg)
 
-[![03_shapes](/examples/03_shapes.svg)](/examples/03_shapes.svg)
+[![03_shapes](03_shapes.svg)](03_shapes.svg)
 
 
 ## 04 path
@@ -94,9 +94,9 @@ end
 svg.save '04_path'
 ```
 
-[View Source Ruby File](/examples/04_path.rb) | [View Image](/examples/04_path.svg)
+[View Source Ruby File](04_path.rb) | [View Image](04_path.svg)
 
-[![04_path](/examples/04_path.svg)](/examples/04_path.svg)
+[![04_path](04_path.svg)](04_path.svg)
 
 
 ## 05 path as array
@@ -116,9 +116,9 @@ end
 svg.save '05_path_as_array'
 ```
 
-[View Source Ruby File](/examples/05_path_as_array.rb) | [View Image](/examples/05_path_as_array.svg)
+[View Source Ruby File](05_path_as_array.rb) | [View Image](05_path_as_array.svg)
 
-[![05_path_as_array](/examples/05_path_as_array.svg)](/examples/05_path_as_array.svg)
+[![05_path_as_array](05_path_as_array.svg)](05_path_as_array.svg)
 
 
 ## 06 text
@@ -134,9 +134,9 @@ svg.text "Victor", x: 100, y: 50, font_family: 'arial', font_weight: 'bold', fon
 svg.save '06_text'
 ```
 
-[View Source Ruby File](/examples/06_text.rb) | [View Image](/examples/06_text.svg)
+[View Source Ruby File](06_text.rb) | [View Image](06_text.svg)
 
-[![06_text](/examples/06_text.svg)](/examples/06_text.svg)
+[![06_text](06_text.svg)](06_text.svg)
 
 
 ## 07 nested
@@ -157,9 +157,9 @@ end
 svg.save '07_nested'
 ```
 
-[View Source Ruby File](/examples/07_nested.rb) | [View Image](/examples/07_nested.svg)
+[View Source Ruby File](07_nested.rb) | [View Image](07_nested.svg)
 
-[![07_nested](/examples/07_nested.svg)](/examples/07_nested.svg)
+[![07_nested](07_nested.svg)](07_nested.svg)
 
 
 ## 08 css
@@ -185,9 +185,9 @@ end
 svg.save '08_css.svg'
 ```
 
-[View Source Ruby File](/examples/08_css.rb) | [View Image](/examples/08_css.svg)
+[View Source Ruby File](08_css.rb) | [View Image](08_css.svg)
 
-[![08_css](/examples/08_css.svg)](/examples/08_css.svg)
+[![08_css](08_css.svg)](08_css.svg)
 
 
 ## 09 pacman
@@ -213,9 +213,9 @@ end
 svg.save '09_pacman'
 ```
 
-[View Source Ruby File](/examples/09_pacman.rb) | [View Image](/examples/09_pacman.svg)
+[View Source Ruby File](09_pacman.rb) | [View Image](09_pacman.svg)
 
-[![09_pacman](/examples/09_pacman.svg)](/examples/09_pacman.svg)
+[![09_pacman](09_pacman.svg)](09_pacman.svg)
 
 
 ## 10 animation
@@ -260,9 +260,9 @@ end
 svg.save '10_animation'
 ```
 
-[View Source Ruby File](/examples/10_animation.rb) | [View Image](/examples/10_animation.svg)
+[View Source Ruby File](10_animation.rb) | [View Image](10_animation.svg)
 
-[![10_animation](/examples/10_animation.svg)](/examples/10_animation.svg)
+[![10_animation](10_animation.svg)](10_animation.svg)
 
 
 ## 11 def pattern
@@ -293,9 +293,9 @@ end
 svg.save '11_def_pattern'
 ```
 
-[View Source Ruby File](/examples/11_def_pattern.rb) | [View Image](/examples/11_def_pattern.svg)
+[View Source Ruby File](11_def_pattern.rb) | [View Image](11_def_pattern.svg)
 
-[![11_def_pattern](/examples/11_def_pattern.svg)](/examples/11_def_pattern.svg)
+[![11_def_pattern](11_def_pattern.svg)](11_def_pattern.svg)
 
 
 ## 12 custom fonts
@@ -335,9 +335,9 @@ end
 svg.save '12_custom_fonts'
 ```
 
-[View Source Ruby File](/examples/12_custom_fonts.rb) | [View Image](/examples/12_custom_fonts.svg)
+[View Source Ruby File](12_custom_fonts.rb) | [View Image](12_custom_fonts.svg)
 
-[![12_custom_fonts](/examples/12_custom_fonts.svg)](/examples/12_custom_fonts.svg)
+[![12_custom_fonts](12_custom_fonts.svg)](12_custom_fonts.svg)
 
 
 ## 13 composite svg
@@ -363,9 +363,9 @@ svg << troll
 svg.save '13_composite_svg'
 ```
 
-[View Source Ruby File](/examples/13_composite_svg.rb) | [View Image](/examples/13_composite_svg.svg)
+[View Source Ruby File](13_composite_svg.rb) | [View Image](13_composite_svg.svg)
 
-[![13_composite_svg](/examples/13_composite_svg.svg)](/examples/13_composite_svg.svg)
+[![13_composite_svg](13_composite_svg.svg)](13_composite_svg.svg)
 
 
 ## 14 subclassing
@@ -407,9 +407,9 @@ troll.add_nose
 troll.save '14_subclassing'
 ```
 
-[View Source Ruby File](/examples/14_subclassing.rb) | [View Image](/examples/14_subclassing.svg)
+[View Source Ruby File](14_subclassing.rb) | [View Image](14_subclassing.svg)
 
-[![14_subclassing](/examples/14_subclassing.svg)](/examples/14_subclassing.svg)
+[![14_subclassing](14_subclassing.svg)](14_subclassing.svg)
 
 
 ## 15 victor logo
@@ -477,9 +477,9 @@ end
 svg.save '15_victor_logo'
 ```
 
-[View Source Ruby File](/examples/15_victor_logo.rb) | [View Image](/examples/15_victor_logo.svg)
+[View Source Ruby File](15_victor_logo.rb) | [View Image](15_victor_logo.svg)
 
-[![15_victor_logo](/examples/15_victor_logo.svg)](/examples/15_victor_logo.svg)
+[![15_victor_logo](15_victor_logo.svg)](15_victor_logo.svg)
 
 
 ## 16 tagless elements
@@ -504,9 +504,9 @@ end
 svg.save '16_tagless_elements'
 ```
 
-[View Source Ruby File](/examples/16_tagless_elements.rb) | [View Image](/examples/16_tagless_elements.svg)
+[View Source Ruby File](16_tagless_elements.rb) | [View Image](16_tagless_elements.svg)
 
-[![16_tagless_elements](/examples/16_tagless_elements.svg)](/examples/16_tagless_elements.svg)
+[![16_tagless_elements](16_tagless_elements.svg)](16_tagless_elements.svg)
 
 
 ## 17 xml encoding
@@ -528,8 +528,34 @@ end
 svg.save '17_xml_endcoding'
 ```
 
-[View Source Ruby File](/examples/17_xml_encoding.rb)
+[View Source Ruby File](17_xml_encoding.rb)
 
+
+
+## 18 dsl
+
+```ruby
+#!/usr/bin/env ruby
+require 'victor/script'
+
+setup viewBox: "-10 -10 120 120", width: 200, height: 200
+
+build do
+  mask id: "heart" do
+    rect x: 0, y: 0, width: 100, height: 100, fill: "white"
+    path d: "M10,35 A20,20,0,0,1,50,35 A20,20,0,0,1,90,35 Q90,65,50,95 Q10,65,10,35 Z", fill: "black"
+  end
+
+  polygon points: "-10,110 110,110 110,-10", fill: "orange"
+  circle cx: 50, cy: 50, r: 50, mask: "url(#heart)"
+end
+
+save '18_dsl'
+```
+
+[View Source Ruby File](18_dsl.rb) | [View Image](18_dsl.svg)
+
+[![18_dsl](18_dsl.svg)](18_dsl.svg)
 
 
 

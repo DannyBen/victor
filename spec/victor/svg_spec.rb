@@ -55,6 +55,36 @@ describe SVG do
     end
   end
 
+  describe '#setup' do
+    it "updates attributes" do
+      subject.setup width: '80%', anything: 'ok'
+      expect(subject.svg_attributes.to_s).to eq 'width="80%" anything="ok" height="100%"'
+    end
+
+    it "sets default template" do
+      subject.setup width: '80%'
+      expect(subject.template).to eq :default
+    end
+
+    context "when the provided attributes contain :template" do
+      before { subject.template = :something_non_default }
+
+      it "sets template to the provided value" do
+        subject.setup width: '80%', template: :minimal
+        expect(subject.template).to eq :minimal
+      end
+    end
+
+    context "when template is set in advance" do
+      before { subject.template = :html }
+
+      it "does not alter the template value" do
+        subject.setup width: '80%'
+        expect(subject.template).to eq :html
+      end
+    end
+  end
+
   describe '#element' do
     it "generates xml without attributes" do
       svg.element 'anything'

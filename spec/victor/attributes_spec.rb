@@ -42,4 +42,19 @@ describe Attributes do
     end
   end
 
+  describe '#[]' do
+    it "returns an attribute value" do
+      @attrs = { hello: :world }
+      expect(subject[:hello]).to eq :world
+    end
+  end
+
+  describe '#[]=' do
+    it "sets an attribute value" do
+      @attrs = { hello: :world }
+      subject[:hello] = :overridden
+      expect(subject[:hello]).to eq :overridden
+    end
+  end
+
 end

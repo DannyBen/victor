@@ -10,8 +10,8 @@
 <text x="10" y="10" font-size="12">
 Ben &amp; Jerry's
 </text>
-<text! x="10" y="25" font-size="12">
-&amp;#x2714; Works!
-</text!>
+<text x="10" y="25" font-size="12">
+&#x2714; Works!
+</text>
 
 </svg>
