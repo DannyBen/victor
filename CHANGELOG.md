@@ -1,11 +1,92 @@
-# Change Log
+# Changelog
 
-## [v0.2.2](https://github.com/DannyBen/victor/tree/v0.2.2) (2018-07-31)
-[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.1...v0.2.2)
+## [v0.3.0.rc1](https://github.com/DannyBen/victor/tree/v0.3.0.rc1) (2020-04-29)
+
+[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.8...v0.3.0.rc1)
+
+**Closed issues:**
+
+- The 'use' element outputs 'xlink-href='，shoud it be xlink:href=? [\#45](https://github.com/DannyBen/victor/issues/45)
+
+**Merged pull requests:**
+
+- Allow setting attributues after initialization [\#48](https://github.com/DannyBen/victor/pull/48) ([DannyBen](https://github.com/DannyBen))
+- Test with GitHub Actions [\#44](https://github.com/DannyBen/victor/pull/44) ([DannyBen](https://github.com/DannyBen))
+- Configure better code hub [\#43](https://github.com/DannyBen/victor/pull/43) ([DannyBen](https://github.com/DannyBen))
+- Test with Ruby 2.7 [\#42](https://github.com/DannyBen/victor/pull/42) ([DannyBen](https://github.com/DannyBen))
+- Add support and contribution info [\#41](https://github.com/DannyBen/victor/pull/41) ([DannyBen](https://github.com/DannyBen))
+- Add link to "victor-opal" on README [\#40](https://github.com/DannyBen/victor/pull/40) ([kuboon](https://github.com/kuboon))
+
+## [v0.2.8](https://github.com/DannyBen/victor/tree/v0.2.8) (2019-07-12)
+
+[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.7...v0.2.8)
+
+**Closed issues:**
+
+- XML escaping [\#37](https://github.com/DannyBen/victor/issues/37)
+
+**Merged pull requests:**
+
+- Allow raw \(unencoded\) text [\#39](https://github.com/DannyBen/victor/pull/39) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.2.7](https://github.com/DannyBen/victor/tree/v0.2.7) (2019-06-21)
+
+[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.6...v0.2.7)
+
+**Merged pull requests:**
+
+- Add XML Escaping [\#38](https://github.com/DannyBen/victor/pull/38) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.2.6](https://github.com/DannyBen/victor/tree/v0.2.6) (2019-06-02)
+
+[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.5...v0.2.6)
+
+**Closed issues:**
+
+- Is it possible to nest tspan elements inside text elements? [\#35](https://github.com/DannyBen/victor/issues/35)
+
+**Merged pull requests:**
+
+- Allow tagless elements [\#36](https://github.com/DannyBen/victor/pull/36) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.2.5](https://github.com/DannyBen/victor/tree/v0.2.5) (2019-05-27)
+
+[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.4...v0.2.5)
+
+**Merged pull requests:**
+
+- Test with ruby 2.6 [\#33](https://github.com/DannyBen/victor/pull/33) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.2.4](https://github.com/DannyBen/victor/tree/v0.2.4) (2018-12-15)
+
+[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.3...v0.2.4)
+
+**Closed issues:**
+
+- Support for nested SVGs [\#29](https://github.com/DannyBen/victor/issues/29)
+
+**Merged pull requests:**
+
+- Fix html template and add minimal template [\#34](https://github.com/DannyBen/victor/pull/34) ([DannyBen](https://github.com/DannyBen))
+- Remove style tags from output if css is empty [\#32](https://github.com/DannyBen/victor/pull/32) ([DannyBen](https://github.com/DannyBen))
+- Allow inheriting without method\_missing [\#31](https://github.com/DannyBen/victor/pull/31) ([DannyBen](https://github.com/DannyBen))
+- Add Rails example [\#30](https://github.com/DannyBen/victor/pull/30) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.2.3](https://github.com/DannyBen/victor/tree/v0.2.3) (2018-08-02)
+
+[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.2...v0.2.3)
 
 **Implemented enhancements:**
 
 - generate single elements to append on svg [\#26](https://github.com/DannyBen/victor/issues/26)
+
+**Merged pull requests:**
+
+- Add `\#append` as alias to `\#\<\<` [\#28](https://github.com/DannyBen/victor/pull/28) ([DannyBen](https://github.com/DannyBen))
+
+## [v0.2.2](https://github.com/DannyBen/victor/tree/v0.2.2) (2018-07-31)
+
+[Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.1...v0.2.2)
 
 **Closed issues:**
 
@@ -21,6 +102,7 @@
 - Bundle update and travis with ruby 2.4 [\#21](https://github.com/DannyBen/victor/pull/21) ([DannyBen](https://github.com/DannyBen))
 
 ## [v0.2.1](https://github.com/DannyBen/victor/tree/v0.2.1) (2017-02-17)
+
 [Full Changelog](https://github.com/DannyBen/victor/compare/v0.2.0...v0.2.1)
 
 **Closed issues:**
@@ -33,6 +115,7 @@
 - Remove global include [\#19](https://github.com/DannyBen/victor/pull/19) ([DannyBen](https://github.com/DannyBen))
 
 ## [v0.2.0](https://github.com/DannyBen/victor/tree/v0.2.0) (2017-02-04)
+
 [Full Changelog](https://github.com/DannyBen/victor/compare/v0.1.3...v0.2.0)
 
 **Merged pull requests:**
@@ -40,6 +123,7 @@
 - Add support for single line CSS [\#17](https://github.com/DannyBen/victor/pull/17) ([DannyBen](https://github.com/DannyBen))
 
 ## [v0.1.3](https://github.com/DannyBen/victor/tree/v0.1.3) (2016-11-11)
+
 [Full Changelog](https://github.com/DannyBen/victor/compare/v0.1.1...v0.1.3)
 
 **Merged pull requests:**
@@ -48,6 +132,7 @@
 - Make style convert underscores to dashes [\#14](https://github.com/DannyBen/victor/pull/14) ([DannyBen](https://github.com/DannyBen))
 
 ## [v0.1.1](https://github.com/DannyBen/victor/tree/v0.1.1) (2016-05-29)
+
 [Full Changelog](https://github.com/DannyBen/victor/compare/v0.1.0...v0.1.1)
 
 **Merged pull requests:**
@@ -55,6 +140,7 @@
 - Improve CSS support [\#13](https://github.com/DannyBen/victor/pull/13) ([DannyBen](https://github.com/DannyBen))
 
 ## [v0.1.0](https://github.com/DannyBen/victor/tree/v0.1.0) (2016-05-28)
+
 [Full Changelog](https://github.com/DannyBen/victor/compare/v0.0.2...v0.1.0)
 
 **Implemented enhancements:**
@@ -77,6 +163,7 @@
 - Allow choosing SVG template [\#7](https://github.com/DannyBen/victor/pull/7) ([DannyBen](https://github.com/DannyBen))
 
 ## [v0.0.2](https://github.com/DannyBen/victor/tree/v0.0.2) (2016-05-27)
+
 [Full Changelog](https://github.com/DannyBen/victor/compare/v0.0.1...v0.0.2)
 
 **Implemented enhancements:**
@@ -89,5 +176,8 @@
 
 ## [v0.0.1](https://github.com/DannyBen/victor/tree/v0.0.1) (2016-05-27)
 
+[Full Changelog](https://github.com/DannyBen/victor/compare/65cc66eb1e4cd1130712a5969b3de2e8c73fb6b8...v0.0.1)
 
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+
+
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*
