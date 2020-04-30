@@ -224,6 +224,23 @@ svg << other
 svg.append other
 ```
 
+To make this common use case a little easier to use, you can use a block when instantiating a new `SVG` object:
+
+```ruby
+troll = SVG.new do
+  circle cx: 50, cy: 60, r: 24, fill: 'yellow'
+end
+```
+
+Which is the same as:
+
+```ruby
+troll = SVG.new
+troll.build do
+  circle cx: 50, cy: 60, r: 24, fill: 'yellow'
+end
+```
+
 Another approach to a more modular SVG composition, would be to subclass 
 `Victor::SVG`.
 
