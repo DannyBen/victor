@@ -4,10 +4,11 @@ module Victor
     attr_accessor :template, :css
     attr_reader :content, :svg_attributes
 
-    def initialize(attributes = nil)
+    def initialize(attributes = nil, &block)
       setup attributes
       @content = []
       @css = {}
+      build &block if block_given?
     end
 
     def <<(additional_content)

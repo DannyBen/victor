@@ -20,6 +20,16 @@ describe SVG do
       svg = SVG.new dudes: { duke: :nukem, vanilla: :ice }
       expect(svg.svg_attributes.to_s).to match(/dudes="duke:nukem; vanilla:ice"/)
     end
+
+    context "when a block is given" do
+      it "builds with the block" do
+        svg = SVG.new do
+          circle cx: 10, cy: 10, r: 20
+        end
+
+        expect(svg.to_s).to eq "<circle cx=\"10\" cy=\"10\" r=\"20\"/>"
+      end
+    end
   end
 
   context 'append' do
