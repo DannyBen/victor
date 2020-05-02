@@ -1,10 +1,11 @@
+*.gem
+/.yardoc
 /coverage
+/debug.rb
 /dev
 /doc
-/gems
+/example_rails/myrails
 /Gemfile.lock
-/.yardoc
-*.gem
+/gems
 /test.svg
 /toc.txt
-/example_rails/myrails

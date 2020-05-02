@@ -95,3 +95,5 @@ help   "Generate TOC to toc.txt"
 action :toc do
   run! 'gh-md-toc README.md > toc.txt'
 end
+
+require_relative 'debug.rb' if File.exist? 'debug.rb'
