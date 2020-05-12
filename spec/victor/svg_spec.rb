@@ -210,11 +210,18 @@ describe SVG do
   end
 
   describe '#render' do
-    it "generates full xml" do
+    before do
       svg.circle radius: 10
-      expect(svg.render).to match(/DOCTYPE svg PUBLIC/)
-      expect(svg.render).to match(/svg width="100%" height="100%"/)
-      expect(svg.render).to match(/<circle radius="10"\/>/)
+    end
+
+    it "generates full xml" do
+      expect(svg.render).to match_fixture('svg/full')
+    end
+
+    context "with template argument" do
+      it "uses the provided template" do
+        expect(svg.render template: :minimal).to match_fixture('svg/minimal')
+      end
     end
 
     context "with css elements" do
@@ -228,9 +235,7 @@ describe SVG do
 
       it "includes a css block" do
         svg.css = @css
-        expect(svg.render).to match(/.main \{/)
-        expect(svg.render).to match(/stroke: green;/)
-        expect(svg.render).to match(/stroke-width: 2;/)
+        expect(svg.render).to match_fixture('svg/css')
       end
     end
   end
@@ -247,20 +252,25 @@ describe SVG do
 
     before do
       File.unlink filename if File.exist? filename
+      expect(File).not_to exist filename
+      svg.circle radius: 10
     end
 
     it "saves to a file" do
-      svg.circle radius: 10
-      expect(File).not_to exist filename
       svg.save filename
       expect(File).to exist filename
     end
 
     it "saves xml" do
-      svg.circle radius: 10
       svg.save filename
-      content = File.read filename
-      expect(content).to match(/<circle radius="10"\/>/)
+      expect(File.read filename).to match_fixture('svg/full')
+    end
+
+    context "with template argument" do
+      it "uses the provided template" do
+        svg.save filename, template: :minimal
+        expect(File.read filename).to match_fixture('svg/minimal')
+      end
     end
   end
 
