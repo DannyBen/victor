@@ -284,6 +284,13 @@ svg = Victor::SVG.new template: 'path/to/template.svg'
 See the [templates] folder for an understanding of how templates are 
 structured.
 
+Templates can also be provided when rendering or saving the output:
+
+```ruby
+svg.save 'filename', template: :minimal
+svg.render template: :minimal
+```
+
 
 ### CSS
 

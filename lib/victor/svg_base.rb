@@ -63,7 +63,8 @@ module Victor
       end
     end
 
-    def render
+    def render(template: nil)
+      @template = template if template
       css_string = CSS.new css
 
       svg_template % {
@@ -78,9 +79,9 @@ module Victor
       content.join "\n"
     end
 
-    def save(filename)
+    def save(filename, template: nil)
       filename = "#{filename}.svg" unless filename =~ /\..{2,4}$/
-      File.write filename, render
+      File.write filename, render(template: template)
     end
 
   protected
