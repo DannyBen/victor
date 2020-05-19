@@ -11,7 +11,7 @@ describe CSS do
         background: 'white'
       }
 
-      expect(subject.to_s).to match_fixture 'css/css1'
+      expect(subject.to_s).to match_approval 'css/css1'
     end
 
     it "converts css several levels deep" do
@@ -25,7 +25,7 @@ describe CSS do
         }
       }
 
-      expect(subject.to_s).to match_fixture 'css/css2'
+      expect(subject.to_s).to match_approval 'css/css2'
     end
 
     it "converts array values to single lines" do
@@ -35,14 +35,14 @@ describe CSS do
         "another url"
       ]
 
-      expect(subject.to_s).to match_fixture 'css/css3'
+      expect(subject.to_s).to match_approval 'css/css3'
     end
   end
 
   describe '#render' do
     it "returns the css string wrapped inside style tags" do
       @css = { '.main' => { color: 'black' } }
-      expect(subject.render).to match_fixture 'css/render'
+      expect(subject.render).to match_approval 'css/render'
     end
 
     context "when the css is empty" do

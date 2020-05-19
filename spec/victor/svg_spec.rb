@@ -215,12 +215,12 @@ describe SVG do
     end
 
     it "generates full xml" do
-      expect(svg.render).to match_fixture('svg/full')
+      expect(svg.render).to match_approval('svg/full')
     end
 
     context "with template argument" do
       it "uses the provided template" do
-        expect(svg.render template: :minimal).to match_fixture('svg/minimal')
+        expect(svg.render template: :minimal).to match_approval('svg/minimal')
       end
     end
 
@@ -235,7 +235,7 @@ describe SVG do
 
       it "includes a css block" do
         svg.css = @css
-        expect(svg.render).to match_fixture('svg/css')
+        expect(svg.render).to match_approval('svg/css')
       end
     end
   end
@@ -263,13 +263,13 @@ describe SVG do
 
     it "saves xml" do
       svg.save filename
-      expect(File.read filename).to match_fixture('svg/full')
+      expect(File.read filename).to match_approval('svg/full')
     end
 
     context "with template argument" do
       it "uses the provided template" do
         svg.save filename, template: :minimal
-        expect(File.read filename).to match_fixture('svg/minimal')
+        expect(File.read filename).to match_approval('svg/minimal')
       end
     end
   end
