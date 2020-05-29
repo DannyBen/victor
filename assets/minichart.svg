@@ -1,0 +1,61 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg viewBox="0 0 920 100" width="100%" height="100%" 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<g transform="translate(0 0)">
+<rect x="0" y="0" width="300" height="60" fill="#ccd"/>
+<polyline fill="none" stroke="green" stroke-width="2" stroke-linejoin="round" points="0.0,60.0 15.789473684210526,58.70967741935484 31.57894736842105,57.09677419354839 47.368421052631575,59.03225806451613 63.1578947368421,49.03225806451613 78.94736842105263,49.354838709677416 94.73684210526315,57.74193548387097 110.52631578947368,38.064516129032256 126.3157894736842,57.41935483870968 142.10526315789474,28.38709677419355 157.89473684210526,42.25806451612903 173.6842105263158,43.54838709677419 189.4736842105263,22.258064516129032 205.26315789473682,26.129032258064512 221.05263157894737,43.87096774193549 236.8421052631579,41.612903225806456 252.6315789473684,36.12903225806452 268.4210526315789,0.0 284.2105263157895,6.451612903225808 300.0,44.193548387096776"/>
+</g>
+<g transform="translate(310 0)">
+<rect x="0" y="0" width="300" height="60" fill="#ccd"/>
+<rect x="0.0" y="60.0" width="7" height="0.0" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="7.5" y="59.347826086956516" width="7" height="0.6521739130434838" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="15.0" y="58.53260869565217" width="7" height="1.467391304347828" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="22.500000000000004" y="59.51086956521739" width="7" height="0.4891304347826093" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="30.0" y="54.45652173913044" width="7" height="5.543478260869563" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="37.5" y="54.619565217391305" width="7" height="5.380434782608695" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="45.00000000000001" y="58.858695652173914" width="7" height="1.141304347826086" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="52.50000000000001" y="48.913043478260875" width="7" height="11.086956521739125" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="60.0" y="58.69565217391305" width="7" height="1.3043478260869534" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="67.5" y="44.02173913043478" width="7" height="15.978260869565219" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="75.0" y="51.03260869565218" width="7" height="8.96739130434782" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="82.5" y="51.68478260869565" width="7" height="8.315217391304351" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="90.00000000000001" y="40.92391304347826" width="7" height="19.076086956521742" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="97.5" y="42.880434782608695" width="7" height="17.119565217391305" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="105.00000000000001" y="51.847826086956516" width="7" height="8.152173913043484" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="112.5" y="50.70652173913044" width="7" height="9.293478260869563" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="120.0" y="47.93478260869565" width="7" height="12.065217391304351" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="127.50000000000001" y="29.673913043478258" width="7" height="30.326086956521742" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="135.0" y="32.93478260869565" width="7" height="27.06521739130435" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="142.5" y="52.01086956521739" width="7" height="7.989130434782609" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="150.0" y="42.391304347826086" width="7" height="17.608695652173914" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="157.5" y="37.98913043478261" width="7" height="22.01086956521739" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="165.0" y="30.65217391304348" width="7" height="29.34782608695652" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="172.50000000000003" y="30.815217391304348" width="7" height="29.184782608695652" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="180.00000000000003" y="30.326086956521742" width="7" height="29.673913043478258" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="187.5" y="16.14130434782609" width="7" height="43.85869565217391" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="195.0" y="22.336956521739133" width="7" height="37.66304347826087" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="202.5" y="21.35869565217391" width="7" height="38.64130434782609" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="210.00000000000003" y="30.0" width="7" height="30.0" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="217.50000000000003" y="20.543478260869563" width="7" height="39.45652173913044" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="225.0" y="19.076086956521742" width="7" height="40.92391304347826" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="232.5" y="32.44565217391305" width="7" height="27.554347826086953" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="240.0" y="52.5" width="7" height="7.5" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="247.50000000000003" y="2.934782608695652" width="7" height="57.06521739130435" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="255.00000000000003" y="43.20652173913043" width="7" height="16.79347826086957" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="262.5" y="21.032608695652172" width="7" height="38.96739130434783" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="270.0" y="52.336956521739125" width="7" height="7.6630434782608745" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="277.5" y="0.0" width="7" height="60.0" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="285.0" y="3.913043478260867" width="7" height="56.08695652173913" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+<rect x="292.5" y="8.478260869565215" width="7" height="51.52173913043478" style="fill:blue; stroke-width:2; stroke:#ccd"/>
+</g>
+<g transform="translate(620 0)">
+<rect x="0" y="0" width="300" height="60" fill="#ccd"/>
+<polyline fill="red" stroke="red" stroke-width="2" stroke-linejoin="round" points="0,60 0.0,60.0 15.789473684210526,58.70967741935484 31.57894736842105,57.09677419354839 47.368421052631575,59.03225806451613 63.1578947368421,49.03225806451613 78.94736842105263,49.354838709677416 94.73684210526315,57.74193548387097 110.52631578947368,38.064516129032256 126.3157894736842,57.41935483870968 142.10526315789474,28.38709677419355 157.89473684210526,42.25806451612903 173.6842105263158,43.54838709677419 189.4736842105263,22.258064516129032 205.26315789473682,26.129032258064512 221.05263157894737,43.87096774193549 236.8421052631579,41.612903225806456 252.6315789473684,36.12903225806452 268.4210526315789,0.0 284.2105263157895,6.451612903225808 300.0,44.193548387096776 300,60"/>
+</g>
+
+</svg>

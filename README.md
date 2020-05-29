@@ -442,6 +442,13 @@ Victor Ruby scripts.
 
 A Victor playground that works in the browser.
 
+### [Minichart][minichart]
+
+A Ruby gem that uses Victor to generate SVG charts
+
+[![Minichart](assets/minichart.svg)][minichart]
+
+
 ### [Icodi][icodi]
 
 A Ruby gem that uses Victor to generate consistent random icon 
@@ -460,6 +467,7 @@ to contribute, feel free to [open an issue][issues].
 [examples]: https://github.com/DannyBen/victor/tree/master/examples#examples
 [templates]: https://github.com/DannyBen/victor/tree/master/lib/victor/templates
 [icodi]: https://github.com/DannyBen/icodi
+[minichart]: https://github.com/DannyBen/minichart
 [victor-opal]: https://kuboon.github.io/victor-opal/
 [victor-cli]:  https://github.com/DannyBen/victor-cli
 [issues]: https://github.com/DannyBen/victor/issues
