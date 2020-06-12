@@ -9,6 +9,7 @@ version Victor::VERSION
 
 RunfileTasks::RubyGems.all 'victor'
 RunfileTasks::Testing.rspec
+RunfileTasks::Changelog.generator "DannyBen/victor"
 
 command "examples"
 

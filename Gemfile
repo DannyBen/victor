@@ -7,6 +7,7 @@ gem 'runfile'
 gem 'runfile-tasks'
 gem 'simplecov'
 gem 'byebug'
+gem 'github_changelog_generator'
 
 gemspec
 
