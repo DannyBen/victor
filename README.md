@@ -185,7 +185,7 @@ svg.text "Victor", x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font
 
 ### Composite SVG
 
-Victor also supports the abiliy to combine several smaller SVG objects into 
+Victor also supports the ability to combine several smaller SVG objects into
 one using the `<<` operator or the `#append` method. 
 
 This operator expects to receive any object that responds to `#to_s` (can be another `SVG` object).
@@ -375,7 +375,7 @@ svg.build do
 end
 ```
 
-See the [targless elements example](https://github.com/DannyBen/victor/tree/master/examples#16-tagless-elements).
+See the [tagless elements example](https://github.com/DannyBen/victor/tree/master/examples#16-tagless-elements).
 
 
 ### XML Encoding
