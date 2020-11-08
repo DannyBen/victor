@@ -31,4 +31,4 @@ end
 
 troll = Troll.new color: '#33f', hat_color: '#3f3';
 troll.add_nose
-troll.save '14_subclassing'
+troll.save '15_subclassing'

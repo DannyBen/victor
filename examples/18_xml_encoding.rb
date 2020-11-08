@@ -11,5 +11,5 @@ svg.build do
   text! "&#x2714; Works!", x: 10, y: 25, font_size: 12
 end
 
-svg.save '17_xml_endcoding'
+svg.save '18_xml_endcoding'
 

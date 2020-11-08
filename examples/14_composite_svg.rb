@@ -15,4 +15,4 @@ svg = SVG.new viewBox: '0 0 100 100', width: 100, height: 100
 svg << frame
 svg << troll
 
-svg.save '13_composite_svg'
+svg.save '14_composite_svg'

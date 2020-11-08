@@ -1,4 +1,4 @@
-![Victor](/examples//15_victor_logo.svg)
+![Victor](/examples/16_victor_logo.svg)
 
 # Victor - Ruby SVG Image Builder
 
@@ -71,7 +71,7 @@ svg.save 'pacman'
 
 Output:
 
-[![pacman](https://cdn.rawgit.com/DannyBen/victor/master/examples/09_pacman.svg)](https://github.com/DannyBen/victor/blob/master/examples/09_pacman.rb)
+[![pacman](https://cdn.rawgit.com/DannyBen/victor/master/examples/10_pacman.svg)](https://github.com/DannyBen/victor/blob/master/examples/10_pacman.rb)
 
 
 See the [examples] folder for several ruby scripts and their SVG output.
@@ -215,7 +215,7 @@ svg.save 'framed-troll'
 
 Output:
 
-[![troll](https://cdn.rawgit.com/DannyBen/victor/master/examples/13_composite_svg.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/13_composite_svg.svg)
+[![troll](https://cdn.rawgit.com/DannyBen/victor/master/examples/14_composite_svg.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/14_composite_svg.svg)
 
 These two calls are identical:
 
@@ -244,8 +244,8 @@ end
 Another approach to a more modular SVG composition, would be to subclass 
 `Victor::SVG`.
 
-See the [composite svg example](https://github.com/DannyBen/victor/tree/master/examples#13-composite-svg)
-or the [subclassing example](https://github.com/DannyBen/victor/tree/master/examples#14-subclassing)
+See the [composite svg example](https://github.com/DannyBen/victor/tree/master/examples#14-composite-svg)
+or the [subclassing example](https://github.com/DannyBen/victor/tree/master/examples#15-subclassing)
 for more details.
 
 
@@ -294,8 +294,27 @@ svg.render template: :minimal
 
 ### CSS
 
-To add a CSS to your SVG, simply use the `css` command inside your `build` 
-block, like this:
+CSS gets a special treatment in `Victor::SVG`, with these objectives in mind:
+
+- Hide implementation details (such as the need for a `CDATA` marker)
+- Provide a DSL-like syntax for CSS rules
+
+The `Victor::SVG` objects has a `css` property, which can contain either a 
+Hash or a String.
+
+```ruby
+svg = Victor::SVG.new
+
+svg.css = css_hash_or_string
+svg.build do
+  # ...
+end
+```
+
+This flexibility allows you to apply CSS in multiple ways. Below are some
+examples.
+
+#### Assigning CSS rules using the hash syntax
 
 ```ruby
 svg = Victor::SVG.new
@@ -311,7 +330,7 @@ svg.build do
 end
 ```
 
-You can also set CSS by providing a hash:
+#### Assigning a full hash to the CSS property
 
 ```ruby
 svg.css = {
@@ -332,6 +351,13 @@ svg.css = {
 Underscore characters will be converted to dashes (`stroke_width` becomes 
 `stroke-width`).
 
+#### Importing CSS from an external file
+
+```ruby
+svg.css = File.read 'styles.css'
+```
+
+#### CSS `@import` directives
 
 If you need to add CSS statements , like `@import`, use the following syntax:
 
@@ -342,11 +368,13 @@ css['@import'] = [
 ]
 ```
 
-When the value of the CSS attribute is an array, Victor will simply use
-the values of the array and prefix each of them with the key, so the above 
-will result in two `@import url(...)` rows.
+This is achieved thanks to the fact that when Victor encounters an array
+in the CSS hash, it will prefix each of the array elements with the hash
+key, so the above will result in two `@import url(...)` rows.
 
-See the [custom fonts example](https://github.com/DannyBen/victor/tree/master/examples#12-custom-fonts).
+See the [css example](https://github.com/DannyBen/victor/tree/master/examples#08-css),
+[css string example](https://github.com/DannyBen/victor/tree/master/examples#09-css-string),
+or the [custom fonts example](https://github.com/DannyBen/victor/tree/master/examples#13-custom-fonts).
 
 
 ### Tagless Elements
@@ -375,7 +403,7 @@ svg.build do
 end
 ```
 
-See the [tagless elements example](https://github.com/DannyBen/victor/tree/master/examples#16-tagless-elements).
+See the [tagless elements example](https://github.com/DannyBen/victor/tree/master/examples#17-tagless-elements).
 
 
 ### XML Encoding
@@ -398,7 +426,7 @@ end
 # <text>Ben & Jerry's</text>
 ```
 
-See the [xml encoding example](https://github.com/DannyBen/victor/tree/master/examples#17-xml-encoding).
+See the [xml encoding example](https://github.com/DannyBen/victor/tree/master/examples#18-xml-encoding).
 
 ### DSL Syntax
 
@@ -424,7 +452,7 @@ puts render
 save 'output.svg'
 ```
 
-See the [dsl example](https://github.com/DannyBen/victor/tree/master/examples#18-dsl).
+See the [dsl example](https://github.com/DannyBen/victor/tree/master/examples#19-dsl).
 
 ## Using with Rails
 

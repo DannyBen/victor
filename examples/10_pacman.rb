@@ -15,4 +15,4 @@ svg.build do
   end
 end
 
-svg.save '09_pacman'
+svg.save '10_pacman'

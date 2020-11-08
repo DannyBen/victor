@@ -34,4 +34,4 @@ svg.build do
   pacman
 end
 
-svg.save '10_animation'
+svg.save '11_animation'

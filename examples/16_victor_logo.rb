@@ -57,5 +57,5 @@ svg.build do
   g(transform: "translate(180 20)") { append o }
 end
 
-svg.save '15_victor_logo'
+svg.save '16_victor_logo'
 

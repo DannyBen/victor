@@ -190,7 +190,38 @@ svg.save '08_css.svg'
 [![08_css](08_css.svg)](08_css.svg)
 
 
-## 09 pacman
+## 09 css string
+
+```ruby
+require 'victor'
+
+svg = Victor::SVG.new width: 200, height: 200, viewBox: "0 0 70 70", 
+  style: { background: '#eee' }
+
+# This can be loaded from a file with `svg.css = File.read 'file.css'`
+svg.css = <<CSS
+  .main {
+    stroke: green;
+    stroke-width: 2;
+    fill: yellow;
+    opacity: 0.7;
+  }
+CSS
+
+svg.build do 
+  rect x: 5, y: 5, width: 60, height: 60, class: 'main'
+  circle cx: 35, cy: 35, r: 20, class: 'main'
+end
+
+svg.save '09_css_string.svg'
+```
+
+[View Source Ruby File](09_css_string.rb) | [View Image](09_css_string.svg)
+
+[![09_css_string](09_css_string.svg)](09_css_string.svg)
+
+
+## 10 pacman
 
 ```ruby
 require 'victor'
@@ -210,15 +241,15 @@ svg.build do
   end
 end
 
-svg.save '09_pacman'
+svg.save '10_pacman'
 ```
 
-[View Source Ruby File](09_pacman.rb) | [View Image](09_pacman.svg)
+[View Source Ruby File](10_pacman.rb) | [View Image](10_pacman.svg)
 
-[![09_pacman](09_pacman.svg)](09_pacman.svg)
+[![10_pacman](10_pacman.svg)](10_pacman.svg)
 
 
-## 10 animation
+## 11 animation
 
 ```ruby
 require 'victor'
@@ -257,15 +288,15 @@ svg.build do
   pacman
 end
 
-svg.save '10_animation'
+svg.save '11_animation'
 ```
 
-[View Source Ruby File](10_animation.rb) | [View Image](10_animation.svg)
+[View Source Ruby File](11_animation.rb) | [View Image](11_animation.svg)
 
-[![10_animation](10_animation.svg)](10_animation.svg)
+[![11_animation](11_animation.svg)](11_animation.svg)
 
 
-## 11 def pattern
+## 12 def pattern
 
 ```ruby
 require 'victor'
@@ -290,15 +321,15 @@ svg.build do
 end
 
 # Save it
-svg.save '11_def_pattern'
+svg.save '12_def_pattern'
 ```
 
-[View Source Ruby File](11_def_pattern.rb) | [View Image](11_def_pattern.svg)
+[View Source Ruby File](12_def_pattern.rb) | [View Image](12_def_pattern.svg)
 
-[![11_def_pattern](11_def_pattern.svg)](11_def_pattern.svg)
+[![12_def_pattern](12_def_pattern.svg)](12_def_pattern.svg)
 
 
-## 12 custom fonts
+## 13 custom fonts
 
 ```ruby
 require 'victor'
@@ -332,15 +363,15 @@ svg.build do
     font_family: 'arial', font_size: 16
 end
 
-svg.save '12_custom_fonts'
+svg.save '13_custom_fonts'
 ```
 
-[View Source Ruby File](12_custom_fonts.rb) | [View Image](12_custom_fonts.svg)
+[View Source Ruby File](13_custom_fonts.rb) | [View Image](13_custom_fonts.svg)
 
-[![12_custom_fonts](12_custom_fonts.svg)](12_custom_fonts.svg)
+[![13_custom_fonts](13_custom_fonts.svg)](13_custom_fonts.svg)
 
 
-## 13 composite svg
+## 14 composite svg
 
 ```ruby
 require 'victor'
@@ -360,15 +391,15 @@ svg = SVG.new viewBox: '0 0 100 100', width: 100, height: 100
 svg << frame
 svg << troll
 
-svg.save '13_composite_svg'
+svg.save '14_composite_svg'
 ```
 
-[View Source Ruby File](13_composite_svg.rb) | [View Image](13_composite_svg.svg)
+[View Source Ruby File](14_composite_svg.rb) | [View Image](14_composite_svg.svg)
 
-[![13_composite_svg](13_composite_svg.svg)](13_composite_svg.svg)
+[![14_composite_svg](14_composite_svg.svg)](14_composite_svg.svg)
 
 
-## 14 subclassing
+## 15 subclassing
 
 ```ruby
 require 'victor'
@@ -404,15 +435,15 @@ end
 
 troll = Troll.new color: '#33f', hat_color: '#3f3';
 troll.add_nose
-troll.save '14_subclassing'
+troll.save '15_subclassing'
 ```
 
-[View Source Ruby File](14_subclassing.rb) | [View Image](14_subclassing.svg)
+[View Source Ruby File](15_subclassing.rb) | [View Image](15_subclassing.svg)
 
-[![14_subclassing](14_subclassing.svg)](14_subclassing.svg)
+[![15_subclassing](15_subclassing.svg)](15_subclassing.svg)
 
 
-## 15 victor logo
+## 16 victor logo
 
 ```ruby
 #!/usr/bin/env ruby
@@ -474,15 +505,15 @@ svg.build do
   g(transform: "translate(180 20)") { append o }
 end
 
-svg.save '15_victor_logo'
+svg.save '16_victor_logo'
 ```
 
-[View Source Ruby File](15_victor_logo.rb) | [View Image](15_victor_logo.svg)
+[View Source Ruby File](16_victor_logo.rb) | [View Image](16_victor_logo.svg)
 
-[![15_victor_logo](15_victor_logo.svg)](15_victor_logo.svg)
+[![16_victor_logo](16_victor_logo.svg)](16_victor_logo.svg)
 
 
-## 16 tagless elements
+## 17 tagless elements
 
 ```ruby
 #!/usr/bin/env ruby
@@ -501,15 +532,15 @@ svg.build do
   end
 end
 
-svg.save '16_tagless_elements'
+svg.save '17_tagless_elements'
 ```
 
-[View Source Ruby File](16_tagless_elements.rb) | [View Image](16_tagless_elements.svg)
+[View Source Ruby File](17_tagless_elements.rb) | [View Image](17_tagless_elements.svg)
 
-[![16_tagless_elements](16_tagless_elements.svg)](16_tagless_elements.svg)
+[![17_tagless_elements](17_tagless_elements.svg)](17_tagless_elements.svg)
 
 
-## 17 xml encoding
+## 18 xml encoding
 
 ```ruby
 #!/usr/bin/env ruby
@@ -525,14 +556,14 @@ svg.build do
   text! "&#x2714; Works!", x: 10, y: 25, font_size: 12
 end
 
-svg.save '17_xml_endcoding'
+svg.save '18_xml_endcoding'
 ```
 
-[View Source Ruby File](17_xml_encoding.rb)
+[View Source Ruby File](18_xml_encoding.rb)
 
 
 
-## 18 dsl
+## 19 dsl
 
 ```ruby
 #!/usr/bin/env ruby
@@ -550,12 +581,12 @@ build do
   circle cx: 50, cy: 50, r: 50, mask: "url(#heart)"
 end
 
-save '18_dsl'
+save '19_dsl'
 ```
 
-[View Source Ruby File](18_dsl.rb) | [View Image](18_dsl.svg)
+[View Source Ruby File](19_dsl.rb) | [View Image](19_dsl.svg)
 
-[![18_dsl](18_dsl.svg)](18_dsl.svg)
+[![19_dsl](19_dsl.svg)](19_dsl.svg)
 
 
 

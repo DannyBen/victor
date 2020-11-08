@@ -20,4 +20,4 @@ svg.build do
 end
 
 # Save it
-svg.save '11_def_pattern'
+svg.save '12_def_pattern'
