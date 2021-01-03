@@ -37,6 +37,13 @@ describe CSS do
 
       expect(subject.to_s).to match_approval 'css/css3'
     end
+
+    context "when attributes are not a hash" do
+      it "returns the attributes as is" do
+        @css = ".class { color: blue }"
+        expect(subject.to_s).to eq @css
+      end
+    end
   end
 
   describe '#render' do

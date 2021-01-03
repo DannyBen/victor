@@ -278,6 +278,15 @@ describe SVG do
         expect(File.read filename).to match_approval('svg/minimal')
       end
     end
+
+    context "when the filename does not end with .svg" do
+      let(:filename) { 'test' }
+
+      it "appends .svg to the filename" do
+        subject.save filename
+        expect(File).to exist "#{filename}.svg"
+      end
+    end
   end
 
 end
