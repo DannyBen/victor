@@ -148,7 +148,7 @@ space delimited string:
 
 ```ruby
 svg.path d: ['M', 150, 0, 'L', 75, 200, 'L', 225, 200, 'Z']
-# => <path d="M 150 9 L 75 200 L 225 200 Z"/>
+# => <path d="M 150 0 L 75 200 L 225 200 Z"/>
 ```
 
 For SVG elements that have an inner content - such as text - simply pass it as 
