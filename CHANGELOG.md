@@ -1,6 +1,12 @@
 Change Log
 ========================================
 
+v0.3.3 - 2021-05-15
+----------------------------------------
+
+- Improve CSS accessors
+
+
 ## [v0.3.2](https://github.com/DannyBen/victor/tree/v0.3.2) (2020-05-14)
 
 [Full Changelog](https://github.com/DannyBen/victor/compare/v0.3.1...v0.3.2)
