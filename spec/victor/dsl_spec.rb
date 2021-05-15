@@ -37,4 +37,11 @@ describe DSL do
     end
   end
 
+  describe '#css' do
+    it "forwards the call to the svg object" do
+      expect(subject.svg).to receive(:css)
+      subject.css
+    end
+  end
+
 end

@@ -1,13 +1,12 @@
 module Victor
 
   class SVGBase
-    attr_accessor :template, :css
+    attr_accessor :template
     attr_reader :content, :svg_attributes
 
     def initialize(attributes = nil, &block)
       setup attributes
       @content = []
-      @css = {}
       build &block if block_given?
     end
 
@@ -63,13 +62,23 @@ module Victor
       end
     end
 
+    def css(defs = nil)
+      @css ||= {}
+      @css = defs if defs
+      @css
+    end
+
+    def css=(defs)
+      @css = defs
+    end
+
     def render(template: nil)
       @template = template if template
-      css_string = CSS.new css
+      css_handler = CSS.new css
 
       svg_template % {
-        css: css_string,
-        style: css_string.render,
+        css: css_handler,
+        style: css_handler.render,
         attributes: svg_attributes,
         content: content.join("\n")
       }
