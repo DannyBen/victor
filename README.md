@@ -300,12 +300,15 @@ CSS gets a special treatment in `Victor::SVG`, with these objectives in mind:
 - Provide a DSL-like syntax for CSS rules
 
 The `Victor::SVG` objects has a `css` property, which can contain either a 
-Hash or a String.
+Hash or a String:
 
 ```ruby
 svg = Victor::SVG.new
 
 svg.css = css_hash_or_string
+# or without the equal sign:
+svg.css css_hash_or_string
+
 svg.build do
   # ...
 end

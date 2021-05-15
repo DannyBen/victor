@@ -175,6 +175,36 @@ describe SVG do
     end
   end
 
+  describe '#css' do
+    context "when no css rules were added" do
+      it "returns an empty hash" do
+        expect(subject.css).to eq({})
+      end
+    end
+
+    context "when css rules were added" do
+      before { subject.css = { fill: 'blue' } }
+
+      it "returns the rules (hash or string)" do
+        expect(subject.css[:fill]).to eq 'blue'
+      end
+
+      context "with an argument" do
+        it "replaces the entire css attribute" do
+          subject.css color: 'red'
+          expect(subject.css).to eq({ color: 'red' })
+        end
+      end
+    end
+  end
+  
+  describe '#css=' do
+    it "replaces the entire css attribute" do
+      subject.css = { color: 'red' }
+      expect(subject.css[:color]).to eq 'red'
+    end
+  end
+
   describe '#method_missing' do
     it "calls #element" do
       expect(subject).to receive(:element).with(:anything)
