@@ -1,6 +1,13 @@
 Change Log
 ========================================
 
+Untagged - Latest
+----------------------------------------
+
+- Refactor SVGBase with a new Element class
+- Rollback SVGBase#element refactor
+
+
 v0.3.3 - 2021-05-15
 ----------------------------------------
 
