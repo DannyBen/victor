@@ -33,8 +33,33 @@ module Victor
       self.instance_eval(&block)
     end
 
-    def element(name, value=nil, attributes={}, &block)
-      @content += Element.new(name, value, attributes).render &block
+    def element(name, value=nil, attributes={}, &_block)
+      if value.is_a? Hash
+        attributes = value
+        value = nil
+      end
+
+      escape = true
+
+      if name.to_s.end_with? '!'
+        escape = false
+        name = name[0..-2]
+      end
+
+      attributes = Attributes.new attributes
+      empty_tag = name.to_s == '_'
+
+      if block_given? || value
+        content.push "<#{name} #{attributes}".strip + ">" unless empty_tag
+        if value
+          content.push(escape ? value.to_s.encode(xml: :text) : value)
+        else
+          yield
+        end
+        content.push "</#{name}>" unless empty_tag
+      else      
+        content.push "<#{name} #{attributes}/>"
+      end
     end
 
     def css(defs = nil)
