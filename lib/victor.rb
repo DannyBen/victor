@@ -1,4 +1,5 @@
 require 'victor/version'
+require 'victor/element'
 require 'victor/svg_base'
 require 'victor/svg'
 require 'victor/attributes'
