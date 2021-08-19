@@ -104,3 +104,4 @@ action :changelog do
 end
 
 require_relative 'debug.rb' if File.exist? 'debug.rb'
+
