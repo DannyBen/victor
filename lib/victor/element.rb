@@ -22,15 +22,11 @@ module Victor
     end
 
     def render(&block)
-      result = []
-
       if block_given? || value
-        result += wrap_element &block
+        wrap_element &block
       else      
-        result.push "<#{name} #{attributes}/>"
+        ["<#{name} #{attributes}/>"]
       end
-
-      result
     end
 
   private
