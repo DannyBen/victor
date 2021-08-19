@@ -21,17 +21,11 @@ module Victor
       end
     end
 
-    def render
+    def render(&block)
       result = []
 
       if block_given? || value
-        result.push "<#{name} #{attributes}".strip + ">" unless empty_tag?
-        if value
-          result.push(escape ? value.to_s.encode(xml: :text) : value)
-        else
-          result += yield
-        end
-        result.push "</#{name}>" unless empty_tag?
+        result += wrap_element &block
       else      
         result.push "<#{name} #{attributes}/>"
       end
@@ -43,6 +37,22 @@ module Victor
 
     def empty_tag?
       name.to_s == '_'
+    end
+
+    def wrap_element
+      result = []
+
+      result.push "<#{name} #{attributes}".strip + ">" unless empty_tag?
+      
+      if value
+        result.push(escape ? value.to_s.encode(xml: :text) : value)
+      else
+        result += yield
+      end
+      
+      result.push "</#{name}>" unless empty_tag?
+
+      result
     end
 
   end
