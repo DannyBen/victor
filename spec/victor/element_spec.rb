@@ -10,7 +10,6 @@ describe Element do
         expect(subject.name).to eq "circle"
         expect(subject.attributes).to be_an Attributes
         expect(subject.value).to be_nil
-        expect(subject.escape).to be true
       end
     end
 
@@ -21,7 +20,6 @@ describe Element do
         expect(subject.name).to eq "circle"
         expect(subject.attributes.attributes).to eq({})
         expect(subject.value).to eq "round"
-        expect(subject.escape).to be true
       end
     end
 
@@ -32,7 +30,6 @@ describe Element do
         expect(subject.name).to eq "circle"
         expect(subject.attributes[:border]).to eq 1
         expect(subject.value).to eq "round"
-        expect(subject.escape).to be true
       end
     end
 
@@ -43,19 +40,26 @@ describe Element do
         expect(subject.name).to eq "circle"
         expect(subject.attributes[:border]).to eq 1
         expect(subject.value).to be_nil
-        expect(subject.escape).to be true
       end
     end
 
     context "with a name that ends with !" do
-      subject { described_class.new "circle!" }
-
-      it "sets escape to false" do
-        expect(subject.escape).to be false
-      end
+      subject { described_class.new "circle!", "Dumb & Dumber" }
 
       it "removes the ! from the name" do
         expect(subject.name).to eq "circle"
+      end
+
+      it "does not escape the value" do
+        expect(subject.value).to eq "Dumb & Dumber"
+      end
+    end
+
+    context "with a value that contains special characters" do
+      subject { described_class.new "circle", "Dumb & Dumber" }
+
+      it "escapes the value" do
+        expect(subject.value).to eq "Dumb &amp; Dumber"
       end
     end
   end
