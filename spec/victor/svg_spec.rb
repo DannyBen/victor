@@ -135,7 +135,10 @@ describe SVG do
         expect(subject.content).to eq ["<universe>", "<world>", "<me />", "</world>", "</universe>"]
       end
 
-      it "ignores the block's return value", :focus do
+      # This test is done since cases like this were not covered which caused
+      # a passing build to actually be broken
+      # https://github.com/DannyBen/victor/pull/59
+      it "ignores the block's return value" do
         subject.build do
           element :group do
             element :one
