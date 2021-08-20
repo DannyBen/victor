@@ -134,6 +134,17 @@ describe SVG do
         end
         expect(subject.content).to eq ["<universe>", "<world>", "<me />", "</world>", "</universe>"]
       end
+
+      it "ignores the block's return value", :focus do
+        subject.build do
+          element :group do
+            element :one
+            element :two
+            element :three if false
+          end
+        end
+        expect(subject.content).to eq ["<group>", "<one />", "<two />", "</group>"]
+      end
     end
 
     context "with a plain text value" do
