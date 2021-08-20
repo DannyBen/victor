@@ -134,6 +134,20 @@ describe SVG do
         end
         expect(subject.content).to eq ["<universe>", "<world>", "<me />", "</world>", "</universe>"]
       end
+
+      # This test is done since cases like this were not covered which caused
+      # a passing build to actually be broken
+      # https://github.com/DannyBen/victor/pull/59
+      it "ignores the block's return value" do
+        subject.build do
+          element :group do
+            element :one
+            element :two
+            element :three if false
+          end
+        end
+        expect(subject.content).to eq ["<group>", "<one />", "<two />", "</group>"]
+      end
     end
 
     context "with a plain text value" do
