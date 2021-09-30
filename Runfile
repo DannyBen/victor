@@ -1,5 +1,7 @@
 require "runfile-tasks"
 require 'filewatcher'
+require 'colsole'
+include Colsole
 
 require_relative 'lib/victor'
 
@@ -27,7 +29,7 @@ action :watch do |args|
 
     Dir.chdir folder do
       filename = File.basename filename
-      run "ruby #{filename}"
+      system "ruby #{filename}"
     end
   end
 end
@@ -38,7 +40,7 @@ action :build do
   File.delete *Dir['examples/*.svg']
   Dir.chdir 'examples' do
     Dir['*.rb'].each do |filename|
-      run "ruby #{filename}"
+      system "ruby #{filename}"
       abort "Aborting" unless $?.success?
     end
   end
@@ -88,19 +90,19 @@ endcommand
 
 help   "Run YARD server"
 action :yard do
-  run "yard server -p3000 -B0.0.0.0 -r"
+  system "yard server -p3000 -B0.0.0.0 -r"
 end
 
 help   "Generate TOC to toc.txt"
 action :toc do
-  run! 'gh-md-toc README.md > toc.txt'
+  exec 'gh-md-toc README.md > toc.txt'
 end
 
 help   "Generate changelog and append old changelog"
 action :changelog do
-  run "git changelog --save"
+  system "git changelog --save"
   # append older changelog (prior to switching to git-changelog)
-  run "cat .changelog.old.md >> CHANGELOG.md"
+  system "cat .changelog.old.md >> CHANGELOG.md"
 end
 
 
