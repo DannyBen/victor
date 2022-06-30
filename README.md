@@ -431,6 +431,24 @@ end
 
 See the [xml encoding example](https://github.com/DannyBen/victor/tree/master/examples#18-xml-encoding).
 
+
+### XML Newlines
+
+By default, the generated SVGs will have a newline glue between the elements.
+You can change this (for example, to an empty string) if the default newlines
+are not appropriate for your use case.
+
+```ruby
+svg = Victor::SVG.new glue: ''
+```
+
+The glue can also be provided when rendering or saving the output:
+
+```ruby
+svg.save 'filename', glue: ''
+svg.render glue: ''
+```
+
 ### DSL Syntax
 
 Victor also supports a DSL-like syntax. To use it, simply `require 'victor/script'`.

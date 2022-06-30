@@ -5,16 +5,7 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
-<style type="text/css">
-<![CDATA[
-  .main {
-    stroke: green;
-    stroke-width: 2;
-  }
-]]>
-</style>
 
-<circle radius="10"/>
-<circle radius="20"/>
+<circle radius="10"/><circle radius="20"/>
 
 </svg>
