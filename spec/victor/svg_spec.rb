@@ -81,6 +81,11 @@ describe SVG do
       expect(subject.template).to eq :default
     end
 
+    it "sets default glue" do
+      subject.setup width: '80%'
+      expect(subject.glue).to eq "\n"
+    end
+
     context "when the provided attributes contain :template" do
       before { subject.template = :something_non_default }
 
@@ -90,12 +95,30 @@ describe SVG do
       end
     end
 
+    context "when the provided attributes contain :glue" do
+      before { subject.glue = "---" }
+
+      it "sets glue to the provided value" do
+        subject.setup width: '80%', glue: "==="
+        expect(subject.glue).to eq "==="
+      end
+    end
+
     context "when template is set in advance" do
       before { subject.template = :html }
 
       it "does not alter the template value" do
         subject.setup width: '80%'
         expect(subject.template).to eq :html
+      end
+    end
+
+    context "when glue is set in advance" do
+      before { subject.glue = "~~~" }
+
+      it "does not alter the glue value" do
+        subject.setup width: '80%'
+        expect(subject.glue).to eq "~~~"
       end
     end
   end
@@ -261,6 +284,7 @@ describe SVG do
   describe '#render' do
     before do
       subject.circle radius: 10
+      subject.circle radius: 20
     end
 
     it "generates full xml" do
@@ -270,6 +294,12 @@ describe SVG do
     context "with template argument" do
       it "uses the provided template" do
         expect(subject.render template: :minimal).to match_approval('svg/minimal')
+      end
+    end
+
+    context "with glue argument" do
+      it "uses the provided glue" do
+        expect(subject.render glue: "").to match_approval('svg/glue')
       end
     end
 
@@ -291,9 +321,21 @@ describe SVG do
   end
 
   describe '#to_s' do
-    it "returns svg xml as string" do
+    before do
       subject.circle radius: 10
-      expect(subject.to_s).to eq '<circle radius="10"/>'
+      subject.circle radius: 20
+    end
+
+    it "returns svg xml as string" do
+      expect(subject.to_s).to eq %Q[<circle radius="10"/>\n<circle radius="20"/>]
+    end
+
+    context "when glue is set to ''" do
+      before { subject.glue = '' }
+
+      it "returns svg xml as string without newlines" do
+        expect(subject.to_s).to eq %q[<circle radius="10"/><circle radius="20"/>]
+      end
     end
   end
 
@@ -304,6 +346,7 @@ describe SVG do
       File.unlink filename if File.exist? filename
       expect(File).not_to exist filename
       subject.circle radius: 10
+      subject.circle radius: 20
     end
 
     it "saves to a file" do

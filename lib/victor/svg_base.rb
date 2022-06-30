@@ -1,7 +1,7 @@
 module Victor
 
   class SVGBase
-    attr_accessor :template
+    attr_accessor :template, :glue
     attr_reader :content, :svg_attributes
 
     def initialize(attributes = nil, &block)
@@ -20,11 +20,11 @@ module Victor
       attributes[:width] ||= "100%"
       attributes[:height] ||= "100%"
 
-      if attributes[:template]
-        @template = attributes.delete :template
-      elsif !@template
-        @template = :default
-      end
+      @template = attributes[:template] || @template || :default
+      @glue = attributes[:glue] || @glue || "\n"
+
+      attributes.delete :template
+      attributes.delete :glue
 
       @svg_attributes = Attributes.new attributes
     end
@@ -72,20 +72,21 @@ module Victor
       @css = defs
     end
 
-    def render(template: nil)
+    def render(template: nil, glue: nil)
       @template = template if template
+      @glue = glue if glue
       css_handler = CSS.new css
 
       svg_template % {
         css: css_handler,
         style: css_handler.render,
         attributes: svg_attributes,
-        content: content.join("\n")
+        content: to_s
       }
     end
 
     def to_s
-      content.join "\n"
+      content.join glue
     end
 
     def save(filename, template: nil)
