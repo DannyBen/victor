@@ -89,9 +89,9 @@ module Victor
       content.join glue
     end
 
-    def save(filename, template: nil)
+    def save(filename, template: nil, glue: nil)
       filename = "#{filename}.svg" unless filename =~ /\..{2,4}$/
-      File.write filename, render(template: template)
+      File.write filename, render(template: template, glue: glue)
     end
 
   protected

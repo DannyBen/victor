@@ -366,6 +366,13 @@ describe SVG do
       end
     end
 
+    context "with glue argument" do
+      it "uses the provided glue" do
+        subject.save filename, glue: ''
+        expect(File.read filename).to match_approval('svg/glue')
+      end
+    end
+
     context "when the filename does not end with .svg" do
       let(:filename) { 'test' }
 
