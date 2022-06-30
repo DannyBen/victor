@@ -27,6 +27,7 @@ directly to SVG elements.
   * [CSS](#css)
   * [Tagless Elements](#tagless-elements)
   * [XML Encoding](#xml-encoding)
+  * [XML Newlines](#xml-newlines)
   * [DSL Syntax](#dsl-syntax)
 * [Using with Rails](#using-with-rails)
 * [Related Projects](#related-projects)
