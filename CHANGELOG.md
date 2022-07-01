@@ -1,11 +1,13 @@
 Change Log
 ========================================
 
-Untagged - Latest
+v0.3.4 - 2022-06-30
 ----------------------------------------
 
 - Refactor SVGBase with a new Element class
 - Rollback SVGBase#element refactor
+- Drop support for Ruby < 2.6
+- Add glue option to allow creating SVGs without newlines bewteen elements
 
 
 v0.3.3 - 2021-05-15
