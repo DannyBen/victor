@@ -1,5 +1,4 @@
 module Victor
-
   class CSS
     attr_reader :attributes
 
@@ -13,12 +12,13 @@ module Victor
 
     def render
       return '' if attributes.empty?
-      %Q{<style type="text/css">\n<![CDATA[\n#{self}\n]]>\n</style>\n}
+
+      %{<style type="text/css">\n<![CDATA[\n#{self}\n]]>\n</style>\n}
     end
 
   protected
 
-    def convert_hash(hash, indent=2)
+    def convert_hash(hash, indent = 2)
       return hash unless hash.is_a? Hash
 
       result = []
@@ -33,13 +33,14 @@ module Victor
     def css_block(key, value, indent)
       result = []
 
-      my_indent = " " * indent
+      my_indent = ' ' * indent
 
-      if value.is_a? Hash
+      case value
+      when Hash
         result.push "#{my_indent}#{key} {"
-        result.push convert_hash(value, indent+2)
+        result.push convert_hash(value, indent + 2)
         result.push "#{my_indent}}"
-      elsif value.is_a? Array
+      when Array
         value.each do |row|
           result.push "#{my_indent}#{key} #{row};"
         end
@@ -50,5 +51,4 @@ module Victor
       result
     end
   end
-
 end

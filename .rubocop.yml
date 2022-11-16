@@ -1,0 +1,43 @@
+inherit_gem:
+  rentacop: rentacop.yml
+
+# Merge `Exclude` arrays
+inherit_mode:
+  merge:
+    - Exclude
+
+AllCops:
+  Exclude:
+    - 'dev/*'
+    - 'debug.rb'
+    - 'example_rails/**/*'
+
+# There is a special use case that needs this
+Lint/LiteralAsCondition:
+  Exclude:
+    - 'spec/**/*'
+
+# This is ok in examples
+Lint/UselessAssignment:
+  Exclude:
+    - 'examples/*'
+
+# `SVGBase#element` is a bit complex
+Metrics/PerceivedComplexity:
+  Max: 11
+
+# This test is allowed to use `eval`
+Security/Eval:
+  Exclude:
+    - 'spec/victor/script_spec.rb'
+
+# Allow `include Victor` in some places
+Style/MixinUsage:
+  Exclude:
+    - 'examples/*'
+    - 'lib/victor/script.rb'
+
+# Some long SVG strings in this spec
+Layout/LineLength:
+  Exclude:
+    - 'spec/victor/svg_spec.rb'

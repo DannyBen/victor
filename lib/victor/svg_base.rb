@@ -1,13 +1,13 @@
 module Victor
-
   class SVGBase
     attr_accessor :template, :glue
     attr_reader :content, :svg_attributes
+    attr_writer :css
 
     def initialize(attributes = nil, &block)
       setup attributes
       @content = []
-      build &block if block_given?
+      build(&block) if block_given?
     end
 
     def <<(additional_content)
@@ -17,8 +17,8 @@ module Victor
 
     def setup(attributes = nil)
       attributes ||= {}
-      attributes[:width] ||= "100%"
-      attributes[:height] ||= "100%"
+      attributes[:width] ||= '100%'
+      attributes[:height] ||= '100%'
 
       @template = attributes[:template] || @template || :default
       @glue = attributes[:glue] || @glue || "\n"
@@ -30,10 +30,10 @@ module Victor
     end
 
     def build(&block)
-      self.instance_eval(&block)
+      instance_eval(&block)
     end
 
-    def element(name, value=nil, attributes={}, &_block)
+    def element(name, value = nil, attributes = {}, &_block)
       if value.is_a? Hash
         attributes = value
         value = nil
@@ -50,14 +50,14 @@ module Victor
       empty_tag = name.to_s == '_'
 
       if block_given? || value
-        content.push "<#{name} #{attributes}".strip + ">" unless empty_tag
+        content.push "#{"<#{name} #{attributes}".strip}>" unless empty_tag
         if value
           content.push(escape ? value.to_s.encode(xml: :text) : value)
         else
           yield
         end
         content.push "</#{name}>" unless empty_tag
-      else      
+      else
         content.push "<#{name} #{attributes}/>"
       end
     end
@@ -68,20 +68,16 @@ module Victor
       @css
     end
 
-    def css=(defs)
-      @css = defs
-    end
-
     def render(template: nil, glue: nil)
       @template = template if template
       @glue = glue if glue
       css_handler = CSS.new css
 
       svg_template % {
-        css: css_handler,
-        style: css_handler.render,
+        css:        css_handler,
+        style:      css_handler.render,
         attributes: svg_attributes,
-        content: to_s
+        content:    to_s,
       }
     end
 
@@ -108,5 +104,4 @@ module Victor
       end
     end
   end
-
 end
