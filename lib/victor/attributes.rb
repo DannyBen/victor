@@ -1,11 +1,10 @@
 module Victor
-
   # Handles conversion from a Hash of attributes, to an XML string or
   # a CSS string.
   class Attributes
     attr_reader :attributes
 
-    def initialize(attributes={})
+    def initialize(attributes = {})
       @attributes = attributes
     end
 
@@ -13,10 +12,11 @@ module Victor
       mapped = attributes.map do |key, value|
         key = key.to_s.tr '_', '-'
 
-        if value.is_a? Hash
+        case value
+        when Hash
           style = Attributes.new(value).to_style
           "#{key}=\"#{style}\""
-        elsif value.is_a? Array
+        when Array
           "#{key}=\"#{value.join ' '}\""
         else
           "#{key}=#{value.to_s.encode(xml: :attr)}"
@@ -42,7 +42,5 @@ module Victor
     def []=(key, value)
       attributes[key] = value
     end
-
   end
-
 end

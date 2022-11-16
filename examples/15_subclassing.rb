@@ -5,7 +5,8 @@ class Troll < Victor::SVG
 
   def initialize(color: 'yellow', hat_color: 'red')
     # Accept parameters we care about, and call the super initializer
-    @color, @hat_color = color, hat_color
+    @color = color
+    @hat_color = hat_color
     super width: 100, height: 100, viewBox: '0 0 100 100'
 
     # Generate the base image with the frame and head elements
@@ -29,6 +30,6 @@ class Troll < Victor::SVG
   end
 end
 
-troll = Troll.new color: '#33f', hat_color: '#3f3';
+troll = Troll.new color: '#33f', hat_color: '#3f3'
 troll.add_nose
 troll.save '15_subclassing'
