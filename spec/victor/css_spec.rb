@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe CSS do
   subject { described_class.new css }
+
   let(:css) { {} }
 
   describe '#to_s' do
@@ -16,12 +17,8 @@ describe CSS do
 
     it 'converts css several levels deep' do
       css['@keyframes animation'] = {
-        '0%'  => {
-          font_size: '10px',
-        },
-        '30%' => {
-          font_size: '15px',
-        },
+        '0%'  => { font_size: '10px' },
+        '30%' => { font_size: '15px' },
       }
 
       expect(subject.to_s).to match_approval 'css/css2'

@@ -38,10 +38,10 @@ describe SVG do
     end
   end
 
-  context 'appending SVGs' do
-    let(:fire) { SVG.new }
-    let(:earth) { SVG.new }
-    let(:water) { SVG.new }
+  context 'when appending SVGs' do
+    let(:fire) { described_class.new }
+    let(:earth) { described_class.new }
+    let(:water) { described_class.new }
 
     before do
       fire.circle color: 'red'
@@ -251,6 +251,12 @@ describe SVG do
     it 'passes arguments to #element' do
       expect(subject).to receive(:element).with(:anything, { at: 'all' })
       subject.anything at: 'all'
+    end
+  end
+
+  describe '#respond_to?' do
+    it "returns true always" do
+      expect(subject.respond_to? :anything).to be true
     end
   end
 

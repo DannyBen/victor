@@ -1,5 +1,11 @@
+require:
+  - rubocop-rspec
+  - rubocop-performance
+
 inherit_gem:
-  rentacop: rentacop.yml
+  rentacop:
+    - rentacop.yml
+    - rspec.yml
 
 # Merge `Exclude` arrays
 inherit_mode:
@@ -7,6 +13,7 @@ inherit_mode:
     - Exclude
 
 AllCops:
+  TargetRubyVersion: 2.6
   Exclude:
     - 'dev/*'
     - 'debug.rb'

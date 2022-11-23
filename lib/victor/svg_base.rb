@@ -7,7 +7,7 @@ module Victor
     def initialize(attributes = nil, &block)
       setup attributes
       @content = []
-      build(&block) if block_given?
+      build(&block) if block
     end
 
     def <<(additional_content)
@@ -33,7 +33,7 @@ module Victor
       instance_eval(&block)
     end
 
-    def element(name, value = nil, attributes = {}, &_block)
+    def element(name, value = nil, attributes = {})
       if value.is_a? Hash
         attributes = value
         value = nil
@@ -86,7 +86,7 @@ module Victor
     end
 
     def save(filename, template: nil, glue: nil)
-      filename = "#{filename}.svg" unless filename =~ /\..{2,4}$/
+      filename = "#{filename}.svg" unless /\..{2,4}$/.match?(filename)
       File.write filename, render(template: template, glue: glue)
     end
 
