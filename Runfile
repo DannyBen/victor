@@ -1,18 +1,13 @@
-require "runfile-tasks"
 require 'filewatcher'
-require 'colsole'
-include Colsole
 
-require_relative 'lib/victor'
+require 'victor'
 
 title   "Victor Developer Toolbelt"
 summary "Runfile tasks for building the Victor gem"
 version Victor::VERSION
 
-RunfileTasks::RubyGems.all 'victor'
-RunfileTasks::Testing.rspec
-
-command "examples"
+import_gem 'runfile-tasks/gem'
+import 'debug'
 
 usage 'watch [--dev]'
 help 'Watch example files and rerun them on change'
@@ -45,7 +40,6 @@ action :build do
     end
   end
   say_status :done, :build
-  
 end
 
 help "Generate readme for examples folder"
@@ -86,18 +80,6 @@ action :readme do
   say_status :write, 'examples/README.md'
 end
 
-endcommand
-
-help   "Run YARD server"
-action :yard do
-  system "yard server -p3000 -B0.0.0.0 -r"
-end
-
-help   "Generate TOC to toc.txt"
-action :toc do
-  exec 'gh-md-toc README.md > toc.txt'
-end
-
 help   "Generate changelog and append old changelog"
 action :changelog do
   system "git changelog --save"
@@ -105,5 +87,3 @@ action :changelog do
   system "cat .changelog.old.md >> CHANGELOG.md"
 end
 
-
-require_relative 'debug.rb' if File.exist? 'debug.rb'

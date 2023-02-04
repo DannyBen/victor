@@ -255,7 +255,7 @@ describe SVG do
   end
 
   describe '#respond_to?' do
-    it "returns true always" do
+    it 'returns true always' do
       expect(subject.respond_to? :anything).to be true
     end
   end

@@ -1,7 +1,7 @@
 *.gem
 /.yardoc
 /coverage
-/debug.rb
+/debug.runfile
 /dev
 /doc
 /example_rails/myrails
