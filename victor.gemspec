@@ -12,6 +12,13 @@ Gem::Specification.new do |s|
   s.files       = Dir['README.md', 'lib/**/*.*']
   s.homepage    = 'https://github.com/DannyBen/victor'
   s.license     = 'MIT'
-  s.required_ruby_version = '>= 2.6.0'
-  s.metadata['rubygems_mfa_required'] = 'true'
+
+  s.required_ruby_version = '>= 3.0.0'
+
+  s.metadata = {
+    'bug_tracker_uri'       => 'https://github.com/DannyBen/victor/issues',
+    'changelog_uri'         => 'https://github.com/DannyBen/victor/blob/master/CHANGELOG.md',
+    'source_code_uri'       => 'https://github.com/DannyBen/victor',
+    'rubygems_mfa_required' => 'true',
+  }
 end
