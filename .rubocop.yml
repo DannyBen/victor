@@ -16,7 +16,6 @@ AllCops:
   TargetRubyVersion: 3.0
   Exclude:
     - 'dev/*'
-    - 'debug.rb'
     - 'example_rails/**/*'
 
 # There is a special use case that needs this
@@ -43,8 +42,3 @@ Style/MixinUsage:
   Exclude:
     - 'examples/*'
     - 'lib/victor/script.rb'
-
-# Some long SVG strings in this spec
-Layout/LineLength:
-  Exclude:
-    - 'spec/victor/svg_spec.rb'

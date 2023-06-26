@@ -273,7 +273,16 @@ describe SVG do
         subject.template = :html
         subject.circle of: 'trust'
         expect(subject.render)
-          .to eq "<svg width=\"100%\" height=\"100%\"\n  xmlns=\"http://www.w3.org/2000/svg\"\n  xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n\n\n<circle of=\"trust\"/>\n\n</svg>"
+          .to eq <<~SVG.chomp
+            <svg width="100%" height="100%"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+            <circle of="trust"/>
+
+            </svg>
+          SVG
       end
     end
 
