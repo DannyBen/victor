@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe 'victor/script' do
   subject { File.read 'spec/fixtures/dsl_script.rb' }
 

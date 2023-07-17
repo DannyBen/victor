@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Attributes do
   attrs = nil
   subject { described_class.new attrs }

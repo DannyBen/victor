@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe CSS do
   subject { described_class.new css }
 

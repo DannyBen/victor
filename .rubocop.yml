@@ -35,10 +35,14 @@ Metrics/PerceivedComplexity:
 # This test is allowed to use `eval`
 Security/Eval:
   Exclude:
-    - 'spec/victor/script_spec.rb'
+    - spec/victor/script_spec.rb
 
 # Allow `include Victor` in some places
 Style/MixinUsage:
   Exclude:
     - 'examples/*'
-    - 'lib/victor/script.rb'
+    - lib/victor/script.rb
+
+RSpec/ExampleLength:
+  Exclude:
+    - spec/victor/svg_spec.rb

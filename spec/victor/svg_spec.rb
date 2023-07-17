@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe SVG do
   describe '#new' do
     it 'sets default attributes' do

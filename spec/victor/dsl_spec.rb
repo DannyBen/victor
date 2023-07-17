@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe DSL do
   subject { Class.new { include DSL }.new }
 
