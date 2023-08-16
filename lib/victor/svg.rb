@@ -1,7 +1,7 @@
 module Victor
   class SVG < SVGBase
-    def method_missing(method_sym, *arguments, &block)
-      element method_sym, *arguments, &block
+    def method_missing(method_sym, ...)
+      element(method_sym, ...)
     end
 
     def respond_to_missing?(*)
