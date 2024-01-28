@@ -4,5 +4,3 @@ require 'victor/svg'
 require 'victor/attributes'
 require 'victor/css'
 require 'victor/dsl'
-
-require 'byebug' if ENV['BYEBUG']

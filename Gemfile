@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'byebug'
+gem 'debug'
 gem 'filewatcher', require: false
 gem 'rentacop', require: false
 gem 'rspec'

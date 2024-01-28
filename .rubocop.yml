@@ -16,7 +16,6 @@ AllCops:
   TargetRubyVersion: 3.0
   Exclude:
     - 'dev/*'
-    - 'example_rails/**/*'
 
 # There is a special use case that needs this
 Lint/LiteralAsCondition:

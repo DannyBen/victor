@@ -15,26 +15,6 @@ directly to SVG elements.
 
 ---
 
-## Table of Contents
-
-* [Install](#install)
-* [Examples](#examples)
-* [Usage](#usage)
-* [Features](#features)
-  * [Composite SVG](#composite-svg)
-  * [Saving the Output](#saving-the-output)
-  * [SVG Templates](#svg-templates)
-  * [CSS](#css)
-  * [Tagless Elements](#tagless-elements)
-  * [XML Encoding](#xml-encoding)
-  * [XML Newlines](#xml-newlines)
-  * [DSL Syntax](#dsl-syntax)
-* [Using with Rails](#using-with-rails)
-* [Related Projects](#related-projects)
-* [Contributing / Support](#contributing--support)
-
----
-
 ## Install
 
 ```
@@ -475,11 +455,6 @@ save 'output.svg'
 ```
 
 See the [dsl example](https://github.com/DannyBen/victor/tree/master/examples#19-dsl).
-
-## Using with Rails
-
-See the [example_rails](example_rails) folder.
-
 
 ## Related Projects
 

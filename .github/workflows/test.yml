@@ -8,11 +8,11 @@ jobs:
     name: Ruby ${{ matrix.ruby }}
     runs-on: ubuntu-latest
     strategy:
-      matrix: { ruby: ['3.0', '3.1', '3.2', 'head'] }
+      matrix: { ruby: ['3.0', '3.1', '3.2', '3.3'] }
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Install OS dependencies
       run: sudo apt-get -y install libyaml-dev
