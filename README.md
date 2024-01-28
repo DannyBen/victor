@@ -476,11 +476,6 @@ save 'output.svg'
 
 See the [dsl example](https://github.com/DannyBen/victor/tree/master/examples#19-dsl).
 
-## Using with Rails
-
-See the [example_rails](example_rails) folder.
-
-
 ## Related Projects
 
 ### [Victor CLI][victor-cli]
