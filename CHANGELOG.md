@@ -6,14 +6,14 @@ Untagged - Latest
 
 - Drop support for Ruby 2.x
 
-
+<!-- break v0.3.4 -->
 v0.3.4 - 2022-06-30
 ----------------------------------------
 
 - Refactor SVGBase with a new Element class
 - Rollback SVGBase#element refactor
 - Drop support for Ruby < 2.6
-- Add glue option to allow creating SVGs without newlines bewteen elements
+- Add glue option to allow creating SVGs without newlines between elements
 
 
 v0.3.3 - 2021-05-15
@@ -22,7 +22,6 @@ v0.3.3 - 2021-05-15
 - Improve CSS accessors
 
 
-<!-- break v0.3.2 -->
 ## [v0.3.2](https://github.com/DannyBen/victor/tree/v0.3.2) (2020-05-14)
 
 [Full Changelog](https://github.com/DannyBen/victor/compare/v0.3.1...v0.3.2)
@@ -57,7 +56,7 @@ v0.3.3 - 2021-05-15
 
 **Closed issues:**
 
-- The 'use' element outputs 'xlink-href='，shoud it be xlink:href=? [\#45](https://github.com/DannyBen/victor/issues/45)
+- The 'use' element outputs 'xlink-href='，should it be xlink:href=? [\#45](https://github.com/DannyBen/victor/issues/45)
 
 **Merged pull requests:**
 

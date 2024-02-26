@@ -1,0 +1,3 @@
+[codespell]
+skip = coverage,tmp,Gemfile.lock,sublime*
+; ignore-words-list = rouge
