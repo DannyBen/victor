@@ -1,6 +1,12 @@
 Change Log
 ========================================
 
+Untagged - Latest
+----------------------------------------
+
+- Drop support for Ruby 2.x
+
+
 v0.3.4 - 2022-06-30
 ----------------------------------------
 
@@ -16,6 +22,7 @@ v0.3.3 - 2021-05-15
 - Improve CSS accessors
 
 
+<!-- break v0.3.2 -->
 ## [v0.3.2](https://github.com/DannyBen/victor/tree/v0.3.2) (2020-05-14)
 
 [Full Changelog](https://github.com/DannyBen/victor/compare/v0.3.1...v0.3.2)

@@ -79,11 +79,3 @@ action :readme do
   File.write 'examples/README.md', result
   say_status :write, 'examples/README.md'
 end
-
-help   "Generate changelog and append old changelog"
-action :changelog do
-  system "git changelog --save"
-  # append older changelog (prior to switching to git-changelog)
-  system "cat .changelog.old.md >> CHANGELOG.md"
-end
-
