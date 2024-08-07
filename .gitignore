@@ -6,5 +6,7 @@
 /doc
 /Gemfile.lock
 /gems
+/spec/coverage
+/spec/status.txt
 /test.svg
-/toc.txt
+/tmp
