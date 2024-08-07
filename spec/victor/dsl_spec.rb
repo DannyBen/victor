@@ -1,5 +1,5 @@
-describe DSL do
-  subject { Class.new { include DSL }.new }
+describe Victor::DSL do
+  subject { Class.new { include Victor::DSL }.new }
 
   describe '#svg' do
     it 'returns a Victor::SVG.instance' do

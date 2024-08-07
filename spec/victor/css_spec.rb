@@ -1,4 +1,4 @@
-describe CSS do
+describe Victor::CSS do
   subject { described_class.new css }
 
   let(:css) { {} }

@@ -1,4 +1,4 @@
-describe SVG do
+describe Victor::SVG do
   describe '#new' do
     it 'sets default attributes' do
       expect(subject.svg_attributes[:height]).to eq '100%'

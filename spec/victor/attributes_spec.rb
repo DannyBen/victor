@@ -1,4 +1,4 @@
-describe Attributes do
+describe Victor::Attributes do
   attrs = nil
   subject { described_class.new attrs }
 

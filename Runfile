@@ -1,5 +1,5 @@
 require 'filewatcher'
-
+require 'debug'
 require 'victor'
 
 title   "Victor Developer Toolbelt"
