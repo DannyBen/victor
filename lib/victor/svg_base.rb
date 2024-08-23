@@ -1,5 +1,7 @@
 module Victor
   class SVGBase
+    include Marshaling
+
     attr_accessor :template, :glue
     attr_reader :content, :svg_attributes
     attr_writer :css
