@@ -27,5 +27,5 @@ describe Victor::SVG do
       expect(restored_object).to be_a described_class
       expect(restored_object.render).to eq subject.render
     end
-  end  
+  end
 end

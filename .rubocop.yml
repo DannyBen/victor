@@ -43,6 +43,11 @@ Style/MixinUsage:
     - 'examples/*'
     - lib/victor/script.rb
 
+# We use Marshal.load to test that it *can* be done. Allow it.
+Security/MarshalLoad:
+  Exclude:
+    - spec/victor/svg_marshaling_spec.rb
+
 RSpec/ExampleLength:
   Exclude:
     - spec/victor/svg_spec.rb

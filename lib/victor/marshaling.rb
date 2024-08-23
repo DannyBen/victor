@@ -1,5 +1,6 @@
 module Victor
   module Marshaling
+    # YAML serialization methods
     def encode_with(coder)
       coder['content'] = @content
       coder['glue'] = @glue
