@@ -103,11 +103,11 @@ describe Victor::SVG do
     end
 
     context 'when template is set in advance' do
-      before { subject.template = :html }
+      before { subject.template = :minimal }
 
       it 'does not alter the template value' do
         subject.setup width: '80%'
-        expect(subject.template).to eq :html
+        expect(subject.template).to eq :minimal
       end
     end
 
@@ -268,18 +268,15 @@ describe Victor::SVG do
   describe '#template' do
     context 'with a symbol' do
       it 'loads a built in template' do
-        subject.template = :html
+        subject.template = :minimal
         subject.circle of: 'trust'
         expect(subject.render)
           .to eq <<~SVG.chomp
-            <svg width="100%" height="100%"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
-
+            <svg width="100%" height="100%">
 
             <circle of="trust"/>
-
             </svg>
+
           SVG
       end
     end

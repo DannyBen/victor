@@ -247,18 +247,13 @@ svg.save 'filename'
 
 ### SVG Templates
 
-The `:default` SVG template is designed to be a full XML document (i.e., 
-a standalone SVG image). If you wish to use the output as an SVG element 
-inside HTML, you can change the SVG template:
+Victor renders its content using the [`:default` template][default-template].
+
+If you wish to use another template, you can either use one of the built-in
+templates (`:default` or `:minimal`), or provide your own:
 
 ```ruby
-svg = Victor::SVG.new template: :html 
-# accepts :html, :minimal, :default or a filename
-```
-
-You can also point it to any other template file:
-
-```ruby
+svg = Victor::SVG.new template: :minimal
 svg = Victor::SVG.new template: 'path/to/template.svg'
 ```
 
@@ -275,12 +270,10 @@ svg.render template: :minimal
 
 ### CSS
 
-CSS gets a special treatment in `Victor::SVG`, with these objectives in mind:
+CSS gets a special treatment in `Victor::SVG`, in order to provide a DSL-like
+syntax for CSS rules.
 
-- Hide implementation details (such as the need for a `CDATA` marker)
-- Provide a DSL-like syntax for CSS rules
-
-The `Victor::SVG` objects has a `css` property, which can contain either a 
+The `Victor::SVG` object has a `css` property, which can contain either a 
 Hash or a String:
 
 ```ruby
@@ -491,6 +484,7 @@ to contribute, feel free to [open an issue][issues].
 
 [examples]: https://github.com/DannyBen/victor/tree/master/examples#examples
 [templates]: https://github.com/DannyBen/victor/tree/master/lib/victor/templates
+[default-template]: https://github.com/DannyBen/victor/blob/master/lib/victor/templates/default.svg?short_path=c28efa4
 [icodi]: https://github.com/DannyBen/icodi
 [minichart]: https://github.com/DannyBen/minichart
 [victor-opal]: https://kuboon.github.io/victor-opal/
