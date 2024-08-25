@@ -1,10 +1,13 @@
-Change Log
+Changelog
 ========================================
 
-Untagged - Latest
+v0.4.0 - 2024-08-25
 ----------------------------------------
 
 - Drop support for Ruby 2.x
+- Remove XML doctype, CDATA, and `type=text/css` from `<style>`
+- Allow Victor::SVG to be marshaled
+
 
 <!-- break v0.3.4 -->
 v0.3.4 - 2022-06-30
