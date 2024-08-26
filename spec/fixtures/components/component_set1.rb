@@ -10,6 +10,7 @@ module ComponentSet1
         append Two.new
       end
     end
+
     def style = { '.one': { stroke: :magenta } }
   end
 
@@ -18,11 +19,15 @@ module ComponentSet1
       add.text 'Two'
       append Three.new
     end
+
     def style = { '.two': { stroke: :magenta } }
   end
 
   class Three < Base
-    def body = add.text 'Tada'
+    def body
+      add.text 'Tada'
+    end
+
     def style = { '.three': { stroke: :magenta } }
   end
 end
