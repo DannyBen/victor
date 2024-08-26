@@ -1,5 +1,10 @@
 module Victor
   class Component
+    include Marshaling
+
+    # Marshaling data
+    def marshaling = %i[width height x y svg css]
+
     # Subclasses MUST implement this
     def body = raise(NotImplementedError, "#{self.class.name} must implement `body'")
 
@@ -7,10 +12,8 @@ module Victor
     def height = @height || raise(NotImplementedError, "#{self.class.name} height or @height")
     def width = @width || raise(NotImplementedError, "#{self.class.name} width or @width")
     
-    # Subclasses MAY implement these methods
-    def style = {}
-
     # Subclasses MAY override these methods, OR assign instance vars
+    def style = @style ||= {}
     def x = @x ||= 0
     def y = @y ||= 0
 
@@ -22,18 +25,6 @@ module Victor
     # SVG
     def vector = @vector ||= SVG.new(viewBox: "#{x} #{y} #{width} #{height}")
     alias add vector
-
-    # Appending/Embedding
-    def append(component)
-      vector.append component.svg
-      css.merge! component.style
-    end
-    alias embed append
-
-  protected
-
-    def css = @css ||= style.dup
-
     def svg
       @svg ||= begin
         body
@@ -41,5 +32,15 @@ module Victor
         vector
       end
     end
+
+    # CSS
+    def css = @css ||= style.dup
+
+    # Appending/Embedding
+    def append(component)
+      vector.append component.svg
+      css.merge! component.css
+    end
+    alias embed append
   end
 end
