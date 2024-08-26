@@ -6,11 +6,20 @@ module Victor
     def marshaling = %i[width height x y svg css]
 
     # Subclasses MUST implement this
-    def body = raise(NotImplementedError, "#{self.class.name} must implement `body'")
+    def body
+      raise(NotImplementedError, "#{self.class.name} must implement `body'")
+    end
 
     # Subclasses MUST override these methods, OR assign instance vars
-    def height = @height || raise(NotImplementedError, "#{self.class.name} height or @height")
-    def width = @width || raise(NotImplementedError, "#{self.class.name} width or @width")
+    def height
+      @height || raise(NotImplementedError,
+        "#{self.class.name} must implement `height' or `@height'")
+    end
+
+    def width
+      @width || raise(NotImplementedError,
+        "#{self.class.name} must implement `width' or `@width'")
+    end
     
     # Subclasses MAY override these methods, OR assign instance vars
     def style = @style ||= {}
@@ -18,13 +27,14 @@ module Victor
     def y = @y ||= 0
 
     # Rendering
-    def render = svg.render
-    alias to_s render
     def save(...) = svg.save(...)
+    def render(...) = svg.render(...)
+    def to_s = render
 
     # SVG
     def vector = @vector ||= SVG.new(viewBox: "#{x} #{y} #{width} #{height}")
     alias add vector
+
     def svg
       @svg ||= begin
         body

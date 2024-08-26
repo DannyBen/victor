@@ -1,5 +1,9 @@
 module Victor
   module Marshaling
+    def marshaling
+      raise NotImplementedError, "#{self.class.name} must implement `marshaling'"
+    end
+
     # YAML serialization methods
     def encode_with(coder)
       marshaling.each do |attr|
