@@ -3,7 +3,7 @@ unless ENV['NOCOV']
   SimpleCov.start do
     enable_coverage :branch if ENV['BRANCH_COV']
     coverage_dir 'spec/coverage'
-    track_files 'lib/**/*.rb'
+    # track_files 'lib/**/*.rb'
   end
 end
 

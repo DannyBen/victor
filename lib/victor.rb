@@ -1,4 +1,4 @@
-autoload :VERSION, 'victor/version'
+require 'victor/version'
 
 module Victor
   autoload :Attributes, 'victor/attributes'

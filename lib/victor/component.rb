@@ -29,12 +29,21 @@ module Victor
     # Rendering
     def save(...) = svg.save(...)
     def render(...) = svg.render(...)
+    def content = svg.content
     def to_s = render
+
+    # Appending/Embedding
+    def append(component)
+      vector.append component.svg
+      css.merge! component.css
+    end
+    alias embed append
+
+  protected
 
     # SVG
     def vector = @vector ||= SVG.new(viewBox: "#{x} #{y} #{width} #{height}")
     alias add vector
-
     def svg
       @svg ||= begin
         body
@@ -45,12 +54,5 @@ module Victor
 
     # CSS
     def css = @css ||= style.dup
-
-    # Appending/Embedding
-    def append(component)
-      vector.append component.svg
-      css.merge! component.css
-    end
-    alias embed append
   end
 end

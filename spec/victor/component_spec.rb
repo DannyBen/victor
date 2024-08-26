@@ -41,44 +41,44 @@ describe Victor::Component do
     end
 
     describe '#save' do
+      let(:svg) { double save: true }
+
       it 'delegates to SVG' do
-        expect(subject.svg).to receive(:save).with('filename')
+        allow(subject).to receive(:svg).and_return(svg)
+        expect(svg).to receive(:save).with('filename')
         subject.save 'filename'
       end
     end
 
     describe '#render' do
+      let(:svg) { double render: true }
+
       it 'delegates to SVG' do
-        expect(subject.svg).to receive(:render).with(template: :minimal)
+        allow(subject).to receive(:svg).and_return(svg)
+        expect(svg).to receive(:render).with(template: :minimal)
         subject.render template: :minimal
       end
     end
 
-    describe '#vector' do
-      it 'returns an SVG object' do
-        expect(subject.vector).to be_a Victor::SVG
-      end
-    end
+    describe '#content' do
+      let(:svg) { double content: true }
 
-    describe '#add' do
-      it 'is an alias to #vector' do
-        expect(subject.add).to equal subject.vector
-      end
-    end
-
-    describe '#css' do
-      it 'returns a duplicate of #style' do
-        expect(subject.css).to eq subject.style
-        expect(subject.css).not_to equal subject.style
+      it 'delegates to SVG' do
+        allow(subject).to receive(:svg).and_return(svg)
+        expect(svg).to receive(:content)
+        subject.content
       end
     end
 
     describe '#append' do
-      let(:component) { double(:Component, svg: 'mocked_svg', css: { color: 'red' }) }
+      let(:component) { double svg: 'mocked_svg', css: { color: 'red' } }
+      let(:vector) { double append: true }
+      let(:css) { double merge!: true }
 
       it 'appends another component and merges its css' do
-        expect(subject.vector).to receive(:append).with('mocked_svg')
-        expect(subject.css).to receive(:merge!).with({ color: 'red' })
+        allow(subject).to receive_messages(vector: vector, css: css)
+        expect(vector).to receive(:append).with('mocked_svg')
+        expect(css).to receive(:merge!).with({ color: 'red' })
 
         subject.append component
       end
