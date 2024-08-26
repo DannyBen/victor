@@ -20,7 +20,7 @@ module Victor
       @width || raise(NotImplementedError,
         "#{self.class.name} must implement `width' or `@width'")
     end
-    
+
     # Subclasses MAY override these methods, OR assign instance vars
     def style = @style ||= {}
     def x = @x ||= 0

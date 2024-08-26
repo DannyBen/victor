@@ -37,9 +37,7 @@ describe Victor::Component do
 
   context 'when all required methods are implemented' do
     before do
-      allow(subject).to receive(:body)
-      allow(subject).to receive(:width).and_return 100
-      allow(subject).to receive(:height).and_return 100
+      allow(subject).to receive_messages(body: nil, width: 100, height: 100)
     end
 
     describe '#save' do
