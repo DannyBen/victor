@@ -5,17 +5,24 @@ module ComponentSet1
   end
 
   class Main < Base
-    def body = append(Two.new)
+    def body
+      add.g transform: 'translate(10, 10)' do
+        append Two.new
+      end
+    end
     def style = { '.one': { stroke: :magenta } }
   end
 
   class Two < Base
-    def body = append(Three.new)
+    def body
+      add.text 'Two'
+      append Three.new
+    end
     def style = { '.two': { stroke: :magenta } }
   end
 
   class Three < Base
-    def body = add.text('Tada')
+    def body = add.text 'Tada'
     def style = { '.three': { stroke: :magenta } }
   end
 end
