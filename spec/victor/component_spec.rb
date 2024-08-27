@@ -71,14 +71,14 @@ describe Victor::Component do
     end
 
     describe '#append' do
-      let(:component) { double svg: 'mocked_svg', css: { color: 'red' } }
-      let(:vector) { double append: true }
-      let(:css) { double merge!: true }
+      let(:component) { double svg: 'mocked_svg', merged_css: { color: 'red' } }
+      let(:svg_instance) { double append: true }
+      let(:merged_css) { double merge!: true }
 
       it 'appends another component and merges its css' do
-        allow(subject).to receive_messages(vector: vector, css: css)
-        expect(vector).to receive(:append).with('mocked_svg')
-        expect(css).to receive(:merge!).with({ color: 'red' })
+        allow(subject).to receive_messages(svg_instance: svg_instance, merged_css: merged_css)
+        expect(svg_instance).to receive(:append).with('mocked_svg')
+        expect(merged_css).to receive(:merge!).with({ color: 'red' })
 
         subject.append component
       end

@@ -3,7 +3,7 @@ module Victor
     include Marshaling
 
     # Marshaling data
-    def marshaling = %i[width height x y svg css]
+    def marshaling = %i[width height x y svg merged_css]
 
     # Subclasses MUST implement this
     def body
@@ -32,27 +32,33 @@ module Victor
     def content = svg.content
     def to_s = render
 
-    # Appending/Embedding
+    # Appending/Embedding - DSL for the `#body` implementation
     def append(component)
-      vector.append component.svg
-      css.merge! component.css
+      svg_instance.append component.svg
+      merged_css.merge! component.merged_css
     end
     alias embed append
 
-  protected
-
-    # SVG
-    def vector = @vector ||= SVG.new(viewBox: "#{x} #{y} #{width} #{height}")
-    alias add vector
+    # SVG / CSS
     def svg
       @svg ||= begin
         body
-        vector.css = css
-        vector
+        svg_instance.css = merged_css
+        svg_instance
       end
     end
 
-    # CSS
-    def css = @css ||= style.dup
+    def css = @css ||= svg.css
+
+  protected
+
+    # Start with an ordinary SVG instance
+    def svg_instance = @svg_instance ||= SVG.new(viewBox: "#{x} #{y} #{width} #{height}")
+
+    # Internal DSL to enable `add.anything` in the `#body` implementation
+    alias add svg_instance
+
+    # Start with a copy of our own style
+    def merged_css = @merged_css ||= style.dup
   end
 end
