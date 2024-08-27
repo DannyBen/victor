@@ -36,37 +36,47 @@ describe Victor::Component do
   end
 
   context 'when all required methods are implemented' do
+    let(:svg) do
+      double save: true, render: true, content: true, element: true, to_s: true
+    end
+
     before do
       allow(subject).to receive_messages(body: nil, width: 100, height: 100)
+      allow(subject).to receive(:svg).and_return(svg)
     end
 
     describe '#save' do
-      let(:svg) { double save: true }
-
       it 'delegates to SVG' do
-        allow(subject).to receive(:svg).and_return(svg)
         expect(svg).to receive(:save).with('filename')
         subject.save 'filename'
       end
     end
 
     describe '#render' do
-      let(:svg) { double render: true }
-
       it 'delegates to SVG' do
-        allow(subject).to receive(:svg).and_return(svg)
         expect(svg).to receive(:render).with(template: :minimal)
         subject.render template: :minimal
       end
     end
 
     describe '#content' do
-      let(:svg) { double content: true }
-
       it 'delegates to SVG' do
-        allow(subject).to receive(:svg).and_return(svg)
         expect(svg).to receive(:content)
         subject.content
+      end
+    end
+
+    describe '#element' do
+      it 'delegates to SVG' do
+        expect(svg).to receive(:element).with(:rect)
+        subject.element :rect
+      end
+    end
+
+    describe '#to_s' do
+      it 'delegates to SVG' do
+        expect(svg).to receive(:to_s)
+        subject.to_s
       end
     end
 

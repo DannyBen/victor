@@ -1,6 +1,11 @@
+require 'forwardable'
+
 module Victor
   class Component
+    extend Forwardable
     include Marshaling
+
+    def_delegators :svg, :save, :render, :content, :element, :to_s
 
     # Marshaling data
     def marshaling = %i[width height x y svg merged_css]
@@ -25,12 +30,6 @@ module Victor
     def style = @style ||= {}
     def x = @x ||= 0
     def y = @y ||= 0
-
-    # Rendering
-    def save(...) = svg.save(...)
-    def render(...) = svg.render(...)
-    def content = svg.content
-    def to_s = render
 
     # Appending/Embedding - DSL for the `#body` implementation
     def append(component)
