@@ -5,7 +5,7 @@ module Victor
     extend Forwardable
     include Marshaling
 
-    def_delegators :svg, :save, :render, :content, :element, :to_s
+    def_delegators :svg, :save, :render, :content, :element, :css, :to_s
 
     # Marshaling data
     def marshaling = %i[width height x y svg merged_css]
@@ -46,8 +46,6 @@ module Victor
         svg_instance
       end
     end
-
-    def css = @css ||= svg.css
 
   protected
 

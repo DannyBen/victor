@@ -20,6 +20,7 @@ module Victor
       content.push additional_content.to_s
     end
     alias append <<
+    alias embed <<
 
     def setup(attributes = nil)
       attributes ||= {}
