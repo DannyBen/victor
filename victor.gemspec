@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.metadata = {
     'bug_tracker_uri'       => 'https://github.com/DannyBen/victor/issues',
     'changelog_uri'         => 'https://github.com/DannyBen/victor/blob/master/CHANGELOG.md',
+    'homepage_uri'          => 'https://victor.dannyb.co/',
     'source_code_uri'       => 'https://github.com/DannyBen/victor',
     'rubygems_mfa_required' => 'true',
   }
