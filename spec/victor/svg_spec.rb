@@ -1,5 +1,5 @@
 describe Victor::SVG do
-  describe '#new' do
+  describe '#initialize' do
     it 'sets default attributes' do
       expect(subject.svg_attributes[:height]).to eq '100%'
       expect(subject.svg_attributes[:width]).to eq '100%'
@@ -58,12 +58,14 @@ describe Victor::SVG do
     end
 
     describe '#append' do
-      it 'pushes stringable objects as content' do
-        subject.append fire
-        subject.append earth
-        subject.append water
+      it 'is an alias to #<<' do
+        expect(subject.method(:append)).to eq subject.method(:<<)
+      end
+    end
 
-        expect(subject.to_s).to eq "<circle color=\"red\"/>\n<triangle color=\"green\"/>\n<rect color=\"blue\"/>"
+    describe '#embed' do
+      it 'is an alias to #<<' do
+        expect(subject.method(:embed)).to eq subject.method(:<<)
       end
     end
   end

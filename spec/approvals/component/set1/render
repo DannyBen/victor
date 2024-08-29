@@ -1,0 +1,22 @@
+<svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+<style>
+  .one {
+    stroke: magenta;
+  }
+  .two {
+    stroke: magenta;
+  }
+  .three {
+    stroke: magenta;
+  }
+</style>
+
+<g transform="translate(10, 10)">
+<text>
+Two
+</text>
+<text>
+Tada
+</text>
+</g>
+</svg>

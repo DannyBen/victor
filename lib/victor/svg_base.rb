@@ -12,10 +12,15 @@ module Victor
       build(&block) if block
     end
 
+    def marshaling
+      %i[template glue svg_attributes css content]
+    end
+
     def <<(additional_content)
       content.push additional_content.to_s
     end
     alias append <<
+    alias embed <<
 
     def setup(attributes = nil)
       attributes ||= {}

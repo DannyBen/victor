@@ -1,39 +1,33 @@
 module Victor
   module Marshaling
+    def marshaling
+      raise NotImplementedError, "#{self.class.name} must implement `marshaling'"
+    end
+
     # YAML serialization methods
     def encode_with(coder)
-      coder['template'] = @template
-      coder['glue'] = @glue
-      coder['svg_attributes'] = @svg_attributes
-      coder['css'] = @css
-      coder['content'] = @content
+      marshaling.each do |attr|
+        coder[attr.to_s] = send(attr)
+      end
     end
 
     def init_with(coder)
-      @template = coder['template']
-      @glue = coder['glue']
-      @svg_attributes = coder['svg_attributes']
-      @css = coder['css']
-      @content = coder['content']
+      marshaling.each do |attr|
+        instance_variable_set(:"@#{attr}", coder[attr.to_s])
+      end
     end
 
     # Marshal serialization methods
     def marshal_dump
-      {
-        template:       @template,
-        glue:           @glue,
-        svg_attributes: @svg_attributes,
-        css:            @css,
-        content:        @content,
-      }
+      marshaling.to_h do |attr|
+        [attr, send(attr)]
+      end
     end
 
     def marshal_load(data)
-      @template = data[:template]
-      @glue = data[:glue]
-      @svg_attributes = data[:svg_attributes]
-      @css = data[:css]
-      @content = data[:content]
+      marshaling.each do |attr|
+        instance_variable_set(:"@#{attr}", data[attr])
+      end
     end
   end
 end
