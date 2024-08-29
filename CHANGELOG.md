@@ -1,6 +1,16 @@
 Changelog
 ========================================
 
+v0.5.0 - 2024-08-29
+----------------------------------------
+
+- Add Victor::Component for component-driven SVG composition
+- Remove xlink from svg tag
+- Add `SVG#embed` as an alias to `SVG#append`
+- Add `SVG#tag` as the preferred alias to `SVG#element`
+- Update logo and documentation
+
+
 v0.4.0 - 2024-08-25
 ----------------------------------------
 
