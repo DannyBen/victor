@@ -4,19 +4,21 @@ Changelog
 v0.5.0 - 2024-08-29
 ----------------------------------------
 
-- Add Victor::Component for component-driven SVG composition
-- Remove xlink from svg tag
-- Add `SVG#embed` as an alias to `SVG#append`
-- Add `SVG#tag` as the preferred alias to `SVG#element`
-- Update logo and documentation
+- Add Victor::Component for component-driven SVG composition [`2786ae2`](https://github.com/DannyBen/victor/commit/2786ae2)
+- Remove xlink from svg tag [`440ff61`](https://github.com/DannyBen/victor/commit/440ff61)
+- Add `SVG#embed` as an alias to `SVG#append` [`79940d6`](https://github.com/DannyBen/victor/commit/79940d6)
+- Add `SVG#tag` as the preferred alias to `SVG#element` [`dff5399`](https://github.com/DannyBen/victor/commit/dff5399)
+- Update logo and documentation [`ae17bd5`](https://github.com/DannyBen/victor/commit/ae17bd5)
+- Compare [`v0.4.0..v0.5.0`](https://github.com/dannyben/victor/compare/v0.4.0..v0.5.0)
 
 
 v0.4.0 - 2024-08-25
 ----------------------------------------
 
-- Drop support for Ruby 2.x
-- Remove XML doctype, CDATA, and `type=text/css` from `<style>`
-- Allow Victor::SVG to be marshaled
+- Drop support for Ruby 2.x [`245c8cc`](https://github.com/DannyBen/victor/commit/245c8cc)
+- Remove XML doctype, CDATA, and `type=text/css` from `<style>` [`b440aec`](https://github.com/DannyBen/victor/commit/b440aec)
+- Allow Victor::SVG to be marshaled [`6bdc751`](https://github.com/DannyBen/victor/commit/6bdc751)
+- Compare [`v0.3.4..v0.4.0`](https://github.com/dannyben/victor/compare/v0.3.4..v0.4.0)
 
 
 <!-- break v0.3.4 -->
