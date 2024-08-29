@@ -1,0 +1,37 @@
+<svg viewBox="-30 -10 586 120" width="586" height="120" xmlns="http://www.w3.org/2000/svg">
+<style>
+  .letter {
+    stroke: black;
+    stroke-width: 3;
+    fill: none;
+  }
+  .eye {
+    stroke: black;
+    stroke-width: 3;
+    fill: black;
+  }
+</style>
+
+<g transform="translate(0 0)">
+<polygon class="letter" points="0,0 50,100 100,0"/>
+</g>
+<g transform="translate(110 0)">
+<rect class="letter" x="0" y="0" width="40" height="100"/>
+</g>
+<g transform="translate(160 0)">
+<path class="letter" transform="rotate(45 50 50)" d="M 50,50 m 0,-50 a 50,50 0 1,0 50,50 L 50,50 Z"/>
+<circle class="eye" cx="50" cy="20" r="5"/>
+</g>
+<g transform="translate(255 0)">
+<polygon class="letter" points="0,0 80,0 80,40 60 40 60,100 20,100 20,40 0,40"/>
+</g>
+<g transform="translate(345 0)">
+<circle class="letter" cx="50" cy="50" r="50"/>
+<circle class="eye" cx="30" cy="30" r="5"/>
+<line class="letter" x1="0" y1="50" x2="50" y2="50"/>
+</g>
+<g transform="translate(455 0)">
+<path class="letter" d="M 0,0 l 40,0 a 30,30 0 1,1 0,60 l 30,40 L 0,100 Z"/>
+<circle class="eye" cx="40" cy="30" r="5"/>
+</g>
+</svg>

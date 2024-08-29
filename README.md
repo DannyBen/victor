@@ -1,4 +1,5 @@
-![Victor](/examples/16_victor_logo.svg)
+<div align='center'>
+<img src='assets/logo.svg' width=500>
 
 # Victor - Ruby SVG Image Builder
 
@@ -6,12 +7,14 @@
 [![Build Status](https://github.com/DannyBen/victor/workflows/Test/badge.svg)](https://github.com/DannyBen/victor/actions?query=workflow%3ATest)
 [![Maintainability](https://api.codeclimate.com/v1/badges/85cc05c219d6d233ab78/maintainability)](https://codeclimate.com/github/DannyBen/victor/maintainability)
 
+## [victor.dannyb.co](https://victor.dannyb.co)
+
+</div>
+
 ---
 
-Victor is a direct Ruby-to-SVG builder. All method calls are converted
-directly to SVG elements.
-
-![Demo](assets/animated.gif)
+**Victor** is a lightweight, zero-dependencies Ruby library that lets you build
+SVG images using Ruby code.
 
 ---
 
@@ -21,472 +24,46 @@ directly to SVG elements.
 $ gem install victor
 ```
 
-Or with bundler:
+## Example
+
+<table><tr><td width="250">
+
+<img src='assets/ghost.svg' width=250>
+
+</td><td>
 
 ```ruby
-gem 'victor'
-```
-
-## Examples
-
-```ruby
-require 'victor'
-
-svg = Victor::SVG.new width: 140, height: 100, style: { background: '#ddd' }
-
-svg.build do 
-  rect x: 10, y: 10, width: 120, height: 80, rx: 10, fill: '#666'
-  
-  circle cx: 50, cy: 50, r: 30, fill: 'yellow'
-  circle cx: 58, cy: 32, r: 4, fill: 'black'
-  polygon points: %w[45,50 80,30 80,70], fill: '#666'
-
-  3.times do |i|
-    x = 80 + i*18
-    circle cx: x, cy: 50, r: 4, fill: 'yellow'
-  end
-end
-
-svg.save 'pacman'
-```
-
-Output:
-
-[![pacman](https://cdn.rawgit.com/DannyBen/victor/master/examples/10_pacman.svg)](https://github.com/DannyBen/victor/blob/master/examples/10_pacman.rb)
-
-
-See the [examples] folder for several ruby scripts and their SVG output.
-
-
-## Usage
-
-Initialize your SVG image:
-
-```ruby
-require 'victor'
-svg = Victor::SVG.new
-```
-
-Any option you provide to `SVG.new` will be added as an attribute to the
-main `<svg>` element. By default, `height` and `width` are set to 100%.
-
-```ruby
-svg = Victor::SVG.new width: '100%', height: '100%'
-# same as just Victor::SVG.new
-
-svg = Victor::SVG.new width: '100%', height: '100%', viewBox: "0 0 200 100"
-```
-
-As an alternative, you can set the root SVG attributes using the `setup` method:
-
-```ruby
-require 'victor'
-svg = Victor::SVG.new
-svg.setup width: 200, height: 150
-```
-
-Victor uses a single method (`element`) to generate all SVG elements:
-
-```ruby
-svg.element :rect, x: 2, y: 2, width: 200, height: 200
-# => <rect x="2" y="2" width="200" height="200"/>
-```
-
-But you can omit it. Calls to any other method, will be delegated to the 
-`element` method, so normal usage looks more like this:
-
-```ruby
-svg.rect x: 2, y: 2, width: 200, height: 200
-# => <rect x="2" y="2" width="200" height="200"/>
-```
-
-In other words, these are the same:
-
-```ruby
-svg.element :anything, option: 'value'
-svg.anything option: 'value'
-```
-
-You can use the `build` method, to generate the SVG with a block
-
-```ruby
-svg.build do 
-  rect x: 0, y: 0, width: 100, height: 100, fill: '#ccc'
-  rect x: 20, y: 20, width: 60, height: 60, fill: '#f99'
-end
-```
-
-If the value of an attribute is a hash, it will be converted to a 
-style-compatible string:
-
-```ruby
-svg.rect x: 0, y: 0, width: 100, height: 100, style: { stroke: '#ccc', fill: 'red' }
-# => <rect x=0 y=0 width=100 height=100 style="stroke:#ccc; fill:red"/>
-```
-
-If the value of an attribute is an array, it will be converted to a 
-space delimited string:
-
-```ruby
-svg.path d: ['M', 150, 0, 'L', 75, 200, 'L', 225, 200, 'Z']
-# => <path d="M 150 0 L 75 200 L 225 200 Z"/>
-```
-
-For SVG elements that have an inner content - such as text - simply pass it as 
-the first argument:
-
-```ruby
-svg.text "Victor", x: 40, y: 50
-# => <text x="40" y="50">Victor</text>
-```
-
-You can also nest elements with blocks:
-
-```ruby
-svg.build do
-  g font_size: 30, font_family: 'arial', fill: 'white' do
-    text "Scalable Victor Graphics", x: 40, y: 50
-  end
-end
-# => <g font-size="30" font-family="arial" fill="white">
-#      <text x="40" y="50">Scalable Victor Graphics</text>
-#    </g>
-```
-
-Underscores in attribute names are converted to dashes:
-
-```ruby
-svg.text "Victor", x: 40, y: 50, font_family: 'arial', font_weight: 'bold', font_size: 40
-# => <text x="40" y="50" font-family="arial" font-weight="bold" font-size="40">
-#      Victor
-#    </text>
-```
-
-## Features
-
-### Composite SVG
-
-Victor also supports the ability to combine several smaller SVG objects into
-one using the `<<` operator or the `#append` method. 
-
-This operator expects to receive any object that responds to `#to_s` (can be another `SVG` object).
-
-```ruby
-require 'victor'
-include Victor
-
-# Create a reusable SVG object
-frame = SVG.new
-frame.rect x: 0, y: 0, width: 100, height: 100, fill: '#336'
-frame.rect x: 10, y: 10, width: 80, height: 80, fill: '#fff'
-
-# ... and another
-troll = SVG.new
-troll.circle cx: 50, cy: 60, r: 24, fill: 'yellow'
-troll.polygon points: %w[24,50 50,14 76,54], fill: 'red'
-
-# Combine objects into a single image
-svg = SVG.new viewBox: '0 0 100 100'
-svg << frame
-svg << troll
-
-# ... and save it
-svg.save 'framed-troll'
-```
-
-Output:
-
-[![troll](https://cdn.rawgit.com/DannyBen/victor/master/examples/14_composite_svg.svg)](https://cdn.rawgit.com/DannyBen/victor/master/examples/14_composite_svg.svg)
-
-These two calls are identical:
-
-```ruby
-svg << other
-svg.append other
-```
-
-To make this common use case a little easier to use, you can use a block when instantiating a new `SVG` object:
-
-```ruby
-troll = SVG.new do
-  circle cx: 50, cy: 60, r: 24, fill: 'yellow'
-end
-```
-
-Which is the same as:
-
-```ruby
-troll = SVG.new
-troll.build do
-  circle cx: 50, cy: 60, r: 24, fill: 'yellow'
-end
-```
-
-Another approach to a more modular SVG composition, would be to subclass 
-`Victor::SVG`.
-
-See the [composite svg example](https://github.com/DannyBen/victor/tree/master/examples#14-composite-svg)
-or the [subclassing example](https://github.com/DannyBen/victor/tree/master/examples#15-subclassing)
-for more details.
-
-
-### Saving the Output
-
-Generate the full SVG to a string with `render`:
-
-```ruby
-result = svg.render
-```
-
-Or, save it to a file with `save`:
-
-```ruby
-svg.save 'filename'
-# the '.svg' extension is optional
-```
-
-### SVG Templates
-
-Victor renders its content using the [`:default` template][default-template].
-
-If you wish to use another template, you can either use one of the built-in
-templates (`:default` or `:minimal`), or provide your own:
-
-```ruby
-svg = Victor::SVG.new template: :minimal
-svg = Victor::SVG.new template: 'path/to/template.svg'
-```
-
-See the [templates] folder for an understanding of how templates are 
-structured.
-
-Templates can also be provided when rendering or saving the output:
-
-```ruby
-svg.save 'filename', template: :minimal
-svg.render template: :minimal
-```
-
-
-### CSS
-
-CSS gets a special treatment in `Victor::SVG`, in order to provide a DSL-like
-syntax for CSS rules.
-
-The `Victor::SVG` object has a `css` property, which can contain either a 
-Hash or a String:
-
-```ruby
-svg = Victor::SVG.new
-
-svg.css = css_hash_or_string
-# or without the equal sign:
-svg.css css_hash_or_string
-
-svg.build do
-  # ...
-end
-```
-
-This flexibility allows you to apply CSS in multiple ways. Below are some
-examples.
-
-#### Assigning CSS rules using the hash syntax
-
-```ruby
-svg = Victor::SVG.new
-
-svg.build do 
-  css['.main'] = {
-    stroke: "green", 
-    stroke_width: 2,
-    fill: "yellow"
-  }
-
-  circle cx: 35, cy: 35, r: 20, class: 'main'
-end
-```
-
-#### Assigning a full hash to the CSS property
-
-```ruby
-svg.css = {
-  '.bar': {
-    fill: '#666',
-    stroke: '#fff',
-    stroke_width: 1
-  },
-  '.negative': {
-    fill: '#f66'
-  },
-  '.positive': {
-    fill: '#6f6'
-  }
-}
-```
-
-Underscore characters will be converted to dashes (`stroke_width` becomes 
-`stroke-width`).
-
-#### Importing CSS from an external file
-
-```ruby
-svg.css = File.read 'styles.css'
-```
-
-#### CSS `@import` directives
-
-If you need to add CSS statements , like `@import`, use the following syntax:
-
-```ruby
-css['@import'] = [
-  "url('https://fonts.googleapis.com/css?family=Audiowide')",
-  "url('https://fonts.googleapis.com/css?family=Pacifico')"
-]
-```
-
-This is achieved thanks to the fact that when Victor encounters an array
-in the CSS hash, it will prefix each of the array elements with the hash
-key, so the above will result in two `@import url(...)` rows.
-
-See the [css example](https://github.com/DannyBen/victor/tree/master/examples#08-css),
-[css string example](https://github.com/DannyBen/victor/tree/master/examples#09-css-string),
-or the [custom fonts example](https://github.com/DannyBen/victor/tree/master/examples#13-custom-fonts).
-
-
-### Tagless Elements
-
-Using underscore (`_`) as the element name will simply add the value to the 
-generated SVG, without any surrounding element. This is designed to allow
-generating something like this:
-
-```xml
-<text>
-  You are
-  <tspan font-weight="bold">not</tspan>
-  a banana
-</text>
-```
-
-using this Ruby code:
-
-```ruby
-svg.build do 
-  text do
-    _ 'You are'
-    tspan 'not', font_weight: "bold"
-    _ 'a banana'
-  end
-end
-```
-
-See the [tagless elements example](https://github.com/DannyBen/victor/tree/master/examples#17-tagless-elements).
-
-
-### XML Encoding
-
-Plain text values are encoded automatically:
-
-```ruby
-svg.build do
-  text "Ben & Jerry's"
-end
-# <text>Ben &amp; Jerry's</text>
-```
-
-If you need to use the raw, unencoded string, add `!` to the element's name:
-
-```ruby
-svg.build do
-  text! "Ben & Jerry's"
-end
-# <text>Ben & Jerry's</text>
-```
-
-See the [xml encoding example](https://github.com/DannyBen/victor/tree/master/examples#18-xml-encoding).
-
-
-### XML Newlines
-
-By default, the generated SVGs will have a newline glue between the elements.
-You can change this (for example, to an empty string) if the default newlines
-are not appropriate for your use case.
-
-```ruby
-svg = Victor::SVG.new glue: ''
-```
-
-The glue can also be provided when rendering or saving the output:
-
-```ruby
-svg.save 'filename', glue: ''
-svg.render glue: ''
-```
-
-### DSL Syntax
-
-Victor also supports a DSL-like syntax. To use it, simply `require 'victor/script'`.
-
-Once required, you have access to:
-
-- `svg` - returns an instance of `Victor::SVG`
-- All the methods that are available on the `SVG` object, are included at the root level.
-
-For example:
-
-```ruby
-require 'victor/script'
-
-setup width: 100, height: 100
+setup viewBox: '0 0 100 100'
 
 build do
-  circle cx: 50, cy: 50, r: 30, fill: "yellow"
-end
+  rect x: 0, y: 0, width: 100, height: 100, fill: :white
+  circle cx: 50, cy: 50, r: 40, fill: 'yellow'
+  rect x: 10, y: 50, width: 80, height: 50, fill: :yellow
 
-puts render
-save 'output.svg'
+  [25, 50].each do |x|
+    circle cx: x, cy: 40, r: 8, fill: :white
+  end
+
+  path fill: 'white', d: %w[
+    M11 100 l13 -15 l13 15 l13 -15 
+    l13 15 l13 -15 l13 15 Z
+  ]
+end
 ```
 
-See the [dsl example](https://github.com/DannyBen/victor/tree/master/examples#19-dsl).
-
-## Related Projects
-
-### [Victor CLI][victor-cli]
-
-A command line utility that allows converting Ruby to SVG as well as SVG to
-Victor Ruby scripts.
-
-### [Victor Opal][victor-opal]
-
-A Victor playground that works in the browser.
-
-### [Minichart][minichart]
-
-A Ruby gem that uses Victor to generate SVG charts
-
-[![Minichart](assets/minichart.svg)][minichart]
+</td></tr></table>
 
 
-### [Icodi][icodi]
+## Documentation
 
-A Ruby gem that uses Victor to generate consistent random icon 
-images, similar to GitHub's identicon.
-
-[![Icodi](assets/icodi.svg)][icodi]
-
+- [Victor Homepage][docs]
 
 ## Contributing / Support
 
 If you experience any issue, have a question or a suggestion, or if you wish
-to contribute, feel free to [open an issue][issues].
+to contribute, feel free to [open an issue][issues] or
+[start a discussion][discussions].
 
----
-
-[examples]: https://github.com/DannyBen/victor/tree/master/examples#examples
-[templates]: https://github.com/DannyBen/victor/tree/master/lib/victor/templates
-[default-template]: https://github.com/DannyBen/victor/blob/master/lib/victor/templates/default.svg?short_path=c28efa4
-[icodi]: https://github.com/DannyBen/icodi
-[minichart]: https://github.com/DannyBen/minichart
-[victor-opal]: https://kuboon.github.io/victor-opal/
-[victor-cli]:  https://github.com/DannyBen/victor-cli
 [issues]: https://github.com/DannyBen/victor/issues
+[discussions]: https://github.com/DannyBen/victor/discussions
+[docs]: https://victor.dannyb.co/
