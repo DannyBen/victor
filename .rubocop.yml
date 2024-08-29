@@ -23,11 +23,6 @@ Lint/LiteralAsCondition:
   Exclude:
     - 'spec/**/*'
 
-# This is ok in examples
-Lint/UselessAssignment:
-  Exclude:
-    - 'examples/*'
-
 # `SVGBase#element` is a bit complex
 Metrics/PerceivedComplexity:
   Max: 11
@@ -40,7 +35,6 @@ Security/Eval:
 # Allow `include Victor` in some places
 Style/MixinUsage:
   Exclude:
-    - 'examples/*'
     - lib/victor/script.rb
 
 # We use Marshal.load to test that it *can* be done. Allow it.
