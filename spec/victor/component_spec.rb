@@ -37,7 +37,7 @@ describe Victor::Component do
 
   context 'when all required methods are implemented' do
     let(:svg) do
-      double save: true, render: true, content: true, element: true, to_s: true
+      double save: true, render: true, content: true, element: true, tag: true, to_s: true
     end
 
     before do
@@ -63,6 +63,13 @@ describe Victor::Component do
       it 'delegates to SVG' do
         expect(svg).to receive(:content)
         subject.content
+      end
+    end
+
+    describe '#tag' do
+      it 'delegates to SVG' do
+        expect(svg).to receive(:tag).with(:rect)
+        subject.tag :rect
       end
     end
 

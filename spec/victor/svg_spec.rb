@@ -123,25 +123,25 @@ describe Victor::SVG do
     end
   end
 
-  describe '#element' do
+  describe '#tag' do
     it 'generates xml without attributes' do
-      subject.element 'anything'
+      subject.tag 'anything'
       expect(subject.content).to eq ['<anything />']
     end
 
     it 'generates xml with attributes' do
-      subject.element 'anything', at: 'all'
+      subject.tag 'anything', at: 'all'
       expect(subject.content).to eq ['<anything at="all"/>']
     end
 
     it 'converts snake attributes to kebabs' do
-      subject.element 'text', font_family: 'arial'
+      subject.tag 'text', font_family: 'arial'
       expect(subject.content).to eq ['<text font-family="arial"/>']
     end
 
     context 'with hashed attributes' do
       it 'converts attributes to style syntax' do
-        subject.element 'cool', style: { color: 'red', anything: 10 }
+        subject.tag 'cool', style: { color: 'red', anything: 10 }
         expect(subject.content).to eq ['<cool style="color:red; anything:10"/>']
       end
     end
@@ -163,10 +163,10 @@ describe Victor::SVG do
       # https://github.com/DannyBen/victor/pull/59
       it "ignores the block's return value" do
         subject.build do
-          element :group do
-            element :one
-            element :two
-            element :three if false
+          tag :group do
+            tag :one
+            tag :two
+            tag :three if false
           end
         end
         expect(subject.content).to eq ['<group>', '<one />', '<two />', '</group>']
@@ -175,29 +175,29 @@ describe Victor::SVG do
 
     context 'with a plain text value' do
       it 'generates a container element' do
-        subject.element 'prison', 'inmate', number: '6'
+        subject.tag 'prison', 'inmate', number: '6'
         expect(subject.content).to eq ['<prison number="6">', 'inmate', '</prison>']
       end
 
       it 'escapes XML' do
-        subject.element 'text', 'For Dumb & Dumber, 2 > 3'
+        subject.tag 'text', 'For Dumb & Dumber, 2 > 3'
         expect(subject.content).to eq ['<text>', 'For Dumb &amp; Dumber, 2 &gt; 3', '</text>']
       end
 
       context 'when the element is an underscore' do
         it 'generates a tagless element' do
-          subject.element '_', 'You are (not) surrounded!'
+          subject.tag '_', 'You are (not) surrounded!'
           expect(subject.content).to eq ['You are (not) surrounded!']
         end
 
         it 'escapes XML' do
-          subject.element '_', 'For Dumb & Dumber, 2 > 3'
+          subject.tag '_', 'For Dumb & Dumber, 2 > 3'
           expect(subject.content).to eq ['For Dumb &amp; Dumber, 2 &gt; 3']
         end
 
         context 'when the element is _!' do
           it 'does not escape XML' do
-            subject.element '_!', 'For Dumb & Dumber, 2 > 3'
+            subject.tag '_!', 'For Dumb & Dumber, 2 > 3'
             expect(subject.content).to eq ['For Dumb & Dumber, 2 > 3']
           end
         end
@@ -205,10 +205,16 @@ describe Victor::SVG do
 
       context 'when the element name ends with !' do
         it 'does not escape XML' do
-          subject.element 'text!', 'For Dumb & Dumber, 2 > 3'
+          subject.tag 'text!', 'For Dumb & Dumber, 2 > 3'
           expect(subject.content).to eq ['<text>', 'For Dumb & Dumber, 2 > 3', '</text>']
         end
       end
+    end
+  end
+
+  describe '#element' do
+    it 'is an alias for #tag' do
+      expect(subject.method(:element)).to eq subject.method(:tag)
     end
   end
 
@@ -243,13 +249,13 @@ describe Victor::SVG do
   end
 
   describe '#method_missing' do
-    it 'calls #element' do
-      expect(subject).to receive(:element).with(:anything)
+    it 'calls #tag' do
+      expect(subject).to receive(:tag).with(:anything)
       subject.anything
     end
 
-    it 'passes arguments to #element' do
-      expect(subject).to receive(:element).with(:anything, { at: 'all' })
+    it 'passes arguments to #tag' do
+      expect(subject).to receive(:tag).with(:anything, { at: 'all' })
       subject.anything at: 'all'
     end
   end

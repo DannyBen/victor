@@ -40,7 +40,7 @@ module Victor
       instance_eval(&block)
     end
 
-    def element(name, value = nil, attributes = {})
+    def tag(name, value = nil, attributes = {})
       if value.is_a? Hash
         attributes = value
         value = nil
@@ -68,6 +68,7 @@ module Victor
         content.push "<#{name} #{attributes}/>"
       end
     end
+    alias element tag
 
     def css(defs = nil)
       @css ||= {}
