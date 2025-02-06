@@ -36,8 +36,8 @@ module Victor
       @svg_attributes = Attributes.new attributes
     end
 
-    def build(&block)
-      instance_eval(&block)
+    def build(&)
+      instance_eval(&)
     end
 
     def tag(name, value = nil, attributes = {})

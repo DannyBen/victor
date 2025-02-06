@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/DannyBen/victor'
   s.license     = 'MIT'
 
-  s.required_ruby_version = '>= 3.0.0'
+  s.required_ruby_version = '>= 3.1'
 
   s.metadata = {
     'bug_tracker_uri'       => 'https://github.com/DannyBen/victor/issues',
