@@ -3,10 +3,6 @@
 
 # Victor - Ruby SVG Image Builder
 
-[![Gem Version](https://badge.fury.io/rb/victor.svg)](https://badge.fury.io/rb/victor)
-[![Build Status](https://github.com/DannyBen/victor/workflows/Test/badge.svg)](https://github.com/DannyBen/victor/actions?query=workflow%3ATest)
-[![Maintainability](https://api.codeclimate.com/v1/badges/85cc05c219d6d233ab78/maintainability)](https://codeclimate.com/github/DannyBen/victor/maintainability)
-
 ## [victor.dannyb.co](https://victor.dannyb.co)
 
 </div>
