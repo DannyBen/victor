@@ -9,7 +9,7 @@
 
 ---
 
-![repocard](repocard.svg)
+![repocard](https://repocard.dannyben.com/svg/victor.svg)
 
 **Victor** is a lightweight, zero-dependencies Ruby library that lets you build
 SVG images using Ruby code.
